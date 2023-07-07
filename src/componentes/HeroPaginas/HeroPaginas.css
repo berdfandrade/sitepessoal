@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.nuvem {
+  transition: 0.5s;
+  text-align: center;
+  display: block;
+  margin-top: 120px;
+  margin-bottom: -180px;
+  height: 120px;
+  z-index: -1;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  animation: float-nuvem 5s ease-in-out infinite;
+}
+
+.benny {
+  text-align: center;
+  display: block;
+  margin-top: -60px;
+  height: 120px;
+  width: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+@keyframes float-nuvem {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateY(0px);
+    transform: translateX(0px);
+  }
+}
+
+/* Animação de flutuar */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+body {
+  zoom: 0.5;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* :root {
+  --body-color: rgb(255, 255, 255);
+  --text-color: #707070;
+} */
+
+.imagem-container {
+  margin-top: 130px;
+}
+
+.imagem-container-paginas {
+  margin-top: 200px;
+}
