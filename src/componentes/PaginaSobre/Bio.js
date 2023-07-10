@@ -43,7 +43,7 @@ function Bio() {
           Bernardo Andrade
         </Text>
         <Text fontSize="sm" ml={1}>
-          Developer gente fina
+          Developer Full Stack
         </Text>
         <Text fontSize="md" p={1} fontWeight="bold" mb={2}>
           Me chamo Bernardo, sou formado em Comunicação Social e estudei Letras.{" "}

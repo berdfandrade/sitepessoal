@@ -38,8 +38,8 @@ function PaginaCetificacoes() {
             base: "repeat(1, 1fr)",
             md: "repeat(3, 1fr)",
           }}
-          maxW="800px"
-          gap={2}
+          maxW="90%"
+          gap={5}
         >
           <Card
             title={"Linux I: conhecendo e utilizando o terminal"}
