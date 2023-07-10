@@ -52,19 +52,6 @@
   }
 }
 
-body {
-  zoom: 0.5;
-  font-family: "PT Sans", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* :root {
-  --body-color: rgb(255, 255, 255);
-  --text-color: #707070;
-} */
-
 .imagem-container {
   margin-top: 130px;
 }
