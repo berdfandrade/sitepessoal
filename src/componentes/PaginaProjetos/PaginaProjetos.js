@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, Flex, Grid, Text } from "@chakra-ui/react";
+import { Center, ChakraProvider, Flex, Grid, Text } from "@chakra-ui/react";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
@@ -12,6 +12,7 @@ import Gerador from "./ProjetosReactLive/GeradorDeSenha/Gerador";
 import Pomodoro from "./ProjetosReactLive/Pomodoro/Pomodoro";
 import BennyDex from "./ProjetosReactLive/BennyDex/BennyDex";
 import Calculadora from "./ProjetosReactLive/Calculadora/Calculadora";
+import HeroCard from "./ProjetosReactLive/HeroCard/componentes/characterCard";
 
 import ApiHandle from "./Outros/ApiHandle";
 import ProjetoCard from "./ProjetoCard";
@@ -22,6 +23,7 @@ import { MdCatchingPokemon } from "react-icons/md";
 import { BsCalculator } from "react-icons/bs";
 import { GiAncientSword } from "react-icons/gi";
 import { SiAiohttp } from "react-icons/si";
+import * as GI from "react-icons/gi";
 
 function PaginaSobre() {
   return (
@@ -78,7 +80,7 @@ function PaginaSobre() {
             componenteLive={<BennyDex />}
             descricaoCard={"Um aplicativo que consome da PokéAPI"}
             descricao={
-              <Text fontSize={13}>
+              <Text>
                 Uma imitação do clássico Pokédex, feito através do consumo de
                 uma API especializada em enviar informações sobre Pokémons.{" "}
                 <br />
@@ -148,6 +150,28 @@ function PaginaSobre() {
                 foi criado para atender aos requisitos do projeto e demonstrar
                 as habilidades adquiridas no contexto de construção e
                 manipulação de APIs.
+              </Text>
+            }
+          />
+          <ProjetoCard
+            tag1={"Front-End"}
+            tag2={"Back-end"}
+            nome={"Hero Card"}
+            icon={GI.GiSwordman}
+            iconModal={GI.GiSwordman}
+            componenteLive={
+              <Center>
+                <HeroCard />
+              </Center>
+            }
+            descricaoCard={"Um card que renderiza a RPG API!"}
+            descricao={
+              <Text justify={"center"}>
+                O componente HeroCard é uma parte do front-end de uma aplicação
+                que consome uma API para exibir informações de um herói gerado
+                aleatoriamente. O componente exibe os atributos e detalhes do
+                herói em um cartão.
+                <br />
               </Text>
             }
           />

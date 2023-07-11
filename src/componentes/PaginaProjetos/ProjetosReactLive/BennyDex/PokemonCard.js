@@ -25,8 +25,8 @@ const PokemonCard = ({ pokemon }) => {
       <Flex flexDirection={"row"}>
         <Image src={sprites.front_default} alt={name} p={1} />
 
-        <StatGroup ml={5}>
-          <Grid ml={5} templateColumns="repeat(3, 1fr)" gap={2}>
+        <StatGroup>
+          <Grid r={1} templateColumns="repeat(3, 1fr)" gap={2}>
             {stats.map((stat) => (
               <Stat fontSize={"large"} color="#99f8f9" key={stat.stat.name}>
                 <GridItem>
