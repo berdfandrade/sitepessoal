@@ -4,19 +4,9 @@ import {
   Icon,
   useDisclosure,
   Button,
-  Modal,
-  ModalBody,
-  ModalHeader,
-  ModalContent,
-  ModalOverlay,
-  ModalCloseButton,
-  ModalFooter,
   Flex,
   Tag,
   Center,
-} from "@chakra-ui/react";
-
-import {
   Drawer,
   DrawerBody,
   DrawerFooter,
@@ -24,10 +14,12 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Link,
 } from "@chakra-ui/react";
 
-import { AiFillQuestionCircle } from "react-icons/ai";
+import { AiFillQuestionCircle, AiOutlineLink } from "react-icons/ai";
 import { MdNoMealsOuline } from "react-icons/md";
+import { FaGithubAlt } from "react-icons/fa";
 
 const ProjetoCard = ({
   nome,
@@ -41,6 +33,7 @@ const ProjetoCard = ({
   tag2,
   corTag1,
   corTag2,
+  link,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -96,34 +89,19 @@ const ProjetoCard = ({
         )}
       </Box>
 
-      {/* <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{nome}</ModalHeader>
-          <ModalCloseButton />
-
-          {iconModal ? (
-            <Center mb={5}>
-              <Icon boxSize={20} as={iconModal} />
-            </Center>
-          ) : null}
-
-          <Text fontSize="md" ml={3} mr={2} p={3}>
-            {descricao}
-          </Text>
-          <ModalBody>{componenteLive}</ModalBody>
-          <ModalFooter>
-            <Button onClick={onClose}>Fechar</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    </> */}
-
-      <Drawer isOpen={isOpen} placement="right" p={4}size={"md"} onClose={onClose}>
+      <Drawer
+        isOpen={isOpen}
+        placement="right"
+        p={4}
+        size={"md"}
+        onClose={onClose}
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader mt={4} fontSize={30}>{nome}</DrawerHeader>
+          <DrawerHeader mt={4} fontSize={30}>
+            {nome}
+          </DrawerHeader>
 
           {iconModal ? (
             <Center mb={5} mt={5}>
@@ -137,11 +115,34 @@ const ProjetoCard = ({
 
           <DrawerBody>{componenteLive}</DrawerBody>
 
-          <DrawerFooter>
+          <DrawerFooter mt={3}>
+            <Button borderRadius={"full"} mr={"auto"}bg={"black"}>
+              <Link isExternal href={link}>
+                <Flex justifyContent={"center"} flexDir={"row"}>
+                  <Icon
+                    color="white"
+                    boxSize={4}
+                    as={FaGithubAlt}
+                    mt={1}
+                    mr={2}
+                  ></Icon>
+                  <Text mt={1} color="white">
+                    Repositório
+                  </Text>
+                  <Icon
+                    color="white"
+                    boxSize={4}
+                    as={AiOutlineLink}
+                    mt={1}
+                    ml={2}
+                  ></Icon>
+                </Flex>
+              </Link>
+            </Button>
+
             <Button variant="outline" mr={3} onClick={onClose}>
               Fechar
             </Button>
-            {/* <Button colorScheme="blue">Save</Button> */}
           </DrawerFooter>
         </DrawerContent>
       </Drawer>

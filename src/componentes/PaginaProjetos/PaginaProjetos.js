@@ -61,6 +61,7 @@ function PaginaSobre() {
               "Relógio pomodoro simples para estudar/trabalhar, criado com React e a chakra-ui, que também utilizei para estilizar esse site. Esse app é vivo! Você pode testá-lo aqui mesmo!"
             }
             icon={GiTomato}
+            link={"https://github.com/berdfandrade/pomodoro-timer/"}
           />
           <ProjetoCard
             tag1={"Front-end"}
@@ -164,6 +165,7 @@ function PaginaSobre() {
                 <HeroCard />
               </Center>
             }
+            link={"https://github.com/berdfandrade/hero-card"}
             descricaoCard={"Um card que renderiza a RPG API!"}
             descricao={
               <Text justify={"center"}>
