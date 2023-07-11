@@ -12,10 +12,11 @@ const BarraDeBusca = ({ onSearch }) => {
         <Input
           width={"60%"}
           borderRadius={"full"}
-          background="gray.100"
-          color="blackAlpha.900"
+          bg={"whiteAlpha"}
           placeholder="Procurar Pokémon"
+          errorBorderColor="coloque um pokemon"
           onChange={handleSearch}
+          vairant={"flushed"}
         />
       </Center>
     </Box>

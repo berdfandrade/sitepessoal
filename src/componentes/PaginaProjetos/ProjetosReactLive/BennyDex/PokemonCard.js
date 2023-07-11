@@ -24,11 +24,10 @@ const PokemonCard = ({ pokemon }) => {
       </Text>
       <Flex flexDirection={"row"}>
         <Image src={sprites.front_default} alt={name} p={1} />
-
-        <StatGroup>
-          <Grid r={1} templateColumns="repeat(3, 1fr)" gap={2}>
+        <StatGroup marginLeft={"auto"} mr={"5%"}>
+          <Grid  templateColumns="repeat(3, 1fr)" gap={3}>
             {stats.map((stat) => (
-              <Stat fontSize={"large"} color="#99f8f9" key={stat.stat.name}>
+              <Stat fontSize={"sm"} color="#99f8f9" key={stat.stat.name}>
                 <GridItem>
                   <StatLabel fontSize={"sm"}>
                     {capitalizeWords(

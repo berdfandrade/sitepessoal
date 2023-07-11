@@ -49,9 +49,9 @@ const CardHabilidade = ({
       marginRight="auto"
       alignItems="center"
       backgroundColor={cor}
-      border="1px solid gray"
+      borderWidth={1}
       borderColor="grey"
-      borderRadius="8px"
+      borderRadius="10px"
       _hover={{
         cursor: "pointer",
       }}
@@ -110,7 +110,7 @@ const CardHabilidade = ({
             </Text>
           </Flex>
           <DrawerBody>
-            <Text fontSize="lg" textJustify="center" mt={2}>
+            <Text fontSize={"15"} textJustify="center" mt={2}>
               {descricaoDrawer ? descricaoDrawer : descricao}
             </Text>
 

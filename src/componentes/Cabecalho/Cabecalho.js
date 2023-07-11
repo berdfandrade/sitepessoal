@@ -6,17 +6,19 @@ const Cabecalho = () => {
   return (
     <Box mt={2} p={2}>
       <Flex align="center">
-        <Text fontSize="md" ml={2} fontWeight="bold">
+        <Link to="/">
+        <Text ml={1} mt={2} hover={{"cursor" : "hover"}}fontSize="md" fontWeight="bold">
           Bernardo Andrade
         </Text>
+        </Link>
         <Spacer />
-        <Button as={Link} to="/" colorScheme="gray" mr={4}>
-          Home
+        <Button fontSize="13" as={Link} to="/projetos" colorScheme="gray" mr={4}>
+          Projetos
         </Button>
-        <Button as={Link} to="/sobre" colorScheme="gray" mr={4}>
+        <Button fontSize="13" as={Link} to="/sobre" colorScheme="gray" mr={4}>
           Sobre
         </Button>
-        <Button as={Link} to="/habilidades" colorScheme="gray" mr={4}>
+        <Button fontSize="13" as={Link} to="/habilidades" colorScheme="gray" mr={4}>
           Habilidades
         </Button>
       </Flex>
