@@ -78,6 +78,7 @@ function PaginaSobre() {
             nome={"BennyDex"}
             tag1={"Front-end"}
             icon={MdCatchingPokemon}
+            link={"https://github.com/berdfandrade/bennydex/tree/main"}
             componenteLive={<BennyDex />}
             descricaoCard={"Um aplicativo que consome da PokéAPI"}
             descricao={
@@ -139,6 +140,7 @@ function PaginaSobre() {
             descricaoCard={
               "API que retorna os dados do cabecalho da requisição"
             }
+            link={"https://github.com/berdfandrade/parser_microservice"}
             descricao={
               <Text justify={"center"}>
                 Este é um aplicativo JavaScript que funciona como um
