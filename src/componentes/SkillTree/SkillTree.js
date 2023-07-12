@@ -14,7 +14,7 @@ import {
   TbHexagonLetterC,
 } from "./IconImports";
 import { DiAndroid, DiDjango } from "react-icons/di";
-import { SiFlask, SiChakraui } from "react-icons/si";
+import { SiFlask, SiChakraui, SiDocker } from "react-icons/si";
 
 const SkillTree = () => {
   const columnCount = useBreakpointValue({ base: 1, md: 2 });
@@ -140,36 +140,16 @@ const SkillTree = () => {
             "Eu possuo habilidades em Flask; consigo criar API's simples, e usar o meu conhecimento de programação na linguagem python para criar rotas e funções interessantes e organizadas, e assim criar Back-End's em Python"
           }
           // descricaoDrawer={this.props.descricao}
-
-          SkillTree={<GRID.HabilidadesC />}
         />
         <CardHabilidade
-          titulo={"Chakra UI"}
+          titulo={"Docker"}
           corTexto="black"
-          cor="purple.200"
+          cor="blue.200"
           corIconeDrawer={"blackAlpha"}
-          level={20}
-          ProgressoDrawer={90}
-          icone={SiChakraui}
-          descricao={
-            
-            `Possuo conhecimento na biblioteca de estilização Chakra UI, sendo
-            capaz de com ela, criar interfaces belas e responsivas,
-            facilitando o trabalho de front-end e economizando tempo.Com a
-            Chakra UI, consegui uma base para usar outras bibliotecas de
-            estilização como a Material UI, Tailwind CSS, etc...`}
-
-          descricaoDrawer={
-            <Text fontSize={"15"} textAlign={"left"}>
-              {" "}
-              Possuo conhecimento na biblioteca de estilização Chakra UI, sendo
-              capaz de com ela, criar interfaces belas e responsivas,
-              facilitando o trabalho de front-end e economizando tempo.
-              Com a Chakra UI, consegui uma base para usar outras bibliotecas de
-              estilização como a Material UI, Tailwind CSS, etc...
-            </Text>
-          }
-          SkillTree={<GRID.HabilidadesC />}
+          level={1}
+          ProgressoDrawer={5}
+          icone={SiDocker}
+          descricao={`Possuo o conhecimento básico em Docker, sei como baixar containers, e criar alguns containers básicoas a partir de imagens.`}
         />
       </SimpleGrid>
     </Box>
