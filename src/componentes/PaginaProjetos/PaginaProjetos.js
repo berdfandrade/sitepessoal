@@ -13,6 +13,7 @@ import Pomodoro from "./ProjetosReactLive/Pomodoro/Pomodoro";
 import BennyDex from "./ProjetosReactLive/BennyDex/BennyDex";
 import Calculadora from "./ProjetosReactLive/Calculadora/Calculadora";
 import HeroCard from "./ProjetosReactLive/HeroCard/componentes/characterCard";
+import BennyTree from "./ProjetosReactLive/BennyTree/componentes/ExportAsApp";
 
 import ApiHandle from "./Outros/ApiHandle";
 import ProjetoCard from "./ProjetoCard";
@@ -175,6 +176,55 @@ function PaginaSobre() {
                 que consome uma API para exibir informações de um herói gerado
                 aleatoriamente. O componente exibe os atributos e detalhes do
                 herói em um cartão.
+                <br />
+              </Text>
+            }
+          />
+          <ProjetoCard
+            tag1={"Front-End"}
+            nome={"Bernardo Card"}
+            icon={GI.GiInfo}
+            componenteLive={
+              <Center>
+                <BennyTree />
+              </Center>
+            }
+            link={"https://github.com/berdfandrade/hero-card"}
+            descricaoCard={"Um card de RPG que mostra minhas informações"}
+            descricao={
+              <Text justify={"center"}>
+                É um card feito em React que mostra informações sobre mim como
+                um personagem de RPG. Tentei colocar algumas informações bem
+                específicas, como se fosse um personagem. Uso esse card na minha
+                BIO do Instagram e quero colocar features para ele funcionar
+                também como uma LinkTree OpenSource!
+                <br />
+              </Text>
+            }
+          />
+          <ProjetoCard
+            tag1={"Front-End"}
+            tag2={"Back-End"}
+            nome={"Monster API"}
+            icon={GI.GiMonsterGrasp}
+            iconModal={GI.GiMonsterGrasp}
+            componenteLive={
+              <Center>
+                <ApiHandle />
+              </Center>
+            }
+            link={"https://github.com/berdfandrade/hero-card"}
+            descricaoCard={
+              "API feita em Node.Js, que retorna um monstro aleatório"
+            }
+            descricao={
+              <Text justify={"center"}>
+                Uma API feita em Node.js parecida com a API de RPG. Essa API é
+                capaz de gerar monstros com níveis aleatórios, assim como os
+                heróis, variando de 1 a 99. Os monstros possuem nomes gerados
+                aleatoriamente, temperamento, e status de força e defesa. Os monstros
+                também possuem um inventário de itens que os eles
+                carregam.
                 <br />
               </Text>
             }
