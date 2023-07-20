@@ -106,6 +106,7 @@ function PaginaSobre() {
             icon={BsCalculator}
             componenteLive={<Calculadora />}
             descricaoCard={"Uma calculadora feita em React"}
+            link={"https://github.com/berdfandrade/calculadora"}
             descricao={
               <Text justify={"center"}>
                 Uma calculadora feita em React e Chakra-ui. A calculadora possui
@@ -152,16 +153,12 @@ function PaginaSobre() {
             link={"https://github.com/berdfandrade/api-conselho/"}
             descricao={
               <Text justify={"center"}>
-                Este é um aplicativo JavaScript que funciona como um
-                microserviço para análise de cabeçalhos de solicitação. Ele
-                extrai e exibe informações do cabeçalho de solicitação de uma
-                solicitação HTTP.
-                <br />
-                Este é um aplicativo em JavaScript que foi desenvolvido como um
-                dos projetos finais do currículo de APIs da FreeCodeCamp. Ele
-                foi criado para atender aos requisitos do projeto e demonstrar
-                as habilidades adquiridas no contexto de construção e
-                manipulação de APIs.
+                A "API de Conselhos Aleatórios" é uma aplicação desenvolvida em
+                Node.js e Express que oferece conselhos inspiradores e
+                motivacionais de forma aleatória. Através dessa API simples, os
+                usuários podem obter conselhos variados sempre que desejarem, o
+                que pode servir como uma fonte de encorajamento ou motivação em
+                diferentes momentos da vida.
               </Text>
             }
           />
@@ -197,7 +194,7 @@ function PaginaSobre() {
                 <BennyTree />
               </Center>
             }
-            link={"https://github.com/berdfandrade/hero-card"}
+            link={"https://github.com/berdfandrade/link_tree"}
             descricaoCard={"Um card de RPG que mostra minhas informações"}
             descricao={
               <Text justify={"center"}>
