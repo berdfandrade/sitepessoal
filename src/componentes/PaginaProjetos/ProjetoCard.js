@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 
 import { AiFillQuestionCircle, AiOutlineLink } from "react-icons/ai";
-import { MdNoMealsOuline } from "react-icons/md";
 import { FaGithubAlt } from "react-icons/fa";
 
 const ProjetoCard = ({
@@ -116,30 +115,30 @@ const ProjetoCard = ({
           <DrawerBody>{componenteLive}</DrawerBody>
 
           <DrawerFooter mt={3}>
-            <Button borderRadius={"full"} mr={"auto"}bg={"black"}>
-              <Link isExternal href={link}>
-                <Flex justifyContent={"center"} flexDir={"row"}>
-                  <Icon
-                    color="white"
-                    boxSize={4}
-                    as={FaGithubAlt}
-                    mt={1}
-                    mr={2}
-                  ></Icon>
-                  <Text mt={1} color="white">
-                    Repositório
-                  </Text>
-                  <Icon
-                    color="white"
-                    boxSize={4}
-                    as={AiOutlineLink}
-                    mt={1}
-                    ml={2}
-                  ></Icon>
-                </Flex>
-              </Link>
-            </Button>
+            <Button
+              mr={"auto"}
+              borderRadius={"full"}
+              bg={"blackAlpha.900"}
+              color={"white"}
+              p={4}
+              as="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            > 
+              <Flex flexDirection={"row"}>
+              <Icon mr={2} as={FaGithubAlt} />
+              <Text fontSize="sm">Repositório</Text>
+              <Icon
+                color="white"
+                boxSize={4}
+                as={AiOutlineLink}
+                // mt={}
+                ml={1}
+              ></Icon>
+              </Flex>
 
+            </Button>
             <Button variant="outline" mr={3} onClick={onClose}>
               Fechar
             </Button>
