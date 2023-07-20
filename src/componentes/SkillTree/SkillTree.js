@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, SimpleGrid, useBreakpointValue, Text } from "@chakra-ui/react";
+import { Box, SimpleGrid, useBreakpointValue } from "@chakra-ui/react";
 import CardHabilidade from "./CardHabilidade";
 import * as GRID from "./GridHabilidades";
 
@@ -12,9 +12,10 @@ import {
   FaLinux,
   FaGitAlt,
   TbHexagonLetterC,
+  SiFlask,
+  SiDocker
 } from "./IconImports";
-import { DiAndroid, DiDjango } from "react-icons/di";
-import { SiFlask, SiChakraui, SiDocker } from "react-icons/si";
+
 
 const SkillTree = () => {
   const columnCount = useBreakpointValue({ base: 1, md: 2 });

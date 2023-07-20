@@ -30,7 +30,7 @@ const HeroCard = () => {
   useEffect(() => {
     const fetchHeroData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/heroi");
+        const response = await axios.get("https://rpgapi-one.vercel.app/heroi");
         setHeroData(response.data);
       } catch (error) {
         console.log(error);

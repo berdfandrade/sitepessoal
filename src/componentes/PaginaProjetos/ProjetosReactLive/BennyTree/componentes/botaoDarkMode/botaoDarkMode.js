@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Switch, useColorMode, extendTheme, Image, Icon } from "@chakra-ui/react";
+import { Switch, useColorMode, extendTheme,  } from "@chakra-ui/react";
 
-import {FaSun, FaMoon} from "react-icons/fa"
+
 
 // Defina as cores personalizadas para o modo claro e escuro
 const colors = {

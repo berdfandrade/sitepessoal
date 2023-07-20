@@ -7,16 +7,22 @@ import {
   InputGroup,
   InputLeftAddon,
   Center,
+  Text,
+  Flex,
+  Code,
+  Icon
 } from "@chakra-ui/react";
+
+import { FaLink } from "react-icons/fa";
 import { JSONTree } from "react-json-tree";
 
-const ApiHandle = ({ urlProps }) => {
+const ApiHandle = ({ dominio, url }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [apiUrl, setApiUrl] = useState("");
 
   const fetchData = () => {
-    const url = `http://${apiUrl}`;
+    const url = `https://${apiUrl}`;
 
     setLoading(true);
     fetch(url)
@@ -31,34 +37,19 @@ const ApiHandle = ({ urlProps }) => {
       });
   };
 
-  const theme = {
-    scheme: "monokai",
-    author: "wimer hazenberg (http://www.monokai.nl)",
-    base00: "#272822",
-    base01: "#383830",
-    base02: "#49483e",
-    base03: "#75715e",
-    base04: "#a59f85",
-    base05: "#f8f8f2",
-    base06: "#f5f4f1",
-    base07: "#f9f8f5",
-    base08: "#f92672",
-    base09: "#fd971f",
-    base0A: "#f4bf75",
-    base0B: "#a6e22e",
-    base0C: "#a1efe4",
-    base0D: "#66d9ef",
-    base0E: "#ae81ff",
-    base0F: "#cc6633",
-  };
-
   return (
-    <Box p={4}>
+    <Box width="100%" p={1}>
+      <Flex flexDirection={"row"}>
+        <Text mb={3}fontSize={16}>
+          <Icon mr={2}as={FaLink}/> 
+          <Code p={2} borderRadius="md"ml={1}>{dominio}<Text as="b" >{url}</Text>
+          </Code>
+        </Text>
+      </Flex>
       <InputGroup>
-        <InputLeftAddon>{"http://"}</InputLeftAddon>
+        <InputLeftAddon>{"https://"}</InputLeftAddon>
         <Input
-          defaultValue={"localhost:5000/"}
-          placeholder={"Digite a URL da API"}
+          placeholder={"Coloque a URL acima!"}
           value={apiUrl}
           onChange={(e) => setApiUrl(e.target.value)}
           mb={4}
@@ -78,30 +69,12 @@ const ApiHandle = ({ urlProps }) => {
 
       {loading ? (
         <Box textAlign="center">
-          <Spinner size="xl" />
+          <Spinner mt={50} size="xl" />
         </Box>
       ) : (
         data && (
           <Box mt={5} borderRadius={"xl"}>
-            <JSONTree
-              data={data}
-              theme={{
-                extend: theme,
-                // underline keys for literal values
-                valueLabel: {
-                  textDecoration: "bold",
-                },
-
-                nestedNodeLabel: ({ style }, keyPath, nodeType, expanded) => ({
-                  style: {
-                    ...style,
-
-                    borderRadius: 10,
-                    marginBottom: 8,
-                  },
-                }),
-              }}
-            />
+            <JSONTree padding="10" data={data} />
           </Box>
         )
       )}

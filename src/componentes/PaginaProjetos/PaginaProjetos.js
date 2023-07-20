@@ -1,5 +1,12 @@
 import React from "react";
-import { Center, ChakraProvider, Flex, Grid, Text } from "@chakra-ui/react";
+import {
+  Center,
+  ChakraProvider,
+  Flex,
+  Grid,
+  Text,
+  Code,
+} from "@chakra-ui/react";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
@@ -23,7 +30,7 @@ import { GiTomato } from "react-icons/gi";
 import { MdCatchingPokemon } from "react-icons/md";
 import { BsCalculator } from "react-icons/bs";
 import { GiAncientSword } from "react-icons/gi";
-import { SiAiohttp } from "react-icons/si";
+import { SiAiohttp, SiMessenger, SiTheconversation } from "react-icons/si";
 import * as GI from "react-icons/gi";
 
 function PaginaSobre() {
@@ -113,7 +120,9 @@ function PaginaSobre() {
             nome={"RPG API"}
             icon={GiAncientSword}
             iconModal={GiAncientSword}
-            componenteLive={<ApiHandle urlProps={"localhost:5000/"} />}
+            componenteLive={
+              <ApiHandle dominio={"rpgapi-one.vercel.app/"} url={"heroi"} />
+            }
             descricaoCard={
               "API feita em Flask, que retorna um herói ou um monstro!"
             }
@@ -126,7 +135,8 @@ function PaginaSobre() {
                 inventário customizado correspondente ao seu nível atual.
                 <br />
                 Além disso, a API também é capaz de gerar{" "}
-                <Text as="b">monstros</Text> com níveis aleatórios, assim como
+                <Text as="b">monstros</Text> na rota{" "}
+                <Code as="b">/monstro</Code> com níveis aleatórios, assim como
                 os heróis, variando de 1 a 99. Os monstros possuem nomes gerados
                 aleatoriamente, temperamento, e status de força e defesa.
               </Text>
@@ -134,14 +144,12 @@ function PaginaSobre() {
           />
           <ProjetoCard
             tag2={"Back-end"}
-            nome={"Whoami?"}
-            icon={SiAiohttp}
-            iconModal={SiAiohttp}
-            componenteLive={<ApiHandle />}
-            descricaoCard={
-              "API que retorna os dados do cabecalho da requisição"
-            }
-            link={"https://github.com/berdfandrade/parser_microservice"}
+            nome={"Conselhos"}
+            icon={SiTheconversation}
+            iconModal={SiTheconversation}
+            componenteLive={<ApiHandle dominio={"apiconselho.vercel.app/"} />}
+            descricaoCard={"API que retorna um conselho aleatório"}
+            link={"https://github.com/berdfandrade/api-conselho/"}
             descricao={
               <Text justify={"center"}>
                 Este é um aplicativo JavaScript que funciona como um
@@ -203,17 +211,16 @@ function PaginaSobre() {
             }
           />
           <ProjetoCard
-            tag1={"Front-End"}
             tag2={"Back-End"}
             nome={"Monster API"}
             icon={GI.GiMonsterGrasp}
             iconModal={GI.GiMonsterGrasp}
             componenteLive={
               <Center>
-                <ApiHandle />
+                <ApiHandle dominio={"apimonster.vercel.app/"} url={"monstro"} />
               </Center>
             }
-            link={"https://github.com/berdfandrade/hero-card"}
+            link={"https://github.com/berdfandrade/api_monster"}
             descricaoCard={
               "API feita em Node.Js, que retorna um monstro aleatório"
             }
@@ -222,8 +229,8 @@ function PaginaSobre() {
                 Uma API feita em Node.js parecida com a API de RPG. Essa API é
                 capaz de gerar monstros com níveis aleatórios, assim como os
                 heróis, variando de 1 a 99. Os monstros possuem nomes gerados
-                aleatoriamente, temperamento, e status de força e defesa. Os monstros
-                também possuem um inventário de itens que os eles
+                aleatoriamente, temperamento, e status de força e defesa. Os
+                monstros também possuem um inventário de itens que os eles
                 carregam.
                 <br />
               </Text>

@@ -5,7 +5,7 @@ import { ChakraProvider, Box } from "@chakra-ui/react";
 function BennyTree() {
   return (
     <ChakraProvider>
-      <Box borderRadius={"md"} borderWidth={"1px"} p={3} width={"90%"}>
+      <Box borderRadius={"md"} borderWidth={"1px"} p={3} width={"100%"}>
         <Hero />
         <LinkTree />
       </Box>
