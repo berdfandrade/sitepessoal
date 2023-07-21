@@ -14,7 +14,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Link,
 } from "@chakra-ui/react";
 
 import { AiFillQuestionCircle, AiOutlineLink } from "react-icons/ai";

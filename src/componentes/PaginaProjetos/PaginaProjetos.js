@@ -30,7 +30,7 @@ import { GiTomato } from "react-icons/gi";
 import { MdCatchingPokemon } from "react-icons/md";
 import { BsCalculator } from "react-icons/bs";
 import { GiAncientSword } from "react-icons/gi";
-import { SiAiohttp, SiMessenger, SiTheconversation } from "react-icons/si";
+import { SiTheconversation } from "react-icons/si";
 import * as GI from "react-icons/gi";
 
 function PaginaSobre() {
@@ -78,6 +78,7 @@ function PaginaSobre() {
             icon={RiLockPasswordFill}
             corIcon={"orange.300"}
             descricaoCard={"Um pequeno gerador de senha"}
+            link={"https://github.com/berdfandrade/gerador-de-senha"}
             descricao={
               "Um gerador de senha simples desenvolvido em React com estilização da Chakra-ui. Esse app é vivo! Você pode testá-lo aqui mesmo"
             }
