@@ -56,7 +56,7 @@ const Card = ({
           </Text>
         </Flex>
         <Flex flexDir={"row"}>
-          <Tag p={1} pr={3} pl={2}
+          <Tag pl={2}
             colorScheme={
               dificuldade === "f"
                 ? "green"
@@ -66,12 +66,13 @@ const Card = ({
             }
             ml={1}
             mt={3}
-          >
+          ><Text fontSize={"xs"}>
             {dificuldade === "f"
               ? "Fácil"
               : dificuldade === "m"
               ? "Médio"
               : "Difícil"}
+              </Text>
           </Tag>
           <ButtonGroup ml={20} mt={3} isAttached variant="outline">
             <Icon mt={1} mr={1} as={AiOutlineLink} />
