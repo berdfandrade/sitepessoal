@@ -55,7 +55,7 @@ function HabilidadesJavscript() {
         gap={8}
         autoRows="minmax(110px, auto)"
       >
-        <IconHabilidade icone={GI.GiBrain} nome={"Algoritmos"} progresso={10} />
+        <IconHabilidade icone={GI.GiBrain} nome={"Algoritmos"} progresso={30} />
         <IconHabilidade icone={TB.TbTypography} nome={"Sintaxe"} progresso={90} />
         <IconHabilidade icone={TB.TbFunction} nome={"Funções"} progresso={80} />
         <IconHabilidade icone={BS.BsBox} nome={"POO"} progresso={70} />
