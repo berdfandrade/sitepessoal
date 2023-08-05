@@ -100,7 +100,7 @@ function Bio() {
                 // size="xl"
                 style={{ width: "150px", height: "150px" }}
               />
-              {/* <Icon boxSize={10} mr={5} as={AiOutlineArrowRight}></Icon> */}
+              
               <Text p={2} fontSize="md" mt={4} mr={7}>
                 <Text as="b">Informações: </Text> <br />
                 <Divider maxW={"100px"} mb={2} />

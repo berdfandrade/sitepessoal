@@ -32,7 +32,7 @@ import { BsCalculator } from "react-icons/bs";
 import { GiAncientSword } from "react-icons/gi";
 import { SiTheconversation } from "react-icons/si";
 import * as GI from "react-icons/gi";
-
+import { FaReact, FaNodeJs, FaFlask } from "react-icons/fa";
 function PaginaSobre() {
   return (
     <ChakraProvider theme={Theme}>

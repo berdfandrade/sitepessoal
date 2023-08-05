@@ -16,8 +16,9 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
+
 import { AiFillQuestionCircle, AiOutlineLink } from "react-icons/ai";
-import { FaGithubAlt } from "react-icons/fa";
+import * as FA from "react-icons/fa";
 
 const ProjetoCard = ({
   nome,
@@ -124,21 +125,24 @@ const ProjetoCard = ({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-            > 
+            >
               <Flex flexDirection={"row"}>
-              <Icon mr={2} as={FaGithubAlt} />
-              <Text fontSize="sm">Repositório</Text>
-              <Icon
-                color="white"
-                boxSize={4}
-                as={AiOutlineLink}
-                // mt={}
-                ml={1}
-              ></Icon>
+                <Icon mr={2} as={FA.FaGithubAlt} />
+                <Text fontSize="sm">Repositório</Text>
+                <Icon
+                  color="white"
+                  boxSize={4}
+                  as={AiOutlineLink}
+                  ml={1}
+                ></Icon>
               </Flex>
-
             </Button>
-            <Button variant="outline" mr={3} onClick={onClose}>
+            <Button
+              variant="outline"
+              colorScheme={"red"}
+              mr={3}
+              onClick={onClose}
+            >
               Fechar
             </Button>
           </DrawerFooter>
