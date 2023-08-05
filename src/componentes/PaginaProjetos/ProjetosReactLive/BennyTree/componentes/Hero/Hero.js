@@ -8,8 +8,6 @@ import {
   Flex,
   Tag,
   Progress,
-  Link,
-  Button,
 } from "@chakra-ui/react";
 
 import * as GI from "react-icons/gi";
@@ -20,7 +18,6 @@ import calcularPorcentagemCompletadaAno from "./porcentagemAno";
 import anime from "animejs";
 
 import PixelBenny from "../../assets/pixelBennySemFundo.png";
-import { ToggleDarkMode } from "../botaoDarkMode/botaoDarkMode";
 import aura from "../../assets/deza8e9-b79fc074-2c89-4214-b0cb-73152b904149.gif"; // Campeã
 import calcularPorcentagemDiaPassado from "./porcentagemDia";
 

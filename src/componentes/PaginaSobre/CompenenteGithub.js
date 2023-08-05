@@ -10,6 +10,7 @@ import {
   Flex,
   Tag,
   Button,
+  Image,
 } from "@chakra-ui/react";
 
 import { IoLocation } from "react-icons/io5";
@@ -17,6 +18,8 @@ import { FaGithub } from "react-icons/fa";
 import { IoMdContacts } from "react-icons/io";
 import { AiFillFolderOpen } from "react-icons/ai";
 import { BiGitBranch } from "react-icons/bi";
+import * as GI from "react-icons/gi"
+
 const GithubProfile = () => {
   const [profileData, setProfileData] = useState(null);
 
@@ -78,8 +81,12 @@ const GithubProfile = () => {
           </Text>
         </Flex>
         <Flex mt={3}>
-          <Icon mr={2} as={AiFillFolderOpen}></Icon>
-          <Text fontSize={"sm"}>Repositórios {public_repos}</Text>
+          <Icon boxSize={7} mr={2} as={GI.GiNinjaHead}></Icon>
+          <Text fontSize={"xs"} mt={1}>codewars.com </Text>
+          <Image
+            src="https://www.codewars.com/users/berdfandrade/badges/micro"
+            ml={2}
+          ></Image>
         </Flex>
 
         <Button

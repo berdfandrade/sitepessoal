@@ -20,10 +20,10 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 
 import RealBenny from "../../assets/imagem/RealBenny.jpg";
-import PixelBenny from "../../assets/imagem/pixelBennySemFundo.png";
+import PixelBenny from "../PaginaProjetos/ProjetosReactLive/BennyTree/assets/pixelBennySemFundo.png";
 import { GiHammerSickle } from "react-icons/gi";
 import { FaBirthdayCake } from "react-icons/fa";
 import { FaRulerVertical } from "react-icons/fa";
@@ -65,9 +65,7 @@ function Bio() {
         <Button mt={8} colorScheme="facebook" size="sm" onClick={onOpen}>
           Ver mais
         </Button>
-      
       </Box>
-
 
       <Drawer onClose={onClose} isOpen={isOpen} size={"md"}>
         <DrawerOverlay />
@@ -83,7 +81,7 @@ function Bio() {
           </Center>
 
           <DrawerBody fontSize={"md"}>
-          Meu nome é Bernardo. Sou formado em Comunicação Social e estudei
+            Meu nome é Bernardo. Sou formado em Comunicação Social e estudei
             Letras. Sou um amante da programação e também das artes. Tento
             combinar esses dois mundos sempre que posso. Sou um desenvolvedor
             Full Stack que gosta de se comprometer a aprender cada vez mais.{" "}
@@ -107,7 +105,7 @@ function Bio() {
                 <Text as="b">Informações: </Text> <br />
                 <Divider maxW={"100px"} mb={2} />
                 <Icon as={GiVikingHelmet} /> Classe |{" "}
-                <Icon  as={GiHammerSickle} />
+                <Icon as={GiHammerSickle} />
                 <br />
                 <Icon as={FaRulerVertical} /> Altura | <Text as="b">1,73m</Text>
                 <br />
@@ -117,7 +115,7 @@ function Bio() {
                 <br />
                 <Icon as={GiRosaShield} /> DEF | <Text as="b">2500</Text>
                 <br />
-                <Icon as={FaBirthdayCake} />  <Text as="b">15-01-1996</Text>
+                <Icon as={FaBirthdayCake} /> <Text as="b">15-01-1996</Text>
                 <br />
               </Text>
             </Center>
