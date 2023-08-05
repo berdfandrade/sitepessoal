@@ -20,8 +20,10 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Spinner,
 } from "@chakra-ui/react";
 
+import { useState } from "react";
 import { AiOutlineLink } from "react-icons/ai";
 import { TbCertificate } from "react-icons/tb";
 
@@ -56,7 +58,8 @@ const Card = ({
           </Text>
         </Flex>
         <Flex flexDir={"row"}>
-          <Tag pl={2}
+          <Tag
+            pl={2}
             colorScheme={
               dificuldade === "f"
                 ? "green"
@@ -66,13 +69,14 @@ const Card = ({
             }
             ml={1}
             mt={3}
-          ><Text fontSize={"xs"}>
-            {dificuldade === "f"
-              ? "Fácil"
-              : dificuldade === "m"
-              ? "Médio"
-              : "Difícil"}
-              </Text>
+          >
+            <Text fontSize={"xs"}>
+              {dificuldade === "f"
+                ? "Fácil"
+                : dificuldade === "m"
+                ? "Médio"
+                : "Difícil"}
+            </Text>
           </Tag>
           <ButtonGroup ml={20} mt={3} isAttached variant="outline">
             <Icon mt={1} mr={1} as={AiOutlineLink} />
@@ -106,8 +110,16 @@ const Card = ({
             <Text fontSize="sm" ml={3} p={3}>
               {descricao}
             </Text>
-            <Image borderRadius={"lg"} mt={5} src={certificado} />
+   
+              <Image
+
+                borderRadius={"lg"}
+                mt={5}
+                src={certificado}
+              />
+       
           </DrawerBody>
+
           <Flex p={4} justify="space-between" alignItems="center" width="100%">
             <ButtonGroup isAttached variant="outline">
               <Icon mt={1} mr={1} as={AiOutlineLink} />
@@ -129,7 +141,7 @@ const Card = ({
                 ? "orange.200"
                 : "red.300"
             }
-            width="100%"
+            
           ></Tag>
         </DrawerContent>
       </Drawer>
