@@ -122,6 +122,7 @@ function PaginaSobre() {
             nome={"RPG API"}
             icon={GiAncientSword}
             iconModal={GiAncientSword}
+            link={"https://github.com/berdfandrade/rpg_api"}
             componenteLive={
               <ApiHandle dominio={"rpgapi-one.vercel.app/"} url={"heroi"} />
             }
