@@ -9,6 +9,7 @@ import {
   Image,
   Center,
   Icon,
+  Spinner
 } from "@chakra-ui/react";
 
 import { AiFillHeart } from "react-icons/ai";
@@ -41,7 +42,7 @@ const HeroCard = () => {
   }, []);
 
   if (!heroData) {
-    return <Text>Carregando...</Text>;
+    return <Spinner mt={8} size="lg"></Spinner>;
   }
 
   const {
