@@ -104,7 +104,7 @@ function PaginaCetificacoes() {
       <Center>
         <Table
           mb={10}
-          size={"md"}
+          size={"sm"}
           width={"80%"}
           variant="simple"
           borderRadius={"md"}
