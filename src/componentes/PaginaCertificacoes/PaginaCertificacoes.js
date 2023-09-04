@@ -96,12 +96,14 @@ function CertificadoItem({
                 ))}
               </UnorderedList>
               <Button
+                ml={2}
                 borderRadius={"full"}
                 onClick={() => window.open(linkCertificado)}
-                color={"blue.400"}
+                bg={"blue.500"}
+                color={"white"}
                 size={"sm"}
               >
-                <Icon as={TbCertificate} mr={1} boxSize={4} />
+                <Icon as={TbCertificate}mr={1} boxSize={4} />
                 Certificado
                 <Icon as={TbLink} ml={1} boxSize={4} />
               </Button>

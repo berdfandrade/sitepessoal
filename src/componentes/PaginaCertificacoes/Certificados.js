@@ -709,6 +709,23 @@ const certificados = [
   },
   {
     // eslint-disable-next-line no-script-url
+    title: "Python: começando com a linguagem",
+    imagem: ICONES.PythonIntroducaoALinguagem,
+    linkCertificado:
+      "https://cursos.alura.com.br/certificate/a2ef0806-959e-4a07-b059-ee7c3ff70747?lang=pt_BR",
+    descricao: {
+      itens: [
+        "Aprenda Python 3 na prática",
+        "Use PyCharm para desenvolver",
+        "Crie um jogo para aprender os recursos fundamentais do Python 3",
+        "Rode o seu código em qualquer lugar",
+      ],
+    },
+    dificuldade: "m",
+    plataforma: "Alura",
+  },
+  {
+    // eslint-disable-next-line no-script-url
     title: "Python: avançando na linguagem",
     imagem: ICONES.Python3AvancandoNaLinguagem,
     linkCertificado:
@@ -720,59 +737,6 @@ const certificados = [
         "Lide com diferentes estruturas de dados",
         "Conhece as List comprehensions",
         "Trabalhe com arquivos",
-      ],
-    },
-    dificuldade: "m",
-    plataforma: "Alura",
-  },
-  {
-    // eslint-disable-next-line no-script-url
-    title: "Python: avançando na orientação a objetos",
-    imagem: ICONES.Python3IntroOrientacaoObjetos,
-    linkCertificado:
-      "https://cursos.alura.com.br/certificate/ae21031b-0c0c-4cc9-963a-9880b8b3644b?lang=pt_BR",
-    descricao: {
-      itens: [
-        "Entenda o que é Duck Typing e para que serve",
-        "Crie classes abstratas e use herança múltipla",
-        "Aprenda sobre o modelo de dados do Python",
-        "Conheça os Mixin e Extensão de classes",
-        "Saiba a diferença entre __str__ e __repr__",
-      ],
-    },
-    dificuldade: "m",
-    plataforma: "Alura",
-  },
-  {
-    // eslint-disable-next-line no-script-url
-    title: "Python: avançando na orientação a objetos",
-    imagem: ICONES.Python3AvancandoNaOrientacaoAObjetos,
-    linkCertificado:
-      "https://cursos.alura.com.br/certificate/ae21031b-0c0c-4cc9-963a-9880b8b3644b?lang=pt_BR",
-    descricao: {
-      itens: [
-        "Entenda o que é Duck Typing e para que serve",
-        "Crie classes abstratas e use herança múltipla",
-        "Aprenda sobre o modelo de dados do Python",
-        "Conheça os Mixin e Extensão de classes",
-        "Saiba a diferença entre __str__ e __repr__",
-      ],
-    },
-    dificuldade: "m",
-    plataforma: "Alura",
-  },
-  {
-    // eslint-disable-next-line no-script-url
-    title: "Python: começando com a linguagem",
-    imagem: ICONES.PythonIntroducaoALinguagem,
-    linkCertificado:
-      "https://cursos.alura.com.br/certificate/a2ef0806-959e-4a07-b059-ee7c3ff70747?lang=pt_BR",
-    descricao: {
-      itens: [
-        "Aprenda Python 3 na prática",
-        "Use PyCharm para desenvolver",
-        "Crie um jogo para aprender os recursos fundamentais do Python 3",
-        "Rode o seu código em qualquer lugar",
       ],
     },
     dificuldade: "m",
@@ -796,6 +760,26 @@ const certificados = [
     dificuldade: "m",
     plataforma: "Alura",
   },
+  {
+    // eslint-disable-next-line no-script-url
+    title: "Python: avançando na orientação a objetos",
+    imagem: ICONES.Python3AvancandoNaOrientacaoAObjetos,
+    linkCertificado:
+      "https://cursos.alura.com.br/certificate/ae21031b-0c0c-4cc9-963a-9880b8b3644b?lang=pt_BR",
+    descricao: {
+      itens: [
+        "Entenda o que é Duck Typing e para que serve",
+        "Crie classes abstratas e use herança múltipla",
+        "Aprenda sobre o modelo de dados do Python",
+        "Conheça os Mixin e Extensão de classes",
+        "Saiba a diferença entre __str__ e __repr__",
+      ],
+    },
+    dificuldade: "m",
+    plataforma: "Alura",
+  },
+
+
 ];
 
 export default certificados;
