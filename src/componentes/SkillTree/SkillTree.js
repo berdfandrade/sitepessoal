@@ -13,9 +13,10 @@ import {
   FaGitAlt,
   TbHexagonLetterC,
   SiFlask,
-  SiDocker
+  SiDocker,
+  SiTypescript,
 } from "./IconImports";
-
+import { SiCplusplus } from "react-icons/si";
 
 const SkillTree = () => {
   const columnCount = useBreakpointValue({ base: 1, md: 2 });
@@ -28,7 +29,7 @@ const SkillTree = () => {
           corTexto="black"
           cor="orange.200"
           titulo={"JavaScript"}
-          level={25}
+          level={30}
           ProgressoDrawer={20}
           descricao={
             "Eu possuo habilidades intermediárias em JavaScript, o que me permite compreender e escrever código relativamente complexo utilizando essa poderosa linguagem de programação. Com o JavaScript, sou capaz de criar funcionalidades interativas e dinâmicas em páginas web, desenvolver aplicações do lado do cliente e trabalhar com bibliotecas e frameworks populares, como o React."
@@ -41,7 +42,7 @@ const SkillTree = () => {
           titulo={"Node.Js"}
           corTexto="black"
           cor="green.100"
-          level={8}
+          level={15}
           ProgressoDrawer={50}
           corIconeDrawer="green.500"
           descricao={
@@ -53,8 +54,8 @@ const SkillTree = () => {
           icone={FaReact}
           corTexto="black"
           titulo={"React"}
-          cor="blue.100"
-          level={17}
+          cor="cyan.200"
+          level={20}
           ProgressoDrawer={90}
           descricao={
             "Eu tenho habilidades médias em React, o que me permite entender e desenvolver aplicações front-end robustas e interativas usando essa biblioteca JavaScript. Com o React, sou capaz de criar interfaces de usuário reativas e componentizadas, proporcionando uma experiência de usuário suave e responsiva."
@@ -62,12 +63,23 @@ const SkillTree = () => {
           SkillTree={<GRID.HabilidadesReact />}
         />
         <CardHabilidade
+          titulo={"TypeScript"}
+          corTexto="black"
+          cor="blue.100"
+          corIconeDrawer={"blackAlpha"}
+          level={19}
+          ProgressoDrawer={50}
+          icone={SiTypescript}
+          descricao={`Tenho habilidades intermediárias em TypeScript, o que me permite trabalhar de forma eficaz no desenvolvimento de aplicações front-end e back-end mais seguras e escaláveis. Com o TypeScript, posso aproveitar a tipagem estática para detectar erros mais cedo durante o desenvolvimento, garantindo uma maior confiabilidade em meus projetos.`}
+          SkillTree={<GRID.HabilidadesTypeScript />}
+        />
+        <CardHabilidade
           titulo={"Python"}
           icone={FaPython}
           cor="purple.100"
           corIconeDrawer="blacklisted"
           corTexto="black"
-          level={4}
+          level={15}
           ProgressoDrawer={60}
           descricao={
             "Eu possuo habilidades básicas na linguagem Python, o que me permite compreender e escrever código simples utilizando essa linguagem de programação. Com o Python, sou capaz de manipular variáveis, utilizar estruturas de controle de fluxo, como condicionais e loops, e criar funções básicas para realizar tarefas específicas."
@@ -147,10 +159,20 @@ const SkillTree = () => {
           corTexto="black"
           cor="blue.200"
           corIconeDrawer={"blackAlpha"}
-          level={1}
+          level={2}
           ProgressoDrawer={5}
           icone={SiDocker}
           descricao={`Possuo o conhecimento básico em Docker, sei como baixar containers, e criar alguns containers básicoas a partir de imagens.`}
+        />
+        <CardHabilidade
+          titulo={"C++"}
+          corTexto="black"
+          cor="orange.200"
+          corIconeDrawer={"blackAlpha"}
+          level={3} 
+          ProgressoDrawer={50}
+          icone={SiCplusplus}
+          descricao={`Tenho um conhecimento bem básico em C++, o que me permite compreender e criar aplicações com essa linguagem de programação de alto desempenho.`}
         />
       </SimpleGrid>
     </Box>

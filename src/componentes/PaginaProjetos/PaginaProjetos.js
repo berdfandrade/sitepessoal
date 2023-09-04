@@ -7,6 +7,8 @@ import {
   Text,
   Code,
 } from "@chakra-ui/react";
+
+
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
@@ -32,7 +34,9 @@ import { BsCalculator } from "react-icons/bs";
 import { GiAncientSword } from "react-icons/gi";
 import { SiTheconversation } from "react-icons/si";
 import * as GI from "react-icons/gi";
-import { FaReact, FaNodeJs, FaFlask } from "react-icons/fa";
+
+
+
 function PaginaSobre() {
   return (
     <ChakraProvider theme={Theme}>

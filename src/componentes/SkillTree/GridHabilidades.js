@@ -206,6 +206,25 @@ function HabilidadesC() {
   );
 }
 
+function HabilidadesTypeScript() {
+  return (
+    <Flex direction="column" align="center" mt={4}>
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        gap={8}
+        autoRows="minmax(110px, auto)"
+      >
+        <IconHabilidade icone={TB.TbLetterCaseToggle} nome={"Tipagem"} progresso={30} />
+        <IconHabilidade icone={TB.TbTypography} nome={"Sintaxe"} progresso={90} />
+        <IconHabilidade icone={TB.TbPanoramaVertical} nome={"Namespaces"} progresso={80} />
+        <IconHabilidade icone={BS.BsIntersect} nome={"Interfaces"} progresso={70} />
+        <IconHabilidade icone={BI.BiNetworkChart} nome={"Type-safe API"} progresso={80} />
+      </Grid>
+    </Flex>
+  );
+}
+
+
 export {
   HabilidadesJavscript,
   HabilidadesNode,
@@ -215,4 +234,5 @@ export {
   HabilidadesLinux,
   HabilidadesGit,
   HabilidadesC,
+  HabilidadesTypeScript
 };

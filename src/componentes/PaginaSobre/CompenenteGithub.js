@@ -16,7 +16,6 @@ import {
 import { IoLocation } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { IoMdContacts } from "react-icons/io";
-import { AiFillFolderOpen } from "react-icons/ai";
 import { BiGitBranch } from "react-icons/bi";
 import * as GI from "react-icons/gi"
 
@@ -43,7 +42,7 @@ const GithubProfile = () => {
     return <CircularProgress isIndeterminate color="blue.300" />;
   }
 
-  const { login, public_repos, followers, following, avatar_url, location } =
+  const { login, followers, following, avatar_url, location } =
     profileData;
 
   return (

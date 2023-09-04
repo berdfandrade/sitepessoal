@@ -9,7 +9,7 @@ import { FaLinux } from "react-icons/fa";
 import { FaGitAlt } from "react-icons/fa";
 import { TbHexagonLetterC } from "react-icons/tb";
 import { TbTypography } from "react-icons/tb";
-import { SiFlask, SiDocker } from "react-icons/si";
+import { SiFlask, SiDocker, SiTypescript } from "react-icons/si";
 
 export {
   IoLogoJavascript,
@@ -26,4 +26,5 @@ export {
   TbTypography,
   SiFlask,
   SiDocker,
+  SiTypescript
 };
