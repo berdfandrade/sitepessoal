@@ -1,11 +1,11 @@
 import React from "react";
 import "./Hero.css";
-import { Box, Text, ChakraProvider, Image } from "@chakra-ui/react";
+import { Box, Text, ChakraProvider} from "@chakra-ui/react";
 import benny from "../../assets/imagem/benny.png";
 import nuvem from "../../assets/imagem/nuvem.png";
 import BotaoDarkMode from "../BotaoDarkMode/BotaoDarkMode";
-import Sol from "../../assets/imagem/sunny.png";
-import Lua from "../../assets/imagem/moon.png";
+// import Sol from "../../assets/imagem/sunny.png";
+// import Lua from "../../assets/imagem/moon.png";
 
 import { extendTheme } from "@chakra-ui/react";
 

@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  ChakraProvider,
   Center,
   Image,
   Tag,
@@ -21,8 +20,6 @@ import {
 } from "@chakra-ui/react";
 
 import certificados from "./Certificados";
-import Theme from "../BotaoDarkMode/Tema";
-import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
 import HeroPaginas from "../HeroPaginas/HeroPaginas";
 import Certificado from "../../assets/imagem/certificate.png";
@@ -90,7 +87,7 @@ function CertificadoItem({
 
             <Box p={1}>
               <Text as={"b"}>Descrição do curso:</Text>
-              <UnorderedList mb={3}>
+              <UnorderedList mt={2} mb={5}>
                 {descricao.itens.map((item, index) => (
                   <ListItem key={index}>{item}</ListItem>
                 ))}
@@ -99,11 +96,11 @@ function CertificadoItem({
                 ml={2}
                 borderRadius={"full"}
                 onClick={() => window.open(linkCertificado)}
-                bg={"blue.500"}
+                bg={"blue.600"}
                 color={"white"}
                 size={"sm"}
               >
-                <Icon as={TbCertificate}mr={1} boxSize={4} />
+                <Icon as={TbCertificate} mr={1} boxSize={4} />
                 Certificado
                 <Icon as={TbLink} ml={1} boxSize={4} />
               </Button>
@@ -117,7 +114,7 @@ function CertificadoItem({
 
 function PaginaCetificacoes() {
   return (
-    <ChakraProvider theme={Theme}>
+    <>
       <Cabecalho />
       <HeroPaginas
         nome={"Certificações"}
@@ -125,10 +122,8 @@ function PaginaCetificacoes() {
         descricao={"Aqui estão as certificações de cursos que fiz"}
       />
 
-      <DividerCustomizado />
-
       <Box ml={"auto"} mr={"auto"} maxW={"90%"}>
-        <Accordion p={4} allowToggle>
+        <Accordion mt={5} p={4} allowToggle>
           {Object.values(certificados).map((certificado, index) => (
             <CertificadoItem key={index} {...certificado} />
           ))}
@@ -136,7 +131,7 @@ function PaginaCetificacoes() {
       </Box>
 
       <Footer />
-    </ChakraProvider>
+    </>
   );
 }
 

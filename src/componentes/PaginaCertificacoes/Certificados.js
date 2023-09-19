@@ -1,3 +1,14 @@
+
+
+/*
+
+  Objeto que contém as 
+  informações sobre a 
+  os certificados
+
+*/
+
+
 import * as ICONES from "./ImportsIcones";
 import * as SI from "react-icons/si";
 import { AiFillHtml5 } from "react-icons/ai";
@@ -754,7 +765,7 @@ const certificados = [
         "Aplique Orientação a objetos com atributos, métodos e classes",
         "Veja como usar propriedades",
         "Entenda encapsulamento e coesão",
-        "Saiba quando deixar o seu método privado ou público"
+        "Saiba quando deixar o seu método privado ou público",
       ],
     },
     dificuldade: "m",
@@ -779,7 +790,42 @@ const certificados = [
     plataforma: "Alura",
   },
 
+  {
+    // eslint-disable-next-line no-script-url
+    title: "React e Node.js: consumindo APIs no React no projeto full stack",
+    imagem: ICONES.ReactNodeApi,
+    linkCertificado:
+      "https://cursos.alura.com.br/certificate/7add293e-cc5a-4742-af6e-1afb4e372bdb?lang=pt_BR",
+    descricao: {
+      itens: [
+        "Aprenda a conectar seu frontend em React com uma API",
+        "Aprenda a criar uma navegação entre páginas com React Router",
+        "Consiga entender o fluxo de dados de uma aplicação completa fim a fim",
+        "Entenda a ferramenta Axios",
+        "Construa uma aplicação full stack",
+      ],
+    },
+    dificuldade: "m",
+    plataforma: "Alura",
+  },
 
+  {
+    // eslint-disable-next-line no-script-url
+    title: "React: comece seu projeto full stack",
+    imagem: ICONES.ReactComeceSeuProjetoFullStack,
+    linkCertificado:
+      "https://cursos.alura.com.br/certificate/93b093f4-3a6c-4f7c-8175-05670a63d23a?lang=pt_BR",
+    descricao: {
+      itens: [
+        "Compreenda os conhecimentos básicos teóricos e práticos de React",
+        "Aplique a manutenção numa aplicação React",
+        "Crie um website próprio usando React",
+        "Coloque em prática as ferramentas mais utilizadas pelo mercado de trabalho front-end",
+      ],
+    },
+    dificuldade: "m",
+    plataforma: "Alura",
+  },
 ];
 
 export default certificados;

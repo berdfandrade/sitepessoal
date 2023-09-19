@@ -33,6 +33,12 @@ function HomePage() {
           descricao={"Veja os certificados que obtive"}
         />
       </Link>
+            <Link to="/experiencia">
+        <Caixa
+          titulo={"Experiência Profissional"}
+          descricao={"Veja minha experiência profissional"}
+        />
+      </Link>
       <DividerCustomizado />
       <Footer />
     </ChakraProvider>

@@ -1,3 +1,14 @@
+
+
+/*
+
+   ===================
+  | Import dos ícones |
+  ===================
+
+*/
+
+
 import AcessibilidadeWebFrontEnd from "../../assets/imagem/IconCertificado/acessibilidade-web-front-end.svg";
 import AlgoritmosJavascriptI from "../../assets/imagem/IconCertificado/algoritmos-javascript-i-algoritmos-ordenacao.svg";
 import AlgoritmosJavascriptII from "../../assets/imagem/IconCertificado/algoritmos-javascript-ii-aprofundando-ordenacao-busca.svg";
@@ -45,7 +56,8 @@ import ReactDesenvolvendoJavascript from "../../assets/imagem/IconCertificado/re
 import Bootstrap from "../../assets/imagem/IconCertificado/bootstrap5-landing-page-responsiva.svg"
 import Regex from "../../assets/imagem/IconCertificado/expressoes-regulares.svg"
 import Python3AvancandoNaOrientacaoAObjetos from "../../assets/imagem/IconCertificado/python-3-avancando-orientacao-objetos.svg"
-
+import ReactNodeApi from "../../assets/imagem/IconCertificado/react-node-consumindo-apis-react.svg"
+import ReactComeceSeuProjetoFullStack from "../../assets/imagem/IconCertificado/react-crie-primeira-pagina-web.svg"
 
 
 export {
@@ -95,5 +107,7 @@ export {
   ReactDesenvolvendoJavascript,
   Bootstrap,
   Regex,
-  Python3AvancandoNaOrientacaoAObjetos
+  Python3AvancandoNaOrientacaoAObjetos,
+  ReactNodeApi,
+  ReactComeceSeuProjetoFullStack
 };
