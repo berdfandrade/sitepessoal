@@ -1,5 +1,3 @@
-
-
 /*
 
   Objeto que contém as 
@@ -8,35 +6,36 @@
 
 */
 
-
 const experiencia = [
   {
-    empresa: "CEIS ",
-    tempo: "2017-2018",
+    empresa: "h3aven ",
+    tempo: "2023-present",
     texto:
-      "Criação de uma rede social interna para os estudantes de comunicação. A aplicação foi feita usando o site do laboratório em um domínio da PUC - Minas. A pequena rede social foi desenvolvida inteiramente por mim através de alguns plugins simples do WordPress, e através de um design elaborado por mim em conjunto com o NEP (Núcleo de Experimentação Publicitária).",
+      "I work on the front-end development of some company products. I also perform some tasks as a full-stack programmer. Currently, I use React, TypeScript, Node.js, and Prisma at work. Despite the team using Solidity, I have no experience with that tool.",
   },
-
   {
-    empresa: "Freelancer audiovisual ",
+    empresa: "Self-Taught programmer",
     tempo: "2020-2023",
-    texto:
-      "Escrevi roteiros para projetos audiovisuais, editei e gravei videos exercendo a minha formação primária que é Cinema e Audiovisual.",
+    texto: "I'm a self-taught programmer who embarked on an exciting journey of learning programming and computer science from 2020 to 2023. During this time, I delved deep into programming languages like JavaScript and Python, absorbing the fundamentals and logic behind them."
   },
-
   {
     empresa: "Orquesta Filarmônica de Minas Gerais ",
     tempo: "2020-2023",
     texto:
-      "Trabalhei como a transmissão de concertos ao vivo da Sala Minas Gerais, tansmitindo a Orquestra Filarmônica. Também trabalhei como assistente na elaboração do nosso fluxo de trabalho interno involvendo redes internas. Atuei também trabalhando em parte na manutenção do site da Orquestra em HTML simples.",
+      "I worked on the live broadcast of concerts from Sala Minas Gerais, streaming the Philharmonic Orchestra. I also worked as an assistant in creating our internal workflow involving internal networks. I also played a role in maintaining the orchestra's website using simple HTML.",
   },
   {
-    empresa: "h3aven ",
-    tempo: "2023-atualmente",
+    empresa: "Freelance Filmmaker",
+    tempo: "2020-2023",
     texto:
-      "Atuo na parte de criação front-end de alguns produtos da empresa. Também faço algumas funções como programador full-stack. Atualmente utilizo React, TypeScript, Node.Js e Prisma no trabalho. Apesar a equipe usar Solidity, não possuo experiência com a ferramenta. ",
+      "I wrote scripts for audiovisual projects, edited and recorded videos, utilizing my primary background in Cinema and Audiovisual.",
   },
-
+  {
+    empresa: "CEIS ",
+    tempo: "2017-2018",
+    texto:
+      "Created an internal social network for communication students. The application was developed using the laboratory's website on a PUC - Minas domain. The small social network was entirely developed by me through some simple WordPress plugins and a design created by me in collaboration with the NEP (Núcleo de Experimentação Publicitária).",
+  },
 ];
 
 export default experiencia;

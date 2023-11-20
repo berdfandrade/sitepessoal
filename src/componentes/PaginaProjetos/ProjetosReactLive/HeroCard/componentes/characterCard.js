@@ -9,7 +9,7 @@ import {
   Image,
   Center,
   Icon,
-  Spinner
+  Spinner,
 } from "@chakra-ui/react";
 
 import { AiFillHeart } from "react-icons/ai";
@@ -59,7 +59,7 @@ const HeroCard = () => {
   } = heroData;
 
   return (
-    <Box maxW="sm" p={7} borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box p={7} borderWidth="1px" borderRadius="lg" overflow="hidden">
       <VStack spacing={4} align="start">
         <Text fontSize="3xl" fontWeight="bold">
           {Nome}
@@ -98,8 +98,9 @@ const HeroCard = () => {
         </Flex>
 
         <Text>
-          <Flex flexDirection={"row"}>
-            <FaStar mr={6} /> Estilo: {Temperamento}
+          <Flex flexDirection={"row"} alignItems={"center"}>
+            <FaStar />
+            <Text ml={3}>Estilo: {Temperamento}</Text>
           </Flex>
         </Text>
 

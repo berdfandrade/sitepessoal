@@ -71,22 +71,19 @@ function CertificadoItem({
           </h2>
           <AccordionPanel width={"90%"}>
             <Text fontSize={"sm"} as={"b"}>
-              Plataforma{" "}
+              Platform{" "}
             </Text>
 
             <Tag
               borderRadius={"full"}
               mb={3}
               colorScheme={plataforma === "Alura" ? "blue" : "purple"}
-              _hover={{
-                cursor: "pointer",
-              }}
             >
               {plataforma}
             </Tag>
 
             <Box p={1}>
-              <Text as={"b"}>Descrição do curso:</Text>
+              <Text as={"b"}>Course description:</Text>
               <UnorderedList mt={2} mb={5}>
                 {descricao.itens.map((item, index) => (
                   <ListItem key={index}>{item}</ListItem>
@@ -101,7 +98,7 @@ function CertificadoItem({
                 size={"sm"}
               >
                 <Icon as={TbCertificate} mr={1} boxSize={4} />
-                Certificado
+                Certificate
                 <Icon as={TbLink} ml={1} boxSize={4} />
               </Button>
             </Box>
@@ -117,9 +114,9 @@ function PaginaCetificacoes() {
     <>
       <Cabecalho />
       <HeroPaginas
-        nome={"Certificações"}
+        nome={"Certifications"}
         imagem={Certificado}
-        descricao={"Aqui estão as certificações de cursos que fiz"}
+        descricao={"Here are the certifications from courses I've completed."}
       />
 
       <Box ml={"auto"} mr={"auto"} maxW={"90%"}>

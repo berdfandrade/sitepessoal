@@ -3,24 +3,18 @@ import { ChakraProvider } from "@chakra-ui/react";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
-import HeroPaginas from "../HeroPaginas/HeroPaginas";
-import habilidades from "../../assets/imagem/habilidades.png";
 import Cabecalho from "../Cabecalho/Cabecalho";
-import SkillTree from "../SkillTree/SkillTree";
+import SkillTree from "./SkillTree/SkillTree";
+import HeroPixel from "./Hero/Hero";
 
 function PaginaHabilidades() {
   return (
     <ChakraProvider theme={Theme}>
       <Cabecalho />
-      <HeroPaginas
-        mb={8}
-        nome={"Habilidades"}
-        imagem={habilidades}
-        descricao={"Minha árvore de habilidades!"}
-      />
-      <DividerCustomizado />
-      <SkillTree />
-      <DividerCustomizado />
+        <HeroPixel/>
+          <DividerCustomizado />
+          <SkillTree />
+          <DividerCustomizado />
       <Footer />
     </ChakraProvider>
   );

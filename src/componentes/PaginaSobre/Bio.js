@@ -11,6 +11,7 @@ import {
   Divider,
   Center,
   Icon,
+  Code,
 } from "@chakra-ui/react";
 
 import {
@@ -31,40 +32,61 @@ import { GiVikingHelmet } from "react-icons/gi";
 import { GiWeightScale } from "react-icons/gi";
 import { GiBroadsword } from "react-icons/gi";
 import { GiRosaShield } from "react-icons/gi";
+import { BsCode } from "react-icons/bs";
+import { BsDot } from "react-icons/bs";
 
 function Bio() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex p={5} alignItems="left">
-      <Box>
-        <Text fontSize="large" ml={1} fontWeight="bold">
-          Bernardo Andrade
-        </Text>
-        <Text fontSize="sm" ml={1}>
+      <Box width={"400px"} border={"1px solid black"}>
+        <Box
+          h={"60px"}
+          alignItems={"center"}
+          borderBottom={"1px solid black"}
+          p={4}
+          bg={"#f7f7f7"}
+        >
+          <Flex flexDir={"row"}>
+            <Flex mt={-4}>
+              <Icon
+                color={"#d46464"}
+                boxSize={"60px"}
+                ml={-6}
+                mr={-10}
+                as={BsDot}
+              />
+              <Icon color={"#fce58f"} boxSize={"60px"} mr={-10} as={BsDot} />
+              <Icon color={"#6cc4a4"} boxSize={"60px"} as={BsDot} />
+            </Flex>
+
+            <Text
+              color={"#1f1f1f"}
+              fontSize="md"
+              ml={2}
+              mt={1}
+              fontWeight="bold"
+            >
+              Bernardo Andrade
+            </Text>
+
+            <Icon
+              color={"#8e8e8e"}
+              boxSize={"20px"}
+              mt={1}
+              ml={"auto"}
+              as={BsCode}
+            />
+          </Flex>
+
+          {/* <Text fontSize="sm" ml={1}>
           Developer Full Stack
-        </Text>
-        <Text fontSize="md" p={1} fontWeight="bold" mb={2}>
-          Me chamo Bernardo, sou formado em Comunicação Social e estudei Letras.{" "}
-          <br />
-          Sou um amante da engenharia digital <br /> e também das artes. Tento
-          combinar esses dois mundos sempre que posso. Sou um desenvolvedor Full
-          Stack que gosta de se comprometer a aprender cada vez mais.
-        </Text>
-        <Stack direction="row">
-          <Badge colorScheme="green" p={1} borderRadius={6}>
-            BackEnd
-          </Badge>
-          <Badge colorScheme="red" p={1} borderRadius={6}>
-            FrontEnd
-          </Badge>
-          <Badge colorScheme="purple" p={1} borderRadius={6}>
-            Design
-          </Badge>
-        </Stack>
-        <Button mt={8} colorScheme="facebook" size="sm" onClick={onOpen}>
+        </Text> */}
+        </Box>
+        {/* <Button mt={8} colorScheme="facebook" size="sm" onClick={onOpen}>
           Ver mais
-        </Button>
+        </Button> */}
       </Box>
 
       <Drawer onClose={onClose} isOpen={isOpen} size={"md"}>
@@ -100,7 +122,7 @@ function Bio() {
                 // size="xl"
                 style={{ width: "150px", height: "150px" }}
               />
-              
+
               <Text p={2} fontSize="md" mt={4} mr={7}>
                 <Text as="b">Informações: </Text> <br />
                 <Divider maxW={"100px"} mb={2} />

@@ -12,6 +12,7 @@ function TimeLine({ arr }) {
     <>
       {arr.map((arr, index) => (
         <Box
+          boder={index === 0 ? "2px solid black" : null}
           key={index}
           p={10}
           ml={"auto"}
@@ -45,9 +46,9 @@ function PaginaExperiencia() {
       <Cabecalho />
       <HeroPaginas
         mb={8}
-        nome={"Experiência"}
+        nome={"Experience"}
         imagem={Experiencia}
-        descricao={"Veja minha experiência profissional!"}
+        descricao={"My professional journey!"}
       />
       <DividerCustomizado />
 
@@ -56,11 +57,10 @@ function PaginaExperiencia() {
         alignItems={"center"}
         p={5}
         gap={10}
-        border={"1px solid red"}
+        // border={"1px solid red"}
       >
         <TimeLine arr={experiencia} />
       </Box>
-
       <DividerCustomizado />
       <Footer />
     </>

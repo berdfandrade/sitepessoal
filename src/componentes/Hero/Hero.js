@@ -38,9 +38,10 @@ const Hero = () => {
           Web developer | Full Stack
         </Text>
 
-        <Text fontSize={14} mt={3} textAlign="center">
-          Interessado por arte e tecnologia. Descubra meus <br />
-          conhecimentos e opiniões.
+        <Text fontSize={14} mt={3} mb={2} textAlign="center">
+        I'm a Brazilian full-stack developer, <br />
+        passionate about creating
+        stuff.
         </Text>
       </Box>
     </ChakraProvider>

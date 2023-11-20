@@ -14,6 +14,7 @@ import Sobre from "../../assets/imagem/sobre.png";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import IdadeEmTempoReal from "./Idade";
 import Bio from "./Bio";
+import benny from "../../assets/imagem/benny.png";
 // import TempoDeExperiencia from "./TempoDeExperiencia";
 import GithubProfile from "./CompenenteGithub.js";
 import MaisSobreMim from "./Mais.js";
@@ -26,9 +27,9 @@ function PaginaSobre() {
 
       <HeroPaginas
         mb={8}
-        nome={"Sobre"}
-        imagem={Sobre}
-        descricao={"Aqui estão algumas coisas sobre mim"}
+        nome={"About me"}
+        imagem={benny}
+        descricao={"Here are some things about me"}
       />
       <DividerCustomizado />
       <Center>

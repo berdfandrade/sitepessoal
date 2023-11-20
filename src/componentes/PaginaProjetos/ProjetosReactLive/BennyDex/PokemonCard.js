@@ -93,42 +93,7 @@ const PokemonCard = ({ pokemon }) => {
             mr="2"
           >
             {capitalizeWords(
-              type.type.name === "grass"
-                ? "grama"
-                : type.type.name === "poison"
-                ? "Venenoso"
-                : type.type.name === "bug"
-                ? "inseto"
-                : type.type.name === "dragon"
-                ? "dragão"
-                : type.type.name === "fire"
-                ? "fogo"
-                : type.type.name === "fighting"
-                ? "lutador"
-                : type.type.name === "water"
-                ? "Àgua"
-                : type.type.name === "psychic"
-                ? "psíquico"
-                : type.type.name === "rock"
-                ? "pedra"
-                : type.type.name === "ground"
-                ? "terrestre"
-                : type.type.name === "flying"
-                ? "Voador"
-                : type.type.name === "steel"
-                ? "metal"
-                : type.type.name === "ice"
-                ? "gelo"
-                : type.type.name === "ghost"
-                ? "fantasma"
-                : type.type.name === "electric"
-                ? "elétrico"
-                : type.type.name === "fairy"
-                ? "fada"
-                : type.type.name === "dark"
-                ? "trevas"
-                : type.type.name
-            )}
+              type.type.name)}
           </Tag>
         ))}
       </Box>

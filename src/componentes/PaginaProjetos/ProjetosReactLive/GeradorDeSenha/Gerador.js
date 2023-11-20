@@ -38,7 +38,7 @@ function Gerador() {
 
   return (
     <Center>
-      <Box borderWidth={1} width={550} borderRadius={10} p={4}>
+      <Box borderWidth={1} width={"100%"} borderRadius={10} p={4}>
         <VStack spacing={4} align="stretch">
           <Center p={1} flexDirection={"column"}>
             <Icon boxSize={8} mb={4} as={RiLockPasswordFill}></Icon>

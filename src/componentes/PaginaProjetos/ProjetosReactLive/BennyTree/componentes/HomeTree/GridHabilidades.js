@@ -4,14 +4,11 @@ import * as BI from "react-icons/bi";
 import {
   Grid,
   Flex,
-  Box,
   Progress,
   Icon,
   Text,
   Center,
 } from "@chakra-ui/react";
-
-import anime from "animejs";
 
 function IconHabilidade({ icone, nome, progresso, descricao, cor }) {
   return (
@@ -49,80 +46,80 @@ function GridHabilidades() {
         autoRows="minmax(120px, auto)"
       >
         <IconHabilidade
-          nome={"Intelecto"}
-          descricao={"Habilidade para falar coisas inteligentes"}
+          nome={"Intelligence"}
+          descricao={"Ability to speak intelligently"}
           icone={GI.GiBrain}
           progresso={70}
         />
         <IconHabilidade
-          nome={"Amor"}
+          nome={"Love"}
           icone={GI.GiHeartBattery}
           progresso={5}
-          descricao={"Habilidades amorosas"}
+          descricao={"Love skills"}
         />
         <IconHabilidade
           nome={"Social"}
           icone={GI.GiTalk}
           progresso={50}
-          descricao={"Habilidades sociais"}
+          descricao={"Social skills"}
         />
         <IconHabilidade
-          nome={"Bateria"}
-          descricao={"Habilidade para tocar a batera."}
+          nome={"Drums"}
+          descricao={"Drumming skills"}
           icone={GI.GiDrumKit}
           progresso={89}
         />
         <IconHabilidade
-          nome={"Festas"}
-          descricao={"Disposição para festas"}
+          nome={"Party"}
+          descricao={"Party skills!"}
           icone={GI.GiPartyHat}
           progresso={70}
         />
         <IconHabilidade
-          nome={"Corrida"}
+          nome={"Running"}
           icone={GI.GiRunningShoe}
           progresso={70}
-          descricao={"Capacidade de correr"}
+          descricao={"Running skills"}
         />
 
         <IconHabilidade
-          nome={"Criatividade"}
+          nome={"Criativity"}
           icone={GI.GiFluffyCloud}
           progresso={100}
-          descricao={"Habilidades criativas"}
+          descricao={"Criative skills"}
         />
         <IconHabilidade
-          nome={"Esforço"}
+          nome={"Griding"}
           icone={GI.GiMuscleUp}
           progresso={80}
-          descricao={"Capacidade de exercer esforço para algo"}
+          descricao={"Griding skills"}
         />
         <IconHabilidade
-          nome={"Físico"}
+          nome={"Physical"}
           icone={GI.GiMuscularTorso}
           progresso={60}
-          descricao={"Aptidões físicas"}
+          descricao={"Body health"}
         />
         <IconHabilidade
-          nome={"Memória"}
+          nome={"Memory"}
           icone={BI.BiMemoryCard}
           progresso={40}
-          descricao={"Capacidade de lembrar das coisas"}
+          descricao={"Remembering skills"}
         />
         <IconHabilidade
-          nome={"Lógica"}
+          nome={"Logical reasoning"}
           icone={GI.GiAbacus}
           progresso={20}
-          descricao={"Capacidade lógica"}
+          descricao={"Problem solving skills"}
         />
         <IconHabilidade
-          nome={"Programação"}
+          nome={"Code"}
           icone={GI.GiComputing}
-          progresso={42}
-          descricao={"Capacidade para programar"}
+          progresso={82}
+          descricao={"Programming skills"}
         />
         <IconHabilidade
-          nome={"Estética"}
+          nome={"Aesthetics"}
           icone={GI.GiEyeTarget}
           progresso={60}
           descricao={"Apuração de senso estético"}
@@ -131,55 +128,55 @@ function GridHabilidades() {
           nome={"Humor"}
           icone={GI.GiChicken}
           progresso={90}
-          descricao={"Senso de humor"}
+          descricao={"Sense of humor"}
         />
         <IconHabilidade
-          nome={"Filmes"}
+          nome={"Movies"}
           icone={GI.GiFilmProjector}
           progresso={70}
-          descricao={"Conhecimento sobre cinema"}
+          descricao={"Movie knowledge"}
         />
         <IconHabilidade
           nome={"Animes"}
           icone={GI.GiNinjaHeroicStance}
           progresso={70}
-          descricao={"Conhecimento sobre animes"}
+          descricao={"Anime knowledge"}
         />
         <IconHabilidade
-          nome={"Música"}
+          nome={"Music"}
           icone={GI.GiMusicalNotes}
           progresso={70}
-          descricao={"Conhecimento sobre música"}
+          descricao={"Knowledge about music "}
         />
         <IconHabilidade
-          nome={"Futebol"}
+          nome={"Football"}
           icone={GI.GiSoccerBall}
           progresso={30}
-          descricao={"Habilidade com a bola"}
+          descricao={"Football skills"}
         />
         <IconHabilidade
-          nome={"Café"}
+          nome={"Coffee"}
           icone={GI.GiCoffeeCup}
           progresso={100}
-          descricao={"Consumo de Café"}
+          descricao={"Coffee consumption"}
         />
         <IconHabilidade
-          nome={"Bebidas"}
+          nome={"Driking"}
           icone={GI.GiDrinking}
           progresso={60}
-          descricao={"Consumo de álcool"}
+          descricao={"Alcohol consumption"}
         />
         <IconHabilidade
-          nome={"Cigarro"}
+          nome={"Smoking"}
           icone={GI.GiCigarette}
           progresso={1}
-          descricao={"Consumo de cigarro"}
+          descricao={"Smoking"}
         />
         <IconHabilidade
-          nome={"Ironia"}
+          nome={"Irony"}
           icone={GI.GiCardJoker}
           progresso={70}
-          descricao={"Uso de ironia"}
+          descricao={"Irony usage"}
         />
       </Grid>
     </Flex>

@@ -79,7 +79,7 @@ const Pomodoro = () => {
 
   return (
     <Center>
-      <Box p={5} borderWidth={1} width={400} borderRadius="8">
+      <Box p={5} borderWidth={1} width={"100%"} borderRadius="8">
         <Flex direction={"row"}></Flex>
 
         <Center mb={2}>

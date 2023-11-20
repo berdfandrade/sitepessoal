@@ -13,30 +13,30 @@ function HomePage() {
       <DividerCustomizado />
       <Link to="/habilidades">
         <Caixa
-          titulo={"Minhas Habilidades"}
-          descricao={"Veja minhas habilidades em programação"}
+          titulo={"My skills"}
+          descricao={"Check out my programming skills."}
         />
       </Link>
       <Link to="/projetos">
         <Caixa
           boxShadow={"md"}
-          titulo={"Meus projetos"}
-          descricao={"Veja os projetos que desenvolvi"}
+          titulo={"My projects"}
+          descricao={"See the projects I've developed."}
         />
       </Link>
       <Link to="/sobre">
-        <Caixa titulo={"Sobre mim"} descricao={"Conheça minha história!"} />
+        <Caixa titulo={"About me"} descricao={"Get to know my story!"} />
       </Link>
       <Link to="/certificacoes">
         <Caixa
-          titulo={"Certificações"}
-          descricao={"Veja os certificados que obtive"}
+          titulo={"Certifications"}
+          descricao={"See the certificates I've obtained."}
         />
       </Link>
             <Link to="/experiencia">
         <Caixa
-          titulo={"Experiência Profissional"}
-          descricao={"Veja minha experiência profissional"}
+          titulo={"Professional Experience"}
+          descricao={"Check out my professional experience"}
         />
       </Link>
       <DividerCustomizado />

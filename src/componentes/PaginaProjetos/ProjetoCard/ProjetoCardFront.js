@@ -14,13 +14,14 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  useBreakpointValue,
+  Spacer,
 } from "@chakra-ui/react";
-
 
 import { AiFillQuestionCircle, AiOutlineLink } from "react-icons/ai";
 import * as FA from "react-icons/fa";
 
-const ProjetoCard = ({
+const ProjetoCardFront = ({
   nome,
   iconModal,
   componenteLive,
@@ -35,62 +36,87 @@ const ProjetoCard = ({
   link,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const widthBasedPlacement = useBreakpointValue({
+    base: "bottom",
+    md: "right",
+  });
 
   return (
     <>
       <Box
         transition="0.1s ease-in-out"
         alignItems="center"
+        h={{ base: "110px", md: "120px" }}
+        p={2}
         borderWidth={1}
         width="100%"
-        borderRadius="8px"
         onClick={onOpen}
         _hover={{
           cursor: "pointer",
         }}
       >
-        <Flex>
-          <Icon
-            as={icon ? icon : AiFillQuestionCircle}
-            color={corIcon}
-            boxSize="50px"
-            p={2}
-          ></Icon>
-          <Text textAlign="left" fontSize={16} fontWeight={"bold"} p={1} mt={1}>
-            {nome ? nome : "Nome do componenteLive"}
-            <Text fontWeight={"light"} fontSize="sm" p={2}>
-              {descricaoCard ? descricaoCard : "descrição do card"}
-            </Text>
-          </Text>
-        </Flex>
+        <Flex flexDir={"column"} height={"100%"}>
+          <Flex flexDir={"row"} alignItems={"center"}>
+            <Icon
+              as={icon ? icon : AiFillQuestionCircle}
+              color={corIcon}
+              boxSize="50px"
+              p={2}
+            ></Icon>
+            <Flex>
+              <Text textAlign="left" fontSize={16} fontWeight={"bold"}>
+                {nome ? nome : "Nome do componenteLive"}
+                <Text fontWeight={"light"} fontSize="12" maxW={"80%"}>
+                  {descricaoCard ? descricaoCard : "descrição do card"}
+                </Text>
+              </Text>
+            </Flex>
+          </Flex>
 
-        {(tag1 || tag2) && (
-          <Center ml={8} mb={2}>
-            {tag1 && (
-              <Tag
-                fontSize={"sm"}
-                marginLeft={0}
-                colorScheme={corTag1 ? corTag1 : "facebook"}
-              >
-                {tag1}
-              </Tag>
-            )}
-            {tag2 && (
-              <Tag
-                fontSize={"sm"}
-                ml={2}
-                colorScheme={corTag2 ? corTag2 : "teal"}
-              >
-                {tag2}
-              </Tag>
-            )}
-          </Center>
-        )}
+          <Spacer />
+          {(tag1 || tag2) && (
+            <Box bottom={0}>
+              {tag1 && (
+                <Tag
+                  fontSize="xs"
+                  variant={"outline"}
+                  borderRadius={"full"}
+                  marginLeft={0}
+                  colorScheme={corTag1 ? corTag1 : "facebook"}
+                >
+                  {tag1}
+                </Tag>
+              )}
+              {tag1 && tag2 && (
+                <>
+                  <Tag
+                    fontSize="sm"
+                    colorScheme={corTag2 ? corTag2 : "teal"}
+                    ml={2}
+                  >
+                    {tag2}
+                  </Tag>
+                </>
+              )}
+              {tag2 && !tag1 && (
+                <Tag
+                  fontSize="xs"
+                  variant={"outline"}
+                  borderRadius={"full"}
+                  marginLeft={0}
+                  colorScheme={corTag2 ? corTag2 : "teal"}
+                >
+                  {tag2}
+                </Tag>
+              )}
+            </Box>
+          )}
+        </Flex>
       </Box>
 
       <Drawer
         isOpen={isOpen}
-        placement="right"
+        placement={widthBasedPlacement}
         p={4}
         size={"md"}
         onClose={onClose}
@@ -152,4 +178,4 @@ const ProjetoCard = ({
   );
 };
 
-export default ProjetoCard;
+export default ProjetoCardFront;

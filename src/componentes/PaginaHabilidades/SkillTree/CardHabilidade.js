@@ -1,5 +1,3 @@
-
-
 import {
   Box,
   Text,
@@ -15,8 +13,8 @@ import {
   Flex,
   Image,
   Center,
+  useBreakpointValue
 } from "@chakra-ui/react";
-
 
 import { useState } from "react";
 
@@ -31,10 +29,10 @@ const CardHabilidade = ({
   ProgressoDrawer,
   level,
   corIconeDrawer,
-  SkillTree
+  SkillTree,
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+  const widthBasedPlacement = useBreakpointValue({ base: "bottom", md: "right" });
   const handleDrawerOpen = () => {
     setIsDrawerOpen(true);
   };
@@ -70,7 +68,7 @@ const CardHabilidade = ({
         <Text fontSize="sm">Lvl: {level ? level : 1}</Text>
         <Center>
           <Progress
-            color="blue"
+            bg={"white"}
             borderRadius="full"
             width="30%"
             value={ProgressoDrawer ? ProgressoDrawer : 20}
@@ -83,7 +81,12 @@ const CardHabilidade = ({
         {descricao}
       </Text>
 
-      <Drawer isOpen={isDrawerOpen}  onClose={handleDrawerClose} size="md">
+      <Drawer
+        isOpen={isDrawerOpen}
+        placement={widthBasedPlacement}
+        onClose={handleDrawerClose}
+        size="md"
+      >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
@@ -99,7 +102,6 @@ const CardHabilidade = ({
               Lvl: {level ? level : 1}
             </Text>
             <Progress
-              
               borderRadius="full"
               width="30%"
               value={ProgressoDrawer ? ProgressoDrawer : 20}
@@ -114,9 +116,7 @@ const CardHabilidade = ({
               {descricaoDrawer ? descricaoDrawer : descricao}
             </Text>
 
-
             {SkillTree}
-            
           </DrawerBody>
         </DrawerContent>
       </Drawer>

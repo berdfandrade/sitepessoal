@@ -17,7 +17,7 @@ import { IoLocation } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { IoMdContacts } from "react-icons/io";
 import { BiGitBranch } from "react-icons/bi";
-import * as GI from "react-icons/gi"
+import * as GI from "react-icons/gi";
 
 const GithubProfile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -42,8 +42,7 @@ const GithubProfile = () => {
     return <CircularProgress isIndeterminate color="blue.300" />;
   }
 
-  const { login, followers, following, avatar_url, location } =
-    profileData;
+  const { login, followers, following, avatar_url, location } = profileData;
 
   return (
     <Box
@@ -78,14 +77,6 @@ const GithubProfile = () => {
               Seguidores {followers} | Seguindo {following}
             </Tag>
           </Text>
-        </Flex>
-        <Flex mt={3}>
-          <Icon boxSize={7} mr={2} as={GI.GiNinjaHead}></Icon>
-          <Text fontSize={"xs"} mt={1}>codewars.com </Text>
-          <Image
-            src="https://www.codewars.com/users/berdfandrade/badges/micro"
-            ml={2}
-          ></Image>
         </Flex>
 
         <Button

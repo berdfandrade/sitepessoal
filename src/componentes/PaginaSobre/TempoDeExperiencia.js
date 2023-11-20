@@ -5,9 +5,8 @@ import {
   StatLabel,
   StatNumber,
   StatHelpText,
-  StatArrow
+  StatArrow,
 } from "@chakra-ui/react";
-
 
 import {
   differenceInYears,
@@ -29,17 +28,19 @@ const TempoDeExperiencia = () => {
 
   return (
     <Box>
-      <Stat p={0} >
-        <StatLabel mt={2} fontWeight={"bold"}fontSize={"lg"}>Tempo de Experiência em programação</StatLabel>
+      <Stat p={0}>
+        <StatLabel mt={2} fontWeight={"bold"} fontSize={"lg"}>
+          Programming Experience Time
+        </StatLabel>
         <StatNumber>
-          {years > 0 && `${years} ano${years !== 1 ? "s" : ""}`}
-          {months > 0 && ` ${months} mes${months !== 1 ? "es" : ""}`}
+          {years > 0 && `${years} year${years !== 1 ? "s" : ""}`}
+          {months > 0 && ` ${months} month${months !== 1 ? "s" : ""}`}
         </StatNumber>
-        {days > 0 && ` ${days} dia${days !== 1 ? "s" : ""}`}
-        {hours > 0 && ` ${hours} hora${hours !== 1 ? "s" : ""}`}
-        {minutes > 0 && ` ${minutes} minuto${minutes !== 1 ? "s" : ""}`}
+        {days > 0 && ` ${days} day${days !== 1 ? "s" : ""}`}
+        {hours > 0 && ` ${hours} hour${hours !== 1 ? "s" : ""}`}
+        {minutes > 0 && ` ${minutes} minute${minutes !== 1 ? "s" : ""}`}
         <StatArrow ml={1} type="increase" />
-        <StatHelpText>Desde 4 de janeiro de 2022</StatHelpText>
+        <StatHelpText>Since January 4, 2022</StatHelpText>
       </Stat>
     </Box>
   );

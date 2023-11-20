@@ -55,10 +55,10 @@ function HabilidadesJavscript() {
         gap={8}
         autoRows="minmax(110px, auto)"
       >
-        <IconHabilidade icone={GI.GiBrain} nome={"Algoritmos"} progresso={30} />
-        <IconHabilidade icone={TB.TbTypography} nome={"Sintaxe"} progresso={90} />
-        <IconHabilidade icone={TB.TbFunction} nome={"Funções"} progresso={80} />
-        <IconHabilidade icone={BS.BsBox} nome={"POO"} progresso={70} />
+        <IconHabilidade icone={GI.GiBrain} nome={"Algorithms"} progresso={30} />
+        <IconHabilidade icone={TB.TbTypography} nome={"Syntax"} progresso={90} />
+        <IconHabilidade icone={TB.TbFunction} nome={"Functions"} progresso={80} />
+        <IconHabilidade icone={BS.BsBox} nome={"OOP"} progresso={70} />
         <IconHabilidade icone={BI.BiCodeCurly} nome={"Json"} progresso={80} />
       </Grid>
     </Flex>
@@ -103,12 +103,12 @@ function HabilidadesNode() {
         autoRows="minmax(110px, auto)"
       >
         <IconHabilidade icone={DI.DiNpm} nome={"npm"} progresso={95} />
-        <IconHabilidade icone={BI.BiServer} nome={"Servidores"} progresso={60} />
-        <IconHabilidade icone={GO.GoPackage} nome={"Pacotes"} progresso={80} />
+        <IconHabilidade icone={BI.BiServer} nome={"Servers"} progresso={60} />
+        <IconHabilidade icone={GO.GoPackage} nome={"Packages"} progresso={80} />
         <IconHabilidade icone={AI.AiFillApi} nome={"APIs"} progresso={50} />
         <IconHabilidade icone={BI.BiData} nome={"DB"} progresso={40} />
         <IconHabilidade icone={GI.GiBookPile} nome={"Async"} progresso={40} />
-        <IconHabilidade icone={GI.GiBookPile} nome={"Bibliotecas"} progresso={80} />
+        <IconHabilidade icone={GI.GiBookPile} nome={"Libraries"} progresso={80} />
       </Grid>
     </Flex>
   );

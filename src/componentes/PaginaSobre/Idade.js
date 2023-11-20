@@ -5,36 +5,36 @@ import { IoMdTime } from "react-icons/io";
 import TempoDeExperiencia from "./TempoDeExperiencia";
 
 function IdadeEmTempoReal() {
-  const [idade, setIdade] = useState("");
+  const [age, setAge] = useState("");
 
   useEffect(() => {
-    function calcularIdadeEmTempoReal() {
-      var dataNascimento = new Date("1996-01-15T10:40");
+    function calculateRealTimeAge() {
+      var birthDate = new Date("1996-01-15T10:40");
 
-      var dataAtual = new Date();
+      var currentDate = new Date();
 
-      var diferenca = dataAtual.getTime() - dataNascimento.getTime();
+      var difference = currentDate.getTime() - birthDate.getTime();
 
-      var segundos = Math.floor(diferenca / 1000);
-      var minutos = Math.floor(segundos / 60);
-      var horas = Math.floor(minutos / 60);
-      var dias = Math.floor(horas / 24);
-      var meses = Math.floor(dias / 30.4375);
-      var anos = Math.floor(meses / 12);
+      var seconds = Math.floor(difference / 1000);
+      var minutes = Math.floor(seconds / 60);
+      var hours = Math.floor(minutes / 60);
+      var days = Math.floor(hours / 24);
+      var months = Math.floor(days / 30.4375);
+      var years = Math.floor(months / 12);
 
       return {
-        anos,
-        meses: meses % 12,
-        dias: dias % 30.4375,
-        horas: horas % 24,
-        minutos: minutos % 60,
-        segundos: segundos % 60,
+        years,
+        months: months % 12,
+        days: days % 30.4375,
+        hours: hours % 24,
+        minutes: minutes % 60,
+        seconds: seconds % 60,
       };
     }
 
     const intervalId = setInterval(() => {
-      const novaIdade = calcularIdadeEmTempoReal();
-      setIdade(novaIdade);
+      const newAge = calculateRealTimeAge();
+      setAge(newAge);
     }, 1000);
 
     return () => clearInterval(intervalId);
@@ -45,24 +45,24 @@ function IdadeEmTempoReal() {
       <Grid templateColumns="repeat(1, 1fr)">
         <Box>
           <Stat>
-            <StatHelpText mb={1}>Tempo de existência nesse mundo</StatHelpText>
+            <StatHelpText mb={1}>Time of existence in this world</StatHelpText>
           </Stat>
           <Flex flexDirection={"row"}>
-            <Heading fontSize={40}>{idade.anos} anos</Heading>
+            <Heading fontSize={40}>{age.years} years</Heading>
             <Icon boxSize={10} mt={2} ml={5} as={IoMdTime}></Icon>
           </Flex>
 
-          <Text fontSize={25}>{idade.meses} meses</Text>
+          <Text fontSize={25}>{age.months} months</Text>
         </Box>
         <Box>
-          <Text fontSize={20}>{Math.round(idade.dias)} dias</Text>
+          <Text fontSize={20}>{Math.round(age.days)} days</Text>
           <Text fontSize={18}>
-            {idade.horas} h {idade.minutos} min
+            {age.hours} h {age.minutes} min
           </Text>
 
-          <Text>{idade.segundos} segundos</Text>
+          <Text>{age.seconds} seconds</Text>
           <Stat>
-            {/* <StatHelpText mt={2}>Desde 15 de janeiro de 1996</StatHelpText> */}
+            {/* <StatHelpText mt={2}>Since January 15, 1996</StatHelpText> */}
           </Stat>
           <TempoDeExperiencia />
         </Box>
