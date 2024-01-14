@@ -13,7 +13,7 @@ import {
   Flex,
   Image,
   Center,
-  useBreakpointValue
+  useBreakpointValue,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -32,7 +32,10 @@ const CardHabilidade = ({
   SkillTree,
 }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const widthBasedPlacement = useBreakpointValue({ base: "bottom", md: "right" });
+  const widthBasedPlacement = useBreakpointValue({
+    base: "bottom",
+    md: "right",
+  });
   const handleDrawerOpen = () => {
     setIsDrawerOpen(true);
   };
@@ -48,10 +51,11 @@ const CardHabilidade = ({
       alignItems="center"
       backgroundColor={cor}
       borderWidth={1}
-      borderColor="grey"
+      borderColor={"gray.400"}
       borderRadius="10px"
       _hover={{
         cursor: "pointer",
+        transform: `scale(1.05)`,
       }}
       onClick={handleDrawerOpen}
     >

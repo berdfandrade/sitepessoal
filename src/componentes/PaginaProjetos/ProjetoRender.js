@@ -32,7 +32,7 @@ export default function ProjetoRender({
               <Heading as={"h3"} mb={2}>
                 {nome}
               </Heading>
-              <Text w={{ base: "100%", md: "80%" }} mb={6} >
+              <Text w={{ base: "100%", md: "80%" }} mb={6}>
                 {descricao}
               </Text>
             </Flex>

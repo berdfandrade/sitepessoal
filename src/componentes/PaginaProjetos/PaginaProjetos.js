@@ -9,34 +9,31 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import { useState, useEffect } from "react";
-import { FaReact, FaServer } from "react-icons/fa";
+import { FaFreeCodeCamp } from "react-icons/fa";
+import { FaServer } from "react-icons/fa";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
 import HeroPaginas from "../HeroPaginas/HeroPaginas";
 import Projetos from "../../assets/imagem/projetos.png";
-import { ProjectsComponents, ProjectsBackEnd } from "./Projetos";
-import ProjetoCardFront from "./ProjetoCard/ProjetoCardFront";
+import { ProjectsBackEnd, ProjetosFreeCode } from "./Projetos";
 import ProjetoCardBack from "./ProjetoCard/ProjetoCardBack";
+import StackCard from "./ProjetoCard/StackCard";
 
 import Cabecalho from "../Cabecalho/Cabecalho";
 
+import {
+  SiFlask,
+  SiLaravel,
+  SiMongodb,
+  SiNodedotjs,
+  SiPhp,
+  SiPostgresql,
+  SiReact,
+} from "react-icons/si";
+import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
+
 function PaginaProjetosClone() {
-  const [rotation, setRotation] = useState(0);
-
-  useEffect(() => {
-    const rotateIcon = () => {
-      setRotation((prevRotation) => (prevRotation + 1) % 360);
-    };
-
-    const rotationInterval = setInterval(rotateIcon, 50);
-
-    return () => {
-      clearInterval(rotationInterval);
-    };
-  }, []);
-
   return (
     <ChakraProvider theme={Theme}>
       <Cabecalho />
@@ -54,7 +51,11 @@ function PaginaProjetosClone() {
 
       <Box maxW={"800px"} mr={"auto"} ml={"auto"}>
         <Flex flexDir={"column"}>
-          <Center mb={6}>
+          {/* 
+        
+        ==== Projetos Front-end ==== 
+        
+        <Center mb={6}>
             <Flex flexDir={"row"}>
               <Text color={"gray.400"} as={"b"} fontSize={25}>
                 Simple React Projects
@@ -79,11 +80,8 @@ function PaginaProjetosClone() {
             p={3}
           >
 
-          {/* 
-              Projetos Front-end
-          */}
-
-            {ProjectsComponents.map((projeto, index) => (
+       
+           {ProjectsComponents.map((projeto, index) => (
               <ProjetoCardFront
                 key={index}
                 tag1={projeto.tag1}
@@ -95,7 +93,7 @@ function PaginaProjetosClone() {
                 link={projeto.link}
               />
             ))}
-          </Grid>
+          </Grid>  */}
 
           <Center mb={6}>
             <Flex flexDir={"row"}>
@@ -131,6 +129,61 @@ function PaginaProjetosClone() {
               ></ProjetoCardBack>
             ))}
           </Grid>
+
+          <Center mb={6}>
+            <Flex flexDir={"row"}>
+              <Text color={"gray.400"} as={"b"} fontSize={25}>
+                FreeCodeCamp Projects
+              </Text>
+              <Icon
+                ml={4}
+                color={"gray.400"}
+                boxSize={"40px"}
+                as={FaFreeCodeCamp}
+              />
+            </Flex>
+          </Center>
+          <Grid
+            templateColumns={{
+              base: "repeat(1, 1fr)",
+              md: "repeat(3, 1fr)",
+            }}
+            mb={10}
+            gap={3}
+            p={3}
+          >
+            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
+            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
+            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
+          </Grid>
+
+          {/* <StackCard
+              name1={"PostgreSQL"}
+              name2={"Flask"}
+              icon1={SiFlask}
+              icon2={SiPostgresql}
+            />
+
+            <StackCard
+              name1={"MongoDB"}
+              name2={"React"}
+              icon1={SiMongodb}
+              icon2={SiReact}
+            />
+
+            <StackCard
+              name1={"React"}
+              name2={"Node.Js"}
+              icon1={SiReact}
+              icon2={SiNodedotjs}
+            />
+                        <StackCard
+              name1={"PHP"}
+              name2={"Node.Js"}
+              icon1={SiReact}
+              icon2={SiPhp}
+            />
+          </Grid> */}
         </Flex>
       </Box>
       <DividerCustomizado />

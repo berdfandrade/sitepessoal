@@ -127,7 +127,7 @@ const SkillTree = () => {
         />
 
         <CardHabilidade
-          titulo={"Linguagem C"}
+          titulo={"C programming "}
           corTexto="black"
           cor="red.300"
           level={2}

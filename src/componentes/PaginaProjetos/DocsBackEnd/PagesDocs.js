@@ -1,31 +1,31 @@
-import BackEndDoc from "../ProjetoCard/PaginaBackEndDoc";
-import { ProjectsBackEnd } from "../Projetos";
+// import BackEndDoc from "../ProjetoCard/PaginaBackEndDoc";
+// import { ProjectsBackEnd } from "../Projetos";
 
 
 
-export function RpgApiDocs (p) {
-    p = ProjectsBackEnd[0]
+// export function RpgApiDocs (p) {
+//     p = ProjectsBackEnd[0]
     
-    return (
+//     return (
 
-         <BackEndDoc projeto={p}/>
+//          <BackEndDoc projeto={p}/>
 
-    )
-}
+//     )
+// }
 
-export function MonsterApiDocs () {
-    return (
+// export function MonsterApiDocs () {
+//     return (
 
-         <BackEndDoc projeto={ProjectsBackEnd[1]}/>
+//          <BackEndDoc projeto={ProjectsBackEnd[1]}/>
 
-    )
-}
+//     )
+// }
 
-export function AdviceApiDocs () {
-    return (
-        <>
-         <BackEndDoc projeto={ProjectsBackEnd[2]}/>
-        </>
-    )
-}
+// export function AdviceApiDocs () {
+//     return (
+//         <>
+//          <BackEndDoc projeto={ProjectsBackEnd[2]}/>
+//         </>
+//     )
+// }
 

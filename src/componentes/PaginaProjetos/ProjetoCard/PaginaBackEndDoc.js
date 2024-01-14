@@ -1,20 +1,23 @@
 import Cabecalho from "../../Cabecalho/Cabecalho";
 import { Box, Text, Icon, Heading, Center, Flex, Tag } from "@chakra-ui/react";
 
+import { JsonView, allExpanded, darkStyles, defaultStyles } from 'react-json-view-lite';
+import 'react-json-view-lite/dist/index.css';
+
 // import { useParams } from "react-router";
 import { ProjectsBackEnd } from "../Projetos";
 import Footer from "../../Footer/Footer";
 import { useParams } from "react-router-dom";
+import TagProjeto from "./TagProjeto";
 
 function JsonRender(data) {
   return (
-    <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
+
+      <JsonView data={data}></JsonView>
   );
 }
 
-export function BackEndDoc({ projeto }) {
+function BackEndDoc({ projeto }) {
   return (
     <>
       <Cabecalho />
@@ -23,6 +26,8 @@ export function BackEndDoc({ projeto }) {
           <Center>
             <Flex flexDir={"column"}>
               <Heading mt={6}>{projeto.nome}</Heading>
+              <Flex flexDir={"row"}>
+              </Flex>
               <Icon
                 mt={3}
                 boxSize={"60px"}
@@ -82,7 +87,11 @@ export function BackEndDoc({ projeto }) {
                         /{metodo.url}
                       </Text>
                     </Flex>
+  
                   </Tag>
+
+                 
+
                   <Tag
                     mb={6}
                     p={4}
@@ -93,9 +102,11 @@ export function BackEndDoc({ projeto }) {
                     mr={"auto"}
                     ml={"auto"}
                   >
+                    <Box borderRadius={"md"} maxW={"400px"} mb={2}>
                     <Text fontSize={"sm"}>
                       <JsonRender data={metodo.responseExample} />
                     </Text>
+                    </Box>
                   </Tag>
                 </Flex>
               ))}
@@ -107,4 +118,4 @@ export function BackEndDoc({ projeto }) {
   );
 }
 
-export default BackEndDoc;
+export { BackEndDoc, JsonRender };

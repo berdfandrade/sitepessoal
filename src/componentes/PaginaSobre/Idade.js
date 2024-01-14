@@ -1,8 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { Box, Text, Heading, Grid, Icon, Flex } from "@chakra-ui/react";
+import { Box, Text, Grid, Icon, Flex } from "@chakra-ui/react";
 import { Stat, StatHelpText } from "@chakra-ui/react";
 import { IoMdTime } from "react-icons/io";
 import TempoDeExperiencia from "./TempoDeExperiencia";
+
+
+export function calcularIdade() {
+  const dataNascimento = '1996-01-15'
+  const hoje = new Date();
+  const nascimento = new Date(dataNascimento);
+  
+  let idade = hoje.getFullYear() - nascimento.getFullYear();
+  const mesAtual = hoje.getMonth();
+  const diaAtual = hoje.getDate();
+  const mesNascimento = nascimento.getMonth();
+  const diaNascimento = nascimento.getDate();
+
+  if (mesAtual < mesNascimento || (mesAtual === mesNascimento && diaAtual < diaNascimento)) {
+      idade--;
+  }
+  
+  return idade;
+}
 
 function IdadeEmTempoReal() {
   const [age, setAge] = useState("");
@@ -45,22 +64,22 @@ function IdadeEmTempoReal() {
       <Grid templateColumns="repeat(1, 1fr)">
         <Box>
           <Stat>
-            <StatHelpText mb={1}>Time of existence in this world</StatHelpText>
+            <StatHelpText fontFamily={"monospace"}mb={1}>Time of existence in this world</StatHelpText>
           </Stat>
           <Flex flexDirection={"row"}>
-            <Heading fontSize={40}>{age.years} years</Heading>
+            <Text fontFamily={"monospace"} fontSize={40}>{age.years} years</Text>
             <Icon boxSize={10} mt={2} ml={5} as={IoMdTime}></Icon>
           </Flex>
 
-          <Text fontSize={25}>{age.months} months</Text>
+          <Text fontFamily={"'VT323', monospace"}fontSize={25}>{age.months} months</Text>
         </Box>
         <Box>
-          <Text fontSize={20}>{Math.round(age.days)} days</Text>
-          <Text fontSize={18}>
+          <Text fontFamily={"monospace"}fontSize={20}>{Math.round(age.days)} days</Text>
+          <Text fontFamily={"monospace"}fontSize={18}>
             {age.hours} h {age.minutes} min
           </Text>
 
-          <Text>{age.seconds} seconds</Text>
+          <Text fontFamily={"monospace"}>{age.seconds} seconds</Text>
           <Stat>
             {/* <StatHelpText mt={2}>Since January 15, 1996</StatHelpText> */}
           </Stat>

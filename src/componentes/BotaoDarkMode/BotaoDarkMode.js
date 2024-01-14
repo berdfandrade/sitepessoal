@@ -6,10 +6,15 @@ const Interruptor = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
 
+  const handleColorModeToggle = () => {
+    toggleColorMode();
+    console.log(`Color mode switched ${isDarkMode}`);
+  };
+
   return (
     <Switch
       isChecked={isDarkMode}
-      onChange={toggleColorMode}
+      onChange={handleColorModeToggle}
       colorScheme="green"
       size="md"
     />

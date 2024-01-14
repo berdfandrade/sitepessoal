@@ -18,10 +18,10 @@ import * as AI from "react-icons/ai";
 
 import calcularPorcentagemCompletadaAno from "./porcentagemAno";
 import anime from "animejs";
-import BotaoDarkMode from "../../BotaoDarkMode/BotaoDarkMode";
 
+import { FaHatWizard } from "react-icons/fa";
 import PixelBenny from "../assets/pixelBennySemFundo.png";
-import aura from "../assets/deza8e9-b79fc074-2c89-4214-b0cb-73152b904149.gif"; // Campeã
+import aura from "../assets/deza8e9-b79fc074-2c89-4214-b0cb-73152b904149.gif";
 import calcularPorcentagemDiaPassado from "./porcentagemDia";
 
 const HeroPixel = () => {
@@ -44,10 +44,10 @@ const HeroPixel = () => {
     const element = elementRef.current;
     anime({
       targets: element,
-      translateY: [-32, -15], 
+      translateY: [-32, -15],
       loop: true,
       direction: "alternate",
-      easing: "easeInOutQuad", 
+      easing: "easeInOutQuad",
       duration: HP >= 60 ? "1000" : "1500",
     });
   }, []);
@@ -165,12 +165,7 @@ const HeroPixel = () => {
                 >
                   <Icon boxSize={"20px"} mr={1} as={TB.TbServer}></Icon>
                   <Text fontSize={"xs"}>Backend Wizard</Text>
-                  <Icon
-                    boxSize={"20px"}
-                    ml={1}
-                    mr={1}
-                    as={GI.GiWizardStaff}
-                  ></Icon>
+                  <Icon boxSize={"20px"} ml={1} mr={1} as={FaHatWizard}></Icon>
                 </Tag>
                 <Tag
                   mr={"auto"}

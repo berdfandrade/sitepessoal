@@ -29,10 +29,10 @@ const TempoDeExperiencia = () => {
   return (
     <Box>
       <Stat p={0}>
-        <StatLabel mt={2} fontWeight={"bold"} fontSize={"lg"}>
+        <StatLabel fontFamily={"monospace"} mt={2} fontWeight={"bold"} fontSize={"lg"}>
           Programming Experience Time
         </StatLabel>
-        <StatNumber>
+        <StatNumber fontFamily={"monospace"}>
           {years > 0 && `${years} year${years !== 1 ? "s" : ""}`}
           {months > 0 && ` ${months} month${months !== 1 ? "s" : ""}`}
         </StatNumber>
@@ -40,7 +40,7 @@ const TempoDeExperiencia = () => {
         {hours > 0 && ` ${hours} hour${hours !== 1 ? "s" : ""}`}
         {minutes > 0 && ` ${minutes} minute${minutes !== 1 ? "s" : ""}`}
         <StatArrow ml={1} type="increase" />
-        <StatHelpText>Since January 4, 2022</StatHelpText>
+        <StatHelpText fontFamily={"monospace"}>Since January 4, 2022</StatHelpText>
       </Stat>
     </Box>
   );

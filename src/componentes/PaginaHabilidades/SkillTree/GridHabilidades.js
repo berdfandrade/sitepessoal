@@ -122,12 +122,12 @@ function HabilidadesPython() {
         gap={8}
         autoRows="minmax(110px, auto)"
       >
-        <IconHabilidade icone={TB.TbTypography} nome={"Sintaxe"} progresso={95} />
-        <IconHabilidade icone={FA.FaListAlt} nome={"Listas"} progresso={60} />
+        <IconHabilidade icone={TB.TbTypography} nome={"Syntax"} progresso={95} />
+        <IconHabilidade icone={FA.FaListAlt} nome={"Lists"} progresso={60} />
         <IconHabilidade icone={GO.GoPackage} nome={"PIP"} progresso={80} />
-        <IconHabilidade icone={AI.AiFillFileAdd} nome={"Módulos"} progresso={70} />
+        <IconHabilidade icone={AI.AiFillFileAdd} nome={"Modules"} progresso={70} />
         <IconHabilidade icone={BS.BsBook} nome={"Tuples"} progresso={80} />
-        <IconHabilidade icone={TB.TbBookUpload} nome={"Dicionários"} progresso={70} />
+        <IconHabilidade icone={TB.TbBookUpload} nome={"Dictionaries"} progresso={70} />
         <IconHabilidade icone={SI.SiFlask} nome={"Flask"} progresso={70} />
         <IconHabilidade icone={SI.SiDjango} nome={"Django"} progresso={30} />
       </Grid>
@@ -143,7 +143,7 @@ function HabilidadesNoSQL() {
         gap={8}
         autoRows="minmax(110px, auto)"
       >
-        <IconHabilidade icone={BI.BiServer} nome={"Servidores"} progresso={60} />
+        <IconHabilidade icone={BI.BiServer} nome={"Servers"} progresso={60} />
         <IconHabilidade icone={DI.DiMongodb} nome={"Mongodb"} progresso={50} />
         <IconHabilidade icone={BI.BiData} nome={"DB"} progresso={40} />
       </Grid>
@@ -196,10 +196,10 @@ function HabilidadesC() {
         autoRows="minmax(110px, auto)"
       >
         <IconHabilidade icone={MD.MdDataArray} nome={"Arrays"} progresso={75} />
-        <IconHabilidade icone={GI.GiSevenPointedStar} nome={"Ponteiros"} progresso={30} />
-        <IconHabilidade icone={TB.TbFunction} nome={"Funções"} progresso={60} />
-        <IconHabilidade icone={BS.BsMemory} nome={"Alocação"} progresso={20} />
-        <IconHabilidade icone={BI.BiCode} nome={"Sintaxe"} progresso={70} />
+        <IconHabilidade icone={GI.GiSevenPointedStar} nome={"Pointers"} progresso={30} />
+        <IconHabilidade icone={TB.TbFunction} nome={"Functions"} progresso={60} />
+        <IconHabilidade icone={BS.BsMemory} nome={"Malloc"} progresso={20} />
+        <IconHabilidade icone={BI.BiCode} nome={"Syntax"} progresso={70} />
         <IconHabilidade icone={FA.FaRobot} nome={<Text textAlign={"left"}>Structs</Text>} progresso={30} />
       </Grid>
     </Flex>
@@ -214,8 +214,8 @@ function HabilidadesTypeScript() {
         gap={8}
         autoRows="minmax(110px, auto)"
       >
-        <IconHabilidade icone={TB.TbLetterCaseToggle} nome={"Tipagem"} progresso={30} />
-        <IconHabilidade icone={TB.TbTypography} nome={"Sintaxe"} progresso={90} />
+        <IconHabilidade icone={TB.TbLetterCaseToggle} nome={"Typing"} progresso={30} />
+        <IconHabilidade icone={TB.TbTypography} nome={"Syntax"} progresso={90} />
         <IconHabilidade icone={TB.TbPanoramaVertical} nome={"Namespaces"} progresso={80} />
         <IconHabilidade icone={BS.BsIntersect} nome={"Interfaces"} progresso={70} />
         <IconHabilidade icone={BI.BiNetworkChart} nome={"Type-safe"} progresso={80} />
