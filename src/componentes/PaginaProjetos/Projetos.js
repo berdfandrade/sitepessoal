@@ -9,7 +9,21 @@
 // import Pomodoro from "./ProjetosReactLive/Pomodoro/Pomodoro";
 // import Calculadora from "./ProjetosReactLive/Calculadora/Calculadora";
 import ApiHandle from "./Outros/ApiHandle";
-import { Center } from "@chakra-ui/react";
+import {
+  Center,
+  Code,
+  Text,
+  Table,
+  Thead,
+  Tbody,
+  Tfoot,
+  Tr,
+  Th,
+  Td,
+  TableCaption,
+  TableContainer,
+  Box,
+} from "@chakra-ui/react";
 
 /*
     Import dos Ícones 
@@ -22,7 +36,9 @@ import { Center } from "@chakra-ui/react";
 import * as GI from "react-icons/gi";
 import * as SI from "react-icons/si";
 import * as IO from "react-icons/io";
-import { FaAddressBook } from "react-icons/fa";
+import { Fa500Px } from "react-icons/fa";
+import { TbKey, TbTypography } from "react-icons/tb";
+import { RxFontRoman } from "react-icons/rx";
 
 const ProjectsBackEnd = [
   {
@@ -232,7 +248,7 @@ const ProjectsBackEnd = [
       {
         method: "GET",
         url: "players/:limit",
-        remainingData : true,
+        remainingData: true,
         descricaoMetodo:
           "Retrieves a specific number of players (between 1 and 20) from the default FIFA version, sorted by their overall score. (The response was condensed for each player in the example below)",
         responseExample: {
@@ -482,13 +498,121 @@ const ProjectsBackEnd = [
   },
 ];
 
-const ProjetosFreeCode = [{
-  icone : <FaAddressBook/>,
-  nome: "Palindrome Checker",
-  descricaoCard : "Create a palidrome checker", 
-  descricao: "The task is to determine if a given string is a palindrome. A palindrome reads the same forward and backward, ignoring punctuation, case, and spacing.\n\nTo verify if it's a palindrome, remove all non-alphanumeric characters (like punctuation, spaces, and symbols) and convert everything to the same case (either lower or upper).\n\nStrings with various formats like \"racecar,\" \"RaceCar,\" and \"race CAR\" are examples. It also includes strings with special symbols like \"2A33a2,\" \"2A3 3a2,\" and \"2_A33#A2.\"\n\nThe goal is to return true if it's a palindrome, and false if it's not.",
-  resolution : 
-    "str === string"
-}];
+const codeColor = "linkedin";
+
+const ProjetosFreeCode = [
+  {
+    icone: TbTypography,
+
+    linguagem: "js",
+    nome: "Palindrome Checker",
+    descricaoCard: "Create a palidrome checker",
+    descricao: (
+      <Text>
+        Return <Code colorScheme={codeColor}>true</Code> if the given string is
+        a palindrome. Otherwise, return{" "}
+        <Code colorScheme={codeColor}>false</Code>. A{" "}
+        <Text as="i">palindrome</Text> is a word or sentence that's spelled the
+        same way both forward and backward, ignoring punctuation, case, and
+        spacing. Note: You'll need to remove all non-alphanumeric characters
+        (punctuation, spaces and symbols) and turn everything into the same case
+        (lower or upper case) in order to check for palindromes. We'll pass
+        strings with varying formats, such as{" "}
+        <Code colorScheme={codeColor}>racecar</Code>,{" "}
+        <Code colorScheme={codeColor}>RaceCar</Code>, and{" "}
+        <Code colorScheme={codeColor}>race CAR</Code> among others. We'll also
+        pass strings with special symbols, such as{" "}
+        <Code colorScheme={codeColor}>2A3*3a2</Code>,{" "}
+        <Code colorScheme={codeColor}>2A3 3a2</Code>, and{" "}
+        <Code colorScheme={codeColor}>2_A3*3#A2</Code>.
+      </Text>
+    ),
+  },
+  {
+    icone: RxFontRoman,
+    nome: "Roman Converter",
+    linguagem: "js",
+    descricaoCard: "Convert into a roman numeral.",
+    descricao: (
+      <Box p={3}>
+        <Text mb={3}>Convert the number into a roman numeral.</Text>
+        <TableContainer fontSize={13} p={1}>
+          <Table
+            mr={"auto"}
+            ml={"auto"}
+            borderRadius={"md"}
+            fontWeight="bold"
+            variant={"striped"}
+          >
+            <Thead>
+              <Tr>
+                <Th>Roman numerals</Th>
+                <Th>Arabic numerals</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
+              <Tr>
+                <Td>M</Td>
+                <Td>1000</Td>
+              </Tr>
+              <Tr>
+                <Td>CM</Td>
+                <Td>900</Td>
+              </Tr>
+              <Tr>
+                <Td>D</Td>
+                <Td>500</Td>
+              </Tr>
+              <Tr>
+                <Td>CD</Td>
+                <Td>400</Td>
+              </Tr>
+              <Tr>
+                <Td>C</Td>
+                <Td>100</Td>
+              </Tr>
+              <Tr>
+                <Td>XC</Td>
+                <Td>90</Td>
+              </Tr>
+
+              <Tr>
+                <Td>L</Td>
+                <Td>50</Td>
+              </Tr>
+              <Tr>
+                <Td>XL</Td>
+                <Td>40</Td>
+              </Tr>
+              <Tr>
+                <Td>X</Td>
+                <Td>10</Td>
+              </Tr>
+              <Tr>
+                <Td>IX</Td>
+                <Td>9</Td>
+              </Tr>
+              <Tr>
+                <Td>V</Td>
+                <Td>5</Td>
+              </Tr>
+              <Tr>
+                <Td>IV</Td>
+                <Td>4</Td>
+              </Tr>
+              <Tr>
+                <Td>I</Td>
+                <Td>1</Td>
+              </Tr>
+            </Tbody>
+          </Table>
+        </TableContainer>
+        <Text mt={4}>
+          All roman numerals answers should be provided in upper-case.
+        </Text>
+      </Box>
+    ),
+  },
+];
 
 export { ProjectsBackEnd, ProjetosFreeCode };

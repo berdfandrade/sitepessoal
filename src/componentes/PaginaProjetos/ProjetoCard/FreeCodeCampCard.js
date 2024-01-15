@@ -1,13 +1,34 @@
-import {Box, Text, Icon}  from '@chakra-ui/react'
+import {
+  Box,
+  Text,
+  Icon,
+  Flex,
+  Tag,
+  Center,
+  Drawer,
+  DrawerBody,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  useDisclosure,
+  Button,
+  Code,
+} from "@chakra-ui/react";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaPython } from "react-icons/fa";
+import ProjetosFreeCode from "./ProjetoCardBack";
 
-import ProjetosFreeCode from './ProjetoCardBack'
+import {} from "@chakra-ui/react";
 
-export default function FreeCodeCampCard ({projeto}) {
-
+export default function FreeCodeCampCard({ projeto }) {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
       <Box
+        onClick={onOpen}
         transition="0.1s ease-in-out"
         alignItems="center"
         h={{ base: "110px", md: "120px" }}
@@ -18,9 +39,70 @@ export default function FreeCodeCampCard ({projeto}) {
           cursor: "pointer",
         }}
       >
-      <Icon as={projeto.icon}/>
-      <Text>{projeto.nome}</Text>    
+        <Flex alignItems="center" flexDir="row">
+          <Icon boxSize="50px" p={2} as={projeto.icone} />
+          <Flex flexDir={"column"}>
+            <Text as="b">{projeto.nome}</Text>
+            <Text fontSize={"sm"}>{projeto.descricaoCard}</Text>
+            {projeto.linguagem ? (
+              <Tag
+                mt={3}
+                variant={"subtle"}
+                // borderRadius={"full"}
+                colorScheme={projeto.linguagem === "js" ? "orange" : "facebook"}
+                p={1}
+                w="110px"
+              >
+                <Flex gap={2} ml={2} flex={"row"} alignItems={"center"}>
+                  <Center>
+                    <Icon
+                      boxSize={"15px"}
+                      as={
+                        projeto.linguagem === "js"
+                          ? IoLogoJavascript
+                          : projeto.linguagem === "python"
+                          ? FaPython
+                          : null
+                      }
+                    />
+                    <Text ml={1} as="b">
+                      {projeto.linguagem === "js" ? "JavaScript" : "Python"}
+                    </Text>
+                  </Center>
+                </Flex>
+              </Tag>
+            ) : null}
+          </Flex>
+        </Flex>
       </Box>
+
+      <>
+        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="sm">
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>{projeto.nome}</DrawerHeader>
+            <Center>
+              <Icon boxSize={"100px"} as={projeto.icone} />
+            </Center>
+            <DrawerBody p={6}>
+              {projeto.descricao}
+              {projeto.solucao}
+            </DrawerBody>
+
+            <DrawerFooter>
+              <Button
+                variant="outline"
+                colorScheme={"red"}
+                mr={3}
+                onClick={onClose}
+              >
+                Close
+              </Button>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
       </>
-  )
+    </>
+  );
 }

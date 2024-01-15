@@ -143,20 +143,27 @@ function PaginaProjetosClone() {
               />
             </Flex>
           </Center>
-          <Grid
-            templateColumns={{
-              base: "repeat(1, 1fr)",
-              md: "repeat(3, 1fr)",
-            }}
-            mb={10}
-            gap={3}
-            p={3}
-          >
-            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
-            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
-            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
-          </Grid>
+          <Flex gap={3} flexDir={"column"}>
+            <Text ml={3} color={"gray.400"} as="b">
+              JavaScript projects
+            </Text>
+            <Grid
+              templateColumns={{
+                base: "repeat(1, 1fr)",
+                md: "repeat(3, 1fr)",
+              }}
+              mb={10}
+              gap={3}
+              p={3}
+            >
+              {ProjetosFreeCode.map((projeto, index) => (
+                <FreeCodeCampCard key={index} projeto={projeto} />
+              ))}
 
+              {/* <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
+            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} /> */}
+            </Grid>
+          </Flex>
           {/* <StackCard
               name1={"PostgreSQL"}
               name2={"Flask"}
