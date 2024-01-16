@@ -25,7 +25,7 @@ function App() {
           <Route path="/projetos/docs/rpg_api" element={<RpgApiDocs/>}/>
           <Route path="/projetos/docs/advice" element={<AdviceApiDocs/>}/>
           <Route path="/projetos/docs/monster" element={<MonsterApiDocs/>}/>
-          {/* <Route path="/docsFront/" element={<FrontEndDoc/>} /> */}
+
         </Routes>
       </Router>
     </ChakraProvider>

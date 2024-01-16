@@ -7,6 +7,7 @@ import {
   SiTypescript,
   SiFlask,
   SiExpress,
+  SiPython,
 } from "react-icons/si";
 
 export default function TagProjeto({ nome, icon }) {
@@ -30,6 +31,8 @@ export default function TagProjeto({ nome, icon }) {
         return "gray";
       case "js":
         return "orange";
+      case "py":
+        return "linkedin";
     }
   };
 
@@ -49,6 +52,8 @@ export default function TagProjeto({ nome, icon }) {
         return SiExpress;
       default:
         return SiNodedotjs;
+      case "py":
+        return SiPython;
     }
   };
 
@@ -78,6 +83,8 @@ export default function TagProjeto({ nome, icon }) {
               ? "Express"
               : nome === "js"
               ? "JavaScript"
+              : nome === "py"
+              ? "Python"
               : ""}
           </Text>
         )}

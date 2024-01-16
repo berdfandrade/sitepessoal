@@ -20,8 +20,8 @@ import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
 import ProjetosFreeCode from "./ProjetoCardBack";
 import TagProjeto from "./TagProjeto";
-
-import {} from "@chakra-ui/react";
+import Gist from "react-gist";
+import { Spinner } from "@chakra-ui/react";
 
 export default function FreeCodeCampCard({ projeto }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -44,14 +44,16 @@ export default function FreeCodeCampCard({ projeto }) {
           <Icon boxSize="50px" p={2} as={projeto.icone} />
           <Flex flexDir={"column"}>
             <Text as="b">{projeto.nome}</Text>
-            <Text fontWeight="light" fontSize="12">{projeto.descricaoCard}</Text>
+            <Text fontWeight="light" fontSize="12">
+              {projeto.descricaoCard}
+            </Text>
             {projeto.linguagem ? (
               <Tag
                 mt={3}
                 ml={5}
                 variant={"subtle"}
                 borderRadius={"full"}
-                colorScheme={projeto.linguagem === "js" ? "orange" : "facebook"}
+                colorScheme={projeto.linguagem === "js" ? "orange" : "blue"}
                 p={1}
                 w="110px"
               >
@@ -62,7 +64,7 @@ export default function FreeCodeCampCard({ projeto }) {
                       as={
                         projeto.linguagem === "js"
                           ? IoLogoJavascript
-                          : projeto.linguagem === "python"
+                          : projeto.linguagem === "py"
                           ? FaPython
                           : null
                       }
@@ -79,30 +81,42 @@ export default function FreeCodeCampCard({ projeto }) {
       </Box>
 
       <>
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="sm">
+        <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>{projeto.nome}</DrawerHeader>
             <Flex
-            pl={7}
-            alignItems={"center"}
-            mb={5}
-            pr={5}
-            gap={2}
-            flexDir={"row"}
-          >
-            <Text fontFamily={"menlo"} fontSize={10}>
-              Problem solved in:{" "}
-            </Text>
-                <TagProjeto nome={projeto.linguagem}  />
-          </Flex>
+              pl={7}
+              alignItems={"center"}
+              mb={5}
+              pr={5}
+              gap={2}
+              flexDir={"row"}
+            >
+              <Text fontFamily={"menlo"} fontSize={10}>
+                Problem solved in:{" "}
+              </Text>
+              <TagProjeto nome={projeto.linguagem} />
+            </Flex>
             <Center p={5}>
               <Icon boxSize={"100px"} as={projeto.icone} />
             </Center>
             <DrawerBody p={6}>
-              {projeto.descricao}
-              {projeto.solucao}
+              <Text
+                mb={3}
+                fontSize={"xs"}
+                borderBottom={"1px dashed gray"}
+                fontFamily={"monospace"}
+              >
+                Task description:
+              </Text>
+              <Box mb={6}>{projeto.descricao}</Box>
+              <Box borderBottom='1px dashed gray' mb={6}></Box>
+              <Text mt={5} ml={3} fontSize="sm" as="b">
+                My solution:{" "}
+              </Text>
+              <Gist id={projeto.solucao} />
             </DrawerBody>
 
             <DrawerFooter>

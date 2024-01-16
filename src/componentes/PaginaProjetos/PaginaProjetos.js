@@ -16,7 +16,11 @@ import DividerCustomizado from "../Divider/DividerCustom";
 import Footer from "../Footer/Footer";
 import HeroPaginas from "../HeroPaginas/HeroPaginas";
 import Projetos from "../../assets/imagem/projetos.png";
-import { ProjectsBackEnd, ProjetosFreeCode } from "./Projetos";
+import {
+  ProjectsBackEnd,
+  ProjetosFreeCode,
+  ProjetosFreeCodePython,
+} from "./Projetos";
 import ProjetoCardBack from "./ProjetoCard/ProjetoCardBack";
 import StackCard from "./ProjetoCard/StackCard";
 
@@ -31,6 +35,7 @@ import {
   SiPostgresql,
   SiReact,
 } from "react-icons/si";
+
 import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
 
 function PaginaProjetosClone() {
@@ -159,38 +164,28 @@ function PaginaProjetosClone() {
               {ProjetosFreeCode.map((projeto, index) => (
                 <FreeCodeCampCard key={index} projeto={projeto} />
               ))}
-
-              {/* <FreeCodeCampCard projeto={ProjetosFreeCode[0]} />
-            <FreeCodeCampCard projeto={ProjetosFreeCode[0]} /> */}
             </Grid>
           </Flex>
-          {/* <StackCard
-              name1={"PostgreSQL"}
-              name2={"Flask"}
-              icon1={SiFlask}
-              icon2={SiPostgresql}
-            />
-
-            <StackCard
-              name1={"MongoDB"}
-              name2={"React"}
-              icon1={SiMongodb}
-              icon2={SiReact}
-            />
-
-            <StackCard
-              name1={"React"}
-              name2={"Node.Js"}
-              icon1={SiReact}
-              icon2={SiNodedotjs}
-            />
-                        <StackCard
-              name1={"PHP"}
-              name2={"Node.Js"}
-              icon1={SiReact}
-              icon2={SiPhp}
-            />
-          </Grid> */}
+          <Flex gap={3} flexDir={"column"}>
+            <Text ml={3} color={"gray.400"} as="b">
+              Python projects
+            </Text>
+            <Grid
+              templateColumns={{
+                base: "repeat(1, 1fr)",
+                md: "repeat(3, 1fr)",
+              }}
+              mb={10}
+              gap={3}
+              p={3}
+            >
+              {
+                ProjetosFreeCodePython.map((projeto, index) => (
+                  <FreeCodeCampCard key={index} projeto={projeto}/>
+                ))
+              }
+            </Grid>
+          </Flex>
         </Flex>
       </Box>
       <DividerCustomizado />
