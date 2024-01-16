@@ -23,6 +23,7 @@ import {
   TableCaption,
   TableContainer,
   Box,
+  Link,
 } from "@chakra-ui/react";
 
 /*
@@ -36,8 +37,8 @@ import {
 import * as GI from "react-icons/gi";
 import * as SI from "react-icons/si";
 import * as IO from "react-icons/io";
-import { Fa500Px } from "react-icons/fa";
-import { TbKey, TbTypography } from "react-icons/tb";
+import { Fa500Px, FaCashRegister, FaMoneyBill } from "react-icons/fa";
+import { TbKey, TbPhoneCall, TbTypography } from "react-icons/tb";
 import { RxFontRoman } from "react-icons/rx";
 
 const ProjectsBackEnd = [
@@ -538,6 +539,7 @@ const ProjetosFreeCode = [
         <Text mb={3}>Convert the number into a roman numeral.</Text>
         <TableContainer fontSize={13} p={1}>
           <Table
+            textAlign={"center"}
             mr={"auto"}
             ml={"auto"}
             borderRadius={"md"}
@@ -611,6 +613,163 @@ const ProjetosFreeCode = [
           All roman numerals answers should be provided in upper-case.
         </Text>
       </Box>
+    ),
+  },
+  {
+    icone: TbKey,
+    nome: "Caesars Cipher",
+    descricaoCard: "Build a Ceaser Cipher",
+    linguagem: "js",
+    descricao: (
+      <Text>
+        One of the simplest and most widely known ciphers is a Caesar cipher,
+        also known as a shift cipher. In a shift cipher the meanings of the
+        letters are shifted by some set amount. A common modern use is the{" "}
+        <Text as="b">ROT13</Text> cipher, where the values of the letters are
+        shifted by 13 places. Thus <Code>A ↔ N</Code>, <Code>B ↔ O</Code> and so
+        on. Write a function which takes a ROT13 encoded string as input and
+        returns a decoded string. All letters will be uppercase. Do not
+        transform any non-alphabetic character (i.e. spaces, punctuation), but
+        do pass them on.
+      </Text>
+    ),
+  },
+  {
+    icone: TbPhoneCall,
+    nome: "Telephone Validator",
+
+    descricaoCard: "A US validator phone number",
+    linguagem: "js",
+    descricao: (
+      <Text>
+        Return <Code>true</Code> if the passed string looks like a valid US
+        phone number. The user may fill out the form field any way they choose
+        as long as it has the format of a valid US number. The following are
+        examples of valid formats for US numbers (refer to the tests below for
+        other variants):
+        <Code mt={2} p={2} borderRadius={"md"} mb={2} w={"100%"}>
+          <ul>555-555-5555</ul> <ul>(555)555-5555</ul> <ul>(555) 555-5555</ul>{" "}
+          <ul>555 555 5555</ul> <ul>5555555555 1</ul>
+          <ul>555 555 5555</ul>
+        </Code>
+        For this challenge you will be presented with a string such as{" "}
+        <Code>800-692-7753</Code> or <Code>8oo-six427676;laskdjf</Code>. Your
+        job is to validate or reject the US phone number based on any
+        combination of the formats provided above. The area code is required. If
+        the country code is provided, you must confirm that the country code is
+        <Code>1</Code>. Return <Code>true</Code> if the string is a valid US
+        phone number; otherwise return <Code>false</Code>.
+      </Text>
+    ),
+  },
+  {
+    nome: "Cash Register",
+    icone: FaCashRegister,
+    descricaoCard: "Design a cash register function",
+    linguagem: "js",
+    descricao: (
+      <>
+        <Text>
+          Design a cash register drawer function like this: <Code>checkCashRegister()</Code> 
+          that accepts purchase price as the
+          first argument (<Code>price</Code>), payment as the second argument (
+          <Code>cash</Code>), and cash-in-drawer (<Code>cid</Code>) as the third
+          argument.
+          <br />
+          <ul>
+            <br />
+            <Code>cid</Code> is a 2D array listing available currency.
+          </ul>
+          <br />
+          <ul>
+            The <Code>checkCashRegister()</Code> function should always return
+            an object with a status key and a change key.
+            <br />
+          </ul>
+          <ul>
+            <br />
+            <Code>{`{status: 'INSUFFICIENT_FUNDS', change: []}`}</Code> should
+            be returned if cash-in-drawer is less than the change due, or if you
+            cannot return the exact change.
+          </ul>
+          <br />
+          <ul>
+            Return <Code>{`{status: "CLOSED", change: [...]}`}</Code> with
+            cash-in-drawer as the value for the key change if it is equal to the
+            change due.
+          </ul>
+          <ul>
+            <br />
+            Otherwise, return <Code>{`{status: "OPEN", change: [...]}`} </Code>,
+            with the change due in coins and bills, sorted in highest to lowest
+            order, as the value of the change key.
+            <br />
+          </ul>
+        </Text>
+
+        <Table mt={5} variant="striped">
+          <Thead>
+            <Tr>
+              <Th>Currency Unit</Th>
+              <Th>Amount</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>Penny</Td>
+              <Td>$0.01 (PENNY)</Td>
+            </Tr>
+            <Tr>
+              <Td>Nickel</Td>
+              <Td>$0.05 (NICKEL)</Td>
+            </Tr>
+            <Tr>
+              <Td>Dime</Td>
+              <Td>$0.1 (DIME)</Td>
+            </Tr>
+            <Tr>
+              <Td>Quarter</Td>
+              <Td>$0.25 (QUARTER)</Td>
+            </Tr>
+            <Tr>
+              <Td>Dollar</Td>
+              <Td>$1 (ONE)</Td>
+            </Tr>
+            <Tr>
+              <Td>Five Dollars</Td>
+              <Td>$5 (FIVE)</Td>
+            </Tr>
+            <Tr>
+              <Td>Ten Dollars</Td>
+              <Td>$10 (TEN)</Td>
+            </Tr>
+            <Tr>
+              <Td>Twenty Dollars</Td>
+              <Td>$20 (TWENTY)</Td>
+            </Tr>
+            <Tr>
+              <Td>One-hundred Dollars</Td>
+              <Td>$100 (ONE HUNDRED)</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+        <Text mt={3} mb={3}>
+          See below for an example of a cash-in-drawer array:
+          <Code mt={3} p={3} borderRadius={"md"} w={"100%"}>
+            {[
+              <ul key="penny">["PENNY", 1.01]</ul>,
+              <ul key="nickel">["NICKEL", 2.05]</ul>,
+              <ul key="dime">["DIME", 3.1]</ul>,
+              <ul key="quarter">["QUARTER", 4.25]</ul>,
+              <ul key="one">["ONE", 90]</ul>,
+              <ul key="five">["FIVE", 55]</ul>,
+              <ul key="ten">["TEN", 20]</ul>,
+              <ul key="twenty">["TWENTY", 60]</ul>,
+              <ul key="oneHundred">["ONE HUNDRED", 100]</ul>,
+            ]}
+          </Code>
+        </Text>
+      </>
     ),
   },
 ];

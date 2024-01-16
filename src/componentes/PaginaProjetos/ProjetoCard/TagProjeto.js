@@ -1,10 +1,4 @@
-import {
-  Tag,
-  Text,
-  Icon,
-  Flex,
-  useBreakpointValue,
-} from "@chakra-ui/react";
+import { Tag, Text, Icon, Flex, useBreakpointValue } from "@chakra-ui/react";
 
 import {
   SiNodedotjs,
@@ -15,10 +9,7 @@ import {
   SiExpress,
 } from "react-icons/si";
 
-
-
 export default function TagProjeto({ nome, icon }) {
-
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const getColorScheme = (nome) => {
@@ -37,6 +28,8 @@ export default function TagProjeto({ nome, icon }) {
         return "teal";
       default:
         return "gray";
+      case "js":
+        return "orange";
     }
   };
 
@@ -83,6 +76,8 @@ export default function TagProjeto({ nome, icon }) {
               ? "TypeScript"
               : nome === "express"
               ? "Express"
+              : nome === "js"
+              ? "JavaScript"
               : ""}
           </Text>
         )}

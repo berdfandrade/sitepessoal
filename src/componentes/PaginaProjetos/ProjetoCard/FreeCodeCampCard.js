@@ -19,6 +19,7 @@ import {
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
 import ProjetosFreeCode from "./ProjetoCardBack";
+import TagProjeto from "./TagProjeto";
 
 import {} from "@chakra-ui/react";
 
@@ -43,12 +44,13 @@ export default function FreeCodeCampCard({ projeto }) {
           <Icon boxSize="50px" p={2} as={projeto.icone} />
           <Flex flexDir={"column"}>
             <Text as="b">{projeto.nome}</Text>
-            <Text fontSize={"sm"}>{projeto.descricaoCard}</Text>
+            <Text fontWeight="light" fontSize="12">{projeto.descricaoCard}</Text>
             {projeto.linguagem ? (
               <Tag
                 mt={3}
+                ml={5}
                 variant={"subtle"}
-                // borderRadius={"full"}
+                borderRadius={"full"}
                 colorScheme={projeto.linguagem === "js" ? "orange" : "facebook"}
                 p={1}
                 w="110px"
@@ -82,7 +84,20 @@ export default function FreeCodeCampCard({ projeto }) {
           <DrawerContent>
             <DrawerCloseButton />
             <DrawerHeader>{projeto.nome}</DrawerHeader>
-            <Center>
+            <Flex
+            pl={7}
+            alignItems={"center"}
+            mb={5}
+            pr={5}
+            gap={2}
+            flexDir={"row"}
+          >
+            <Text fontFamily={"menlo"} fontSize={10}>
+              Problem solved in:{" "}
+            </Text>
+                <TagProjeto nome={projeto.linguagem}  />
+          </Flex>
+            <Center p={5}>
               <Icon boxSize={"100px"} as={projeto.icone} />
             </Center>
             <DrawerBody p={6}>
