@@ -515,7 +515,7 @@ const ProjectsBackEnd = [
   },
 ];
 
-const codeColor = "linkedin";
+const codeColor = "gray";
 
 const ProjetosFreeCode = [
   {
@@ -556,12 +556,12 @@ const ProjetosFreeCode = [
         <Text mb={3}>Convert the number into a roman numeral.</Text>
         <TableContainer fontSize={13} p={1}>
           <Table
-            textAlign={"center"}
+       
             mr={"auto"}
             ml={"auto"}
             borderRadius={"md"}
             fontWeight="bold"
-            variant={"striped"}
+            variant={"simple"}
           >
             <Thead>
               <Tr>

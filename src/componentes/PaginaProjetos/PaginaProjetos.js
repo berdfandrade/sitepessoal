@@ -9,6 +9,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import { FaFreeCodeCamp } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import Theme from "../BotaoDarkMode/Tema";
@@ -37,6 +38,7 @@ import {
 } from "react-icons/si";
 
 import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
+import { Link } from "react-router-dom";
 
 function PaginaProjetosClone() {
   return (
@@ -152,6 +154,7 @@ function PaginaProjetosClone() {
             <Text ml={3} color={"gray.400"} as="b">
               JavaScript projects
             </Text>
+
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
@@ -179,11 +182,9 @@ function PaginaProjetosClone() {
               gap={3}
               p={3}
             >
-              {
-                ProjetosFreeCodePython.map((projeto, index) => (
-                  <FreeCodeCampCard key={index} projeto={projeto}/>
-                ))
-              }
+              {ProjetosFreeCodePython.map((projeto, index) => (
+                <FreeCodeCampCard key={index} projeto={projeto} />
+              ))}
             </Grid>
           </Flex>
         </Flex>
