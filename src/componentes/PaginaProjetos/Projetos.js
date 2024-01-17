@@ -2,13 +2,6 @@
     Import dos componentes
 */
 
-// import BennyDex from "./ProjetosReactLive/BennyDex/BennyDex";
-// import BennyTree from "./ProjetosReactLive/BennyTree/componentes/ExportAsApp";
-// import Gerador from "./ProjetosReactLive/GeradorDeSenha/Gerador";
-// import HeroCard from "./ProjetosReactLive/HeroCard/componentes/characterCard";
-// import Pomodoro from "./ProjetosReactLive/Pomodoro/Pomodoro";
-// import Calculadora from "./ProjetosReactLive/Calculadora/Calculadora";
-import ApiHandle from "./Outros/ApiHandle";
 import {
   Center,
   Code,
@@ -33,10 +26,7 @@ import {
     Import dos Ícones 
 */
 
-// import { RiLockPasswordFill } from "react-icons/ri";
-// import { GiTomato } from "react-icons/gi";
-// import { MdCatchingPokemon } from "react-icons/md";
-// import { BsCalculator } from "react-icons/bs";
+
 import * as GI from "react-icons/gi";
 import * as SI from "react-icons/si";
 import * as IO from "react-icons/io";
@@ -515,8 +505,6 @@ const ProjectsBackEnd = [
   },
 ];
 
-const codeColor = "gray";
-
 const ProjetosFreeCode = [
   {
     icone: TbTypography,
@@ -526,22 +514,16 @@ const ProjetosFreeCode = [
     descricaoCard: "Create a palidrome checker",
     descricao: (
       <Text>
-        Return <Code colorScheme={codeColor}>true</Code> if the given string is
-        a palindrome. Otherwise, return{" "}
-        <Code colorScheme={codeColor}>false</Code>. A{" "}
-        <Text as="i">palindrome</Text> is a word or sentence that's spelled the
-        same way both forward and backward, ignoring punctuation, case, and
-        spacing. Note: You'll need to remove all non-alphanumeric characters
-        (punctuation, spaces and symbols) and turn everything into the same case
-        (lower or upper case) in order to check for palindromes. We'll pass
-        strings with varying formats, such as{" "}
-        <Code colorScheme={codeColor}>racecar</Code>,{" "}
-        <Code colorScheme={codeColor}>RaceCar</Code>, and{" "}
-        <Code colorScheme={codeColor}>race CAR</Code> among others. We'll also
-        pass strings with special symbols, such as{" "}
-        <Code colorScheme={codeColor}>2A3*3a2</Code>,{" "}
-        <Code colorScheme={codeColor}>2A3 3a2</Code>, and{" "}
-        <Code colorScheme={codeColor}>2_A3*3#A2</Code>.
+        Return <Code>true</Code> if the given string is a palindrome. Otherwise,
+        return <Code>false</Code>. A <Text as="i">palindrome</Text> is a word or
+        sentence that's spelled the same way both forward and backward, ignoring
+        punctuation, case, and spacing. Note: You'll need to remove all
+        non-alphanumeric characters (punctuation, spaces and symbols) and turn
+        everything into the same case (lower or upper case) in order to check
+        for palindromes. We'll pass strings with varying formats, such as{" "}
+        <Code>racecar</Code>, <Code>RaceCar</Code>, and <Code>race CAR</Code>{" "}
+        among others. We'll also pass strings with special symbols, such as{" "}
+        <Code>2A3*3a2</Code>, <Code>2A3 3a2</Code>, and <Code>2_A3*3#A2</Code>.
       </Text>
     ),
     solucao: "acb9fe2bdb1f7492c659c562ae393822",
@@ -556,7 +538,6 @@ const ProjetosFreeCode = [
         <Text mb={3}>Convert the number into a roman numeral.</Text>
         <TableContainer fontSize={13} p={1}>
           <Table
-       
             mr={"auto"}
             ml={"auto"}
             borderRadius={"md"}

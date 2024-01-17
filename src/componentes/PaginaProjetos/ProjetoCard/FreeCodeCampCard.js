@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
-import ProjetosFreeCode from "./ProjetoCardBack";
+
 import TagProjeto from "./TagProjeto";
 import Gist from "react-gist";
 import { Spinner } from "@chakra-ui/react";
@@ -94,7 +94,7 @@ export default function FreeCodeCampCard({ projeto }) {
               gap={2}
               flexDir={"row"}
             >
-              <Text fontFamily={"menlo"} fontSize={10}>
+              <Text fontFamily={"monospace"} fontSize={10}>
                 Problem solved in:{" "}
               </Text>
               <TagProjeto nome={projeto.linguagem} />
@@ -116,6 +116,9 @@ export default function FreeCodeCampCard({ projeto }) {
               <Text mt={5} ml={3} fontSize="sm" as="b">
                 My solution:{" "}
               </Text>
+              {
+
+              }
               <Gist id={projeto.solucao} />
             </DrawerBody>
 

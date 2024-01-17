@@ -8,9 +8,7 @@ import {
   Icon,
   Box,
 } from "@chakra-ui/react";
-
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { FaFreeCodeCamp } from "react-icons/fa";
+import { FaFreeCodeCamp, FaPython } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
@@ -23,22 +21,10 @@ import {
   ProjetosFreeCodePython,
 } from "./Projetos";
 import ProjetoCardBack from "./ProjetoCard/ProjetoCardBack";
-import StackCard from "./ProjetoCard/StackCard";
-
 import Cabecalho from "../Cabecalho/Cabecalho";
-
-import {
-  SiFlask,
-  SiLaravel,
-  SiMongodb,
-  SiNodedotjs,
-  SiPhp,
-  SiPostgresql,
-  SiReact,
-} from "react-icons/si";
-
 import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
-import { Link } from "react-router-dom";
+import { IoLogoJavascript } from "react-icons/io5";
+
 
 function PaginaProjetosClone() {
   return (
@@ -58,49 +44,7 @@ function PaginaProjetosClone() {
 
       <Box maxW={"800px"} mr={"auto"} ml={"auto"}>
         <Flex flexDir={"column"}>
-          {/* 
-        
-        ==== Projetos Front-end ==== 
-        
-        <Center mb={6}>
-            <Flex flexDir={"row"}>
-              <Text color={"gray.400"} as={"b"} fontSize={25}>
-                Simple React Projects
-              </Text>
-              <Icon
-                ml={4}
-                color={"gray.400"}
-                boxSize={"40px"}
-                as={FaReact}
-                style={{ transform: `rotate(${rotation}deg)` }}
-              />
-            </Flex>
-          </Center>
-
-          <Grid
-            templateColumns={{
-              base: "repeat(1, 2fr)",
-              md: "repeat(3, 1fr)",
-            }}
-            mb={10}
-            gap={3}
-            p={3}
-          >
-
-       
-           {ProjectsComponents.map((projeto, index) => (
-              <ProjetoCardFront
-                key={index}
-                tag1={projeto.tag1}
-                nome={projeto.nome}
-                componenteLive={projeto.component}
-                descricao={projeto.descricao}
-                descricaoCard={projeto.descricaoCard}
-                icon={projeto.icon}
-                link={projeto.link}
-              />
-            ))}
-          </Grid>  */}
+  
 
           <Center mb={6}>
             <Flex flexDir={"row"}>
@@ -151,10 +95,12 @@ function PaginaProjetosClone() {
             </Flex>
           </Center>
           <Flex gap={3} flexDir={"column"}>
-            <Text ml={3} color={"gray.400"} as="b">
+            <Flex flexDir={"row"} alignItems={"center"} >
+              <Icon ml={3} as={IoLogoJavascript} boxSize={"25px"} color={"gray.400"}/>
+            <Text ml={2} color={"gray.400"} as="b">
               JavaScript projects
             </Text>
-
+            </Flex>
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
@@ -170,9 +116,13 @@ function PaginaProjetosClone() {
             </Grid>
           </Flex>
           <Flex gap={3} flexDir={"column"}>
-            <Text ml={3} color={"gray.400"} as="b">
+            <Flex flexDir={"row"} alignItems={"center"}>
+            <Icon ml={3} boxSize={"25px"} color={"gray.400"} as={FaPython}/>
+            <Text ml={2} color={"gray.400"} as="b">
               Python projects
             </Text>
+            
+            </Flex>
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
