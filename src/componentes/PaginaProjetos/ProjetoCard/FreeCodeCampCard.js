@@ -106,13 +106,13 @@ export default function FreeCodeCampCard({ projeto }) {
               <Text
                 mb={3}
                 fontSize={"xs"}
-                borderBottom={"1px dashed gray"}
                 fontFamily={"monospace"}
               >
                 Task description:
               </Text>
+              <Box borderBottom='1px dashed gray' mb={3}/>
               <Box mb={6}>{projeto.descricao}</Box>
-              <Box borderBottom='1px dashed gray' mb={6}></Box>
+              <Box borderBottom='1px dashed gray' mt={6} mb={3}/>
               <Text mt={5} ml={3} fontSize="sm" as="b">
                 My solution:{" "}
               </Text>

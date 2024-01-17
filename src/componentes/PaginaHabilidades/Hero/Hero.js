@@ -19,12 +19,17 @@ import * as AI from "react-icons/ai";
 import calcularPorcentagemCompletadaAno from "./porcentagemAno";
 import anime from "animejs";
 
+
 import { FaHatWizard } from "react-icons/fa";
 import PixelBenny from "../assets/pixelBennySemFundo.png";
 import aura from "../assets/deza8e9-b79fc074-2c89-4214-b0cb-73152b904149.gif";
 import calcularPorcentagemDiaPassado from "./porcentagemDia";
 
+
+
+
 const HeroPixel = () => {
+
   const elementRef = useRef(null);
 
   const [porCentoAno, setPorCentoAno] = useState(0);
@@ -118,8 +123,8 @@ const HeroPixel = () => {
                 <Text fontSize="12" mr={1} mt={4}>
                   Lvl.
                 </Text>
-                <Text fontSize="30" as="b">
-                  27
+                <Text fontSize="30" mr={1} as="b">
+                  28
                 </Text>
                 <Text fontSize={"xs"} mt={3} mr={1}>
                   Class:

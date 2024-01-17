@@ -7,11 +7,9 @@ import PaginaProjetos from "./componentes/PaginaProjetos/PaginaProjetos";
 import PaginaSobre from "./componentes/PaginaSobre/PaginaSobre";
 import PaginaCertificacoes from "./componentes/PaginaCertificacoes/PaginaCertificacoes";
 import PaginaExperincia from "./componentes/PaginaExperiencia/PaginaExperiencia";
-import * as DOCS from "./componentes/PaginaProjetos/DocsBackEnd/PagesDocs"
-import { RpgApiDocs, AdviceApiDocs, MonsterApiDocs } from "./componentes/PaginaProjetos/DocsBackEnd/PagesDocs";
+
 
 function App() {
-
   return (
     <ChakraProvider theme={Theme}>
       <Router>
@@ -22,10 +20,6 @@ function App() {
           <Route path="/sobre" element={<PaginaSobre />} />
           <Route path="/certificacoes" element={<PaginaCertificacoes />} />
           <Route path="/experiencia" element={<PaginaExperincia />} />
-          <Route path="/projetos/docs/rpg_api" element={<RpgApiDocs/>}/>
-          <Route path="/projetos/docs/advice" element={<AdviceApiDocs/>}/>
-          <Route path="/projetos/docs/monster" element={<MonsterApiDocs/>}/>
-
         </Routes>
       </Router>
     </ChakraProvider>
