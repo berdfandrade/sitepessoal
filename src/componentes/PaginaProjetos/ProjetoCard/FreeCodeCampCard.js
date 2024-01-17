@@ -18,10 +18,11 @@ import {
 } from "@chakra-ui/react";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
-
+import ReactEmbedGist from "react-embed-gist";
 import TagProjeto from "./TagProjeto";
-import Gist from "react-gist";
+
 import { Spinner } from "@chakra-ui/react";
+import React from "react";
 
 export default function FreeCodeCampCard({ projeto }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -103,23 +104,18 @@ export default function FreeCodeCampCard({ projeto }) {
               <Icon boxSize={"100px"} as={projeto.icone} />
             </Center>
             <DrawerBody p={6}>
-              <Text
-                mb={3}
-                fontSize={"xs"}
-                fontFamily={"monospace"}
-              >
+              <Text mb={3} fontSize={"xs"} fontFamily={"monospace"}>
                 Task description:
               </Text>
-              <Box borderBottom='1px dashed gray' mb={3}/>
+              <Box borderBottom="1px dashed gray" mb={3} />
               <Box mb={6}>{projeto.descricao}</Box>
-              <Box borderBottom='1px dashed gray' mt={6} mb={3}/>
-              <Text mt={5} ml={3} fontSize="sm" as="b">
+              <Text mt={5} mb={2} ml={3} fontSize="sm" as="b">
                 My solution:{" "}
               </Text>
-              {
-
-              }
-              <Gist id={projeto.solucao} />
+              <Box borderBottom="1px dashed gray" mt={6} mb={3} />
+              <Box>
+                <ReactEmbedGist gist={`berdfandrade/${projeto.solucao}`} />
+              </Box>
             </DrawerBody>
 
             <DrawerFooter>
