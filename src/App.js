@@ -7,6 +7,7 @@ import PaginaProjetos from "./componentes/PaginaProjetos/PaginaProjetos";
 import PaginaSobre from "./componentes/PaginaSobre/PaginaSobre";
 import PaginaCertificacoes from "./componentes/PaginaCertificacoes/PaginaCertificacoes";
 import PaginaExperincia from "./componentes/PaginaExperiencia/PaginaExperiencia";
+import PaginaTest from "./componentes/PaginaTest/PaginaTest";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/sobre" element={<PaginaSobre />} />
           <Route path="/certificacoes" element={<PaginaCertificacoes />} />
           <Route path="/experiencia" element={<PaginaExperincia />} />
+          <Route path="/__test" element={<PaginaTest />} />
         </Routes>
       </Router>
     </ChakraProvider>
