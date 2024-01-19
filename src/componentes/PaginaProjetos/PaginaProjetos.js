@@ -36,7 +36,7 @@ const container = {
     opacity: 1,
     scale: 1,
     transition: {
-      delayChildren: 0.4,
+      delayChildren: 0.6,
       staggerChildren: 0.2,
     },
   },
@@ -51,31 +51,33 @@ const item = {
 };
 
 const TextAnimation = {
-  hidden : {y : -20, opacity : 0},
-  visible : {
-    y : 0,
-    opacity : 1,
-    scale : 1
-  }
-}
+  hidden: { y: -20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    scale: 1,
+  },
+};
 
 function PaginaProjetosClone() {
   return (
     <ChakraProvider theme={Theme}>
       <Cabecalho />
-      <motion.div initial={"hidden"} animate={"visible"} variants={TextAnimation}>
-      <HeroPaginas
-        mb={8}
-        nome={"Projects"}
-        imagem={Projetos}
-        descricao={
-          
-          <Text fontSize={"15"}>
-            Here are some projects that I have developed
-          </Text>
-          
-        }
-      />
+      <motion.div
+        initial={"hidden"}
+        animate={"visible"}
+        variants={TextAnimation}
+      >
+        <HeroPaginas
+          mb={8}
+          nome={"Projects"}
+          imagem={Projetos}
+          descricao={
+            <Text fontSize={"15"}>
+              Here are some projects that I have developed
+            </Text>
+          }
+        />
       </motion.div>
       <DividerCustomizado />
 
@@ -119,52 +121,61 @@ function PaginaProjetosClone() {
               ))}
             </Grid>
           </motion.div>
-          <Center mb={6}>
-            <Flex flexDir={"row"}>
-              <Text color={"gray.400"} as={"b"} fontSize={25}>
-                FreeCodeCamp Projects
-              </Text>
-              <Icon
-                ml={4}
-                color={"gray.400"}
-                boxSize={"40px"}
-                as={FaFreeCodeCamp}
-              />
-            </Flex>
-          </Center>
+          <motion.div initial="hidden" animate="visible" variants={item}>
+            <Center mb={6}>
+              <Flex flexDir={"row"}>
+                <Text color={"gray.400"} as={"b"} fontSize={25}>
+                  FreeCodeCamp Projects
+                </Text>
+                <Icon
+                  ml={4}
+                  color={"gray.400"}
+                  boxSize={"40px"}
+                  as={FaFreeCodeCamp}
+                />
+              </Flex>
+            </Center>
+          </motion.div>
           <Flex gap={3} flexDir={"column"}>
-            <Flex flexDir={"row"} alignItems={"center"}>
-              <Icon
-                ml={3}
-                as={IoLogoJavascript}
-                boxSize={"25px"}
-                color={"gray.400"}
-              />
-              <Text ml={2} color={"gray.400"} as="b">
-                JavaScript projects
-              </Text>
-            </Flex>
-            <Grid
-              templateColumns={{
-                base: "repeat(1, 1fr)",
-                md: "repeat(3, 1fr)",
-              }}
-              mb={10}
-              gap={3}
-              p={3}
-            >
-              {ProjetosFreeCode.map((projeto, index) => (
-                <FreeCodeCampCard key={index} projeto={projeto} />
-              ))}
-            </Grid>
+            <motion.div initial="hidden" animate="visible" variants={container}>
+              <Flex flexDir={"row"} alignItems={"center"}>
+                <Icon
+                  ml={3}
+                  as={IoLogoJavascript}
+                  boxSize={"25px"}
+                  color={"gray.400"}
+                />
+                <Text ml={2} color={"gray.400"} as="b">
+                  JavaScript projects
+                </Text>
+              </Flex>
+
+              <Grid
+                templateColumns={{
+                  base: "repeat(1, 1fr)",
+                  md: "repeat(3, 1fr)",
+                }}
+                mb={10}
+                gap={3}
+                p={3}
+              >
+                {ProjetosFreeCode.map((projeto, index) => (
+                  <motion.div variants={item}>
+                    <FreeCodeCampCard key={index} projeto={projeto} />
+                  </motion.div>
+                ))}
+              </Grid>
+            </motion.div>
           </Flex>
           <Flex gap={3} flexDir={"column"}>
+          <motion.div initial="hidden" animate="visible" variants={container}>
             <Flex flexDir={"row"} alignItems={"center"}>
               <Icon ml={3} boxSize={"25px"} color={"gray.400"} as={FaPython} />
               <Text ml={2} color={"gray.400"} as="b">
                 Python projects
               </Text>
             </Flex>
+            
             <Grid
               templateColumns={{
                 base: "repeat(1, 1fr)",
@@ -175,9 +186,12 @@ function PaginaProjetosClone() {
               p={3}
             >
               {ProjetosFreeCodePython.map((projeto, index) => (
-                <FreeCodeCampCard key={index} projeto={projeto} />
+                <motion.div variants={item}>
+                  <FreeCodeCampCard key={index} projeto={projeto} />
+                </motion.div>
               ))}
             </Grid>
+            </motion.div>
           </Flex>
         </Flex>
       </Box>

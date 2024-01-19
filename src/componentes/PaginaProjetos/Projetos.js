@@ -508,7 +508,7 @@ const ProjectsBackEnd = [
 const ProjetosFreeCode = [
   {
     icone: TbTypography,
-
+    dificuldade : 0.5,
     linguagem: "js",
     nome: "Palindrome Checker",
     descricaoCard: "Create a palidrome checker",
@@ -532,6 +532,7 @@ const ProjetosFreeCode = [
     icone: RxFontRoman,
     nome: "Roman Converter",
     linguagem: "js",
+    dificuldade : 3,
     descricaoCard: "Convert into a roman numeral.",
     descricao: (
       <Box p={3}>
@@ -617,6 +618,7 @@ const ProjetosFreeCode = [
   {
     icone: TbKey,
     nome: "Caesars Cipher",
+    dificuldade : 4,
     descricaoCard: "Build a Ceaser Cipher",
     linguagem: "js",
     descricao: (
@@ -637,7 +639,7 @@ const ProjetosFreeCode = [
   {
     icone: TbPhoneCall,
     nome: "Telephone Validator",
-
+    dificuldade : 2.5,
     descricaoCard: "A US validator phone number",
     linguagem: "js",
     descricao: (
@@ -666,6 +668,7 @@ const ProjetosFreeCode = [
   {
     nome: "Cash Register",
     icone: FaCashRegister,
+    dificuldade : 4.0,
     descricaoCard: "Design a cash register function",
     linguagem: "js",
     descricao: (
@@ -780,6 +783,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Arithmetic Formatter",
     icone: TbMath,
+    dificuldade : 4,
     descricaoCard: "An Arithmetic Formatter",
     linguagem: "py",
     descricao: (
@@ -906,6 +910,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Time calculator",
     icone: TbCalendarTime,
+    dificuldade : 3.0,
     linguagem: "py",
     descricaoCard: "A time calculator",
     descricao: (
@@ -978,6 +983,7 @@ const ProjetosFreeCodePython = [
     icone: FaWallet,
     descricaoCard: "Build a Budget App",
     linguagem: "py",
+    dificuldade : 3.2,
     descricao: (
       <Box>
         <Text mb={3}>
@@ -1098,6 +1104,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Polygon Area Calculator",
     icone: FaDrawPolygon,
+    dificuldade : 2.7,
     descricaoCard: "Create a Polygon Area Calculator",
     linguagem: "py",
     descricao: (
@@ -1221,6 +1228,7 @@ const ProjetosFreeCodePython = [
     nome: "Probability Calculator",
     linguagem: "py",
     icone: TbCalculator,
+    dificuldade : 4,
     descricaoCard: "A probabilty calculator",
     descricao: (
       <Box>
