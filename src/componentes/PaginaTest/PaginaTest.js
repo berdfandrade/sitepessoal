@@ -1,10 +1,11 @@
-import { Box, Text, Icon, Center, Heading } from "@chakra-ui/react";
+import { Box, Text, Icon, Center, Heading, Flex, Divider} from "@chakra-ui/react";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import CabecalhoPagina from "../HeroPaginas/HeroPaginas";
 import * as FA from "react-icons/fa";
 import Moon from "../../assets/imagem/html-file.png";
 import { motion } from "framer-motion";
-
+import { FaMarsStrokeH } from "react-icons/fa";
+import { Children } from "react";
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -25,21 +26,62 @@ const item = {
   },
 };
 
+function Linha() {
+  return <Box border={"1px dashed gray"} ml={1} mr={2} h="1px" w="100px"></Box>;
+}
+
+function Cell({icone}) {
+  return (
+    <>
+      <Box border="1px solid gray" borderRadius={"100%"} boxSize={"80px"} p={5}>
+        {Children}
+      </Box>
+      <Icon as={icone}></Icon>
+    </>
+  );
+}
+
 export default function PaginaTest() {
   return (
     <Box>
       <Cabecalho />
       <CabecalhoPagina nome={"Test"} descricao={"Test page"} imagem={Moon} />
+      
       <Center>
-      <motion.ul initial="hidden" animate="visible" variants={container}>
-        <Box border='1px solid gray' p={10} borderRadius={"md"}>
-          
-            <motion.li variants={item}>B</motion.li>
-            <motion.li variants={item}>E</motion.li>
-            <motion.li variants={item}>R</motion.li>
-            <motion.li variants={item}>D</motion.li>
-        
-        </Box>
+       
+        <motion.ul initial="hidden" animate="visible" variants={container}>
+          <Flex alignItems={"center"}>
+            <Box
+              border="1px solid gray"
+              borderRadius={"100%"}
+              boxSize={"80px"}
+              p={5}
+            >
+              <Icon
+                mt={2}
+                ml={1}
+                colorScheme={"red"}
+                boxSize={"30px"}
+                as={FA.FaNpm}
+              />
+            </Box>
+
+            <Linha />
+            <Box
+              border="1px solid gray"
+              borderRadius={"100%"}
+              boxSize={"80px"}
+              p={5}
+            >
+              <Icon
+                mt={2}
+                ml={1}
+                colorScheme={"red"}
+                boxSize={"30px"}
+                as={FA.FaNpm}
+              />
+            </Box>
+          </Flex>
         </motion.ul>
       </Center>
     </Box>

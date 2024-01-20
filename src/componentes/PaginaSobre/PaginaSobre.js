@@ -4,6 +4,7 @@ import {
   Box,
   Flex,
   useBreakpointValue,
+  ScaleFade
 } from "@chakra-ui/react";
 
 import Theme from "../BotaoDarkMode/Tema";
@@ -35,8 +36,10 @@ function PaginaSobre() {
       <DividerCustomizado />
       <Box mr={"auto"} ml={"auto"} maxW={"800px"}>
         <Flex gap={3} p flexDir={handleOrderFlex}>
-          <ProgrammerLincense />
 
+          
+            <ProgrammerLincense />
+          
           <Box
             // border={"1px solid gray"}
             mr={"auto"}

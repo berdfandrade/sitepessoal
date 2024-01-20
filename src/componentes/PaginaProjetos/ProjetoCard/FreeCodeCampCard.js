@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
-
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaPython } from "react-icons/fa";
 import ReactEmbedGist from "react-embed-gist";
@@ -55,7 +54,7 @@ export default function FreeCodeCampCard({ projeto }) {
               {projeto.linguagem ? (
                 <Tag
                   mt={3}
-                  ml={5}
+                  ml={2}
                   variant={"subtle"}
                   borderRadius={"full"}
                   colorScheme={projeto.linguagem === "js" ? "orange" : "blue"}
