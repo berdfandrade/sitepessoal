@@ -618,7 +618,7 @@ const ProjetosFreeCode = [
   {
     icone: TbKey,
     nome: "Caesars Cipher",
-    dificuldade : 4,
+    dificuldade : 4 ,
     descricaoCard: "Build a Ceaser Cipher",
     linguagem: "js",
     descricao: (
@@ -668,7 +668,7 @@ const ProjetosFreeCode = [
   {
     nome: "Cash Register",
     icone: FaCashRegister,
-    dificuldade : 4.0,
+    dificuldade : 4,
     descricaoCard: "Design a cash register function",
     linguagem: "js",
     descricao: (

@@ -82,20 +82,20 @@ export default function FreeCodeCampCard({ projeto }) {
               ) : null}
             </Flex>
           </Flex>
-          <Flex flexDir={"row"} mt={3} gap={2} alignItems={"center"}>
+          {/* <Flex flexDir={"row"} mt={3} gap={2} alignItems={"center"}>
             <Text ml={1} opacity={"0.7"} fontSize={"xs"} color="gray">
               Project Difficulty :
             </Text>
             <Progress
-              bg={"gray.400"}
+              // bg={"gray.400"}
               opacity={"0.6"}
               borderRadius={"full"}
               size={"sm"}
               w={"50%"}
               value={projeto.dificuldade * 20}
-              color={"gray"}
+              colorScheme="gray"
             />
-          </Flex>
+          </Flex> */}
         </Box>
       </motion.div>
 
@@ -104,7 +104,24 @@ export default function FreeCodeCampCard({ projeto }) {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>{projeto.nome}</DrawerHeader>
+            <DrawerHeader>
+              {projeto.nome}
+
+              <Flex flexDir={"row"} mt={3}  gap={2} alignItems={"center"}>
+                <Text ml={1} opacity={"0.7"} fontSize={"xs"} color="gray">
+                  Project Difficulty :
+                </Text>
+                <Progress
+                  // bg={"gray.400"}
+                  opacity={"0.6"}
+                  borderRadius={"full"}
+                  size={"sm"}
+                  w={"50%"}
+                  value={projeto.dificuldade * 20}
+                  colorScheme={"blue"}
+                />
+              </Flex>
+            </DrawerHeader>
             <Flex
               pl={7}
               alignItems={"center"}
@@ -118,7 +135,7 @@ export default function FreeCodeCampCard({ projeto }) {
               </Text>
               <TagProjeto nome={projeto.linguagem} />
             </Flex>
-                  
+
             <Center p={5}>
               <Icon boxSize={"100px"} as={projeto.icone} />
             </Center>
