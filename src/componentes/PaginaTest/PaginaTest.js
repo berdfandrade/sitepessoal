@@ -7,16 +7,17 @@ import {
   Flex,
   Divider,
 } from "@chakra-ui/react";
+import { useState } from "react";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import DividerCustomizado from "../Divider/DividerCustom";
 import CabecalhoPagina from "../HeroPaginas/HeroPaginas";
 import * as FA from "react-icons/fa";
-import SKILL from '../../assets/imagem/habilidades.png'
+import SKILL from "../../assets/imagem/habilidades.png";
 import { motion } from "framer-motion";
 import { FaMarsStrokeH } from "react-icons/fa";
 import * as TB from "react-icons/tb";
+import { IoLogoJavascript } from "react-icons/io5";
 
-import { Children } from "react";
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -37,24 +38,79 @@ const item = {
   },
 };
 
-function Linha() {
-  return <Box border={"1px dashed gray"} ml={1} mr={2} h="1px" w="100px"></Box>;
+function LinhaHorizontal() {
+  return <Box border={"1px dashed gray"} h="1px" w="260px"></Box>;
 }
 
-function Cell({ icone, nome, color, ativo }) {
+function LinhaVertical() {
+  return (
+    <Box
+      border={"1px dashed gray"}
+      h="120px"
+      ml={10}
+      mt={5}
+      mb={5}
+      w="1px"
+    ></Box>
+  );
+}
+
+function LinhaDiagonalEsquerda() {
+  return (
+    <Box
+      border={"1px dashed gray"}
+      h="160px"
+      transform="rotate(-40deg)"
+      ml={14}
+      mb={5}
+      w="1px"
+    />
+  );
+}
+
+function LinhaDiagonalDireita() {
+  return (
+    <Box
+      border={"1px dashed gray"}
+      h="160px"
+      transform="rotate(40deg)"
+      mr={4}
+      // mb={5}
+      w="1px"
+    />
+  );
+}
+
+function Cell({ icone, nome, color }) {
+  const [ativo, setAtivo] = useState(false);
+
+  const handleClick = () => {
+    setAtivo(!ativo);
+  };
+
   return (
     <>
-      <Box
-        border={`3px solid gray`}
-        boxShadow={"md"}
-        borderRadius={"100%"}
-        boxSize={"80px"}
-        p={4}
-      >
-        <Center>
-          <Icon color={color ? color : "gray"} boxSize={"50px"} as={icone} />
-        </Center>
-      </Box>
+      <motion.div>
+        <Box
+          _hover={{ cursor: "pointer" }}
+          onClick={handleClick}
+          border={`2px solid ${ativo ? color : "black"}`} // Muda a cor da borda quando ativo
+          boxShadow={"white "}
+          borderRadius={"100%"}
+          opacity={ativo ? "1" : "0.5"}
+          boxSize={"80px"}
+          p={4}
+        >
+          <Center>
+            <Icon
+              color={ativo ? color : "gray"}
+              mt={1}
+              boxSize={"40px"}
+              as={icone}
+            />
+          </Center>
+        </Box>
+      </motion.div>
     </>
   );
 }
@@ -64,7 +120,7 @@ export default function PaginaTest() {
     <Box>
       <Cabecalho />
       <CabecalhoPagina
-        nome={"Test"}
+        nome={"Skills"}
         descricao={
           <Center>
             <Text fontSize="sm" maxW={"500px"}>
@@ -79,12 +135,17 @@ export default function PaginaTest() {
       <DividerCustomizado />
       <Center>
         <motion.ul initial="hidden" animate="visible" variants={container}>
-          <Flex alignItems={"center"}>
-            <Cell icone={TB.TbBrandJavascript} />
-            <></>
-            <Linha />
-            <Cell icone={TB.TbBrandNpm} />
-            
+          <Flex alignItems={"center"} gap={10}>
+            <Flex flexDir={"column"}>
+              <Cell color={"orange"} icone={IoLogoJavascript} />
+              <Flex flexDir={"row"}>
+                <LinhaDiagonalDireita />
+                <LinhaVertical />
+                <LinhaDiagonalEsquerda />
+              </Flex>
+              {/* <LinhaHorizontal /> */}
+              <Cell color={"red"} icone={TB.TbBrandNpm} />
+            </Flex>
           </Flex>
         </motion.ul>
       </Center>
