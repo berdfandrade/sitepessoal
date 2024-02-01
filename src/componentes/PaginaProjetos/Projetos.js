@@ -26,10 +26,10 @@ import {
     Import dos Ícones 
 */
 
-
 import * as GI from "react-icons/gi";
 import * as SI from "react-icons/si";
 import * as IO from "react-icons/io";
+import * as MD from "react-icons/md";
 import {
   Fa500Px,
   FaCashRegister,
@@ -124,11 +124,125 @@ const ProjectsBackEnd = [
     ],
   },
   {
+    nome: "Pokémon API",
+    tags: ["express", "py", "mongodb", "typescript"],
+    descricaoCard: "API to retrieve information from all the Pokémons",
+    descricao: (
+      <Text mb={3}>
+        {" "}
+        The Pokémon API offers endpoints for accessing comprehensive information
+        about Pokémon. Constructed with Express, a widely-used Node.js web
+        application framework, the API originates from a{" "}
+        <Link
+          href="https://www.kaggle.com/datasets/rohanpatil63/pokemon-dataset"
+          target="_blank"
+        > 
+          <Text color={'blue.400'} as='u'>
+          CSV file{" "}
+          </Text>
+        </Link>
+        that has been transformed into a JSON object. Subsequently, all data was
+        seamlessly integrated into a MongoDB database. To enhance accessibility
+        and organization, a user-friendly API was created for efficient data
+        management.
+      </Text>
+    ),
+    icon: MD.MdCatchingPokemon,
+    link: "https://github.com/berdfandrade/poke-api",
+    tag2: "Back-end",
+    methods: [
+      {
+        method: "GET",
+        remainingData: true,
+        url: "poke/all",
+        descricaoMetodo: "Retrieve a list of all Pokémons",
+        responseExample: [
+          {
+            Sp: {
+              " Atk": "65",
+              " Def": "65",
+            },
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/bulbasaur.png",
+            Id: "0001",
+            Names: "Bulbasaur",
+            Type1: "Grass",
+            Type2: "Poison",
+            Total: "318",
+            HP: "45",
+            Attack: "49",
+            Defense: "49",
+            Speed: "45",
+          },
+          {
+            Sp: {
+              " Atk": "135",
+              " Def": "115",
+            },
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/blastoise-mega.png",
+            Id: "0009",
+            Names: "Blastoise Mega Blastoise",
+            Type1: "Water",
+            Type2: "",
+            Total: "630",
+            HP: "79",
+            Attack: "103",
+            Defense: "120",
+            Speed: "78",
+          },
+          {
+            Sp: {
+              " Atk": "40",
+              " Def": "55",
+            },
+
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/aipom.png",
+            Id: "0190",
+            Names: " Aipom",
+            Type1: "Normal",
+            Type2: "",
+            Total: "360",
+            HP: "55",
+            Attack: "70",
+            Defense: "55",
+            Speed: "85",
+          },
+        ],
+      },
+      {
+        method: "GET",
+        url: "poke/{pokemon}",
+        descricaoMetodo: "Retrieve data from a specific Pokémon",
+        responseExample: {
+          Sp: {
+            " Atk": "60",
+            " Def": "50",
+          },
+
+          image_url:
+            "https://img.pokemondb.net/sprites/sword-shield/icon/charmander.png",
+          Id: "0004",
+          Names: "Charmander",
+          Type1: "Fire",
+          Type2: "",
+          Total: "309",
+          HP: "39",
+          Attack: "52",
+          Defense: "43",
+          Speed: "65",
+        },
+      },
+    ],
+  },
+  {
     nome: "FIFA API",
     descricaoCard: "API to retrive information from FIFA players",
     descricao: `The FIFA API retrieves information from a remote MongoDB database, allowing users to access data for any player across FIFA editions, starting from FIFA 15 up to EA FC (FIFA 24). This API offers comprehensive access to player data from various FIFA versions, facilitating seamless retrieval and analysis.`,
     icon: IO.IoIosFootball,
     tag2: "Back-end",
+    link: "https://github.com/berdfandrade/fifa24",
     tags: ["node", "express", "typescript", "mongodb"],
     methods: [
       {
@@ -508,7 +622,7 @@ const ProjectsBackEnd = [
 const ProjetosFreeCode = [
   {
     icone: TbTypography,
-    dificuldade : 0.5,
+    dificuldade: 0.5,
     linguagem: "js",
     nome: "Palindrome Checker",
     descricaoCard: "Create a palidrome checker",
@@ -532,7 +646,7 @@ const ProjetosFreeCode = [
     icone: RxFontRoman,
     nome: "Roman Converter",
     linguagem: "js",
-    dificuldade : 3,
+    dificuldade: 3,
     descricaoCard: "Convert into a roman numeral.",
     descricao: (
       <Box p={3}>
@@ -618,7 +732,7 @@ const ProjetosFreeCode = [
   {
     icone: TbKey,
     nome: "Caesars Cipher",
-    dificuldade : 4 ,
+    dificuldade: 4,
     descricaoCard: "Build a Ceaser Cipher",
     linguagem: "js",
     descricao: (
@@ -639,7 +753,7 @@ const ProjetosFreeCode = [
   {
     icone: TbPhoneCall,
     nome: "Telephone Validator",
-    dificuldade : 2.5,
+    dificuldade: 2.5,
     descricaoCard: "A US validator phone number",
     linguagem: "js",
     descricao: (
@@ -668,7 +782,7 @@ const ProjetosFreeCode = [
   {
     nome: "Cash Register",
     icone: FaCashRegister,
-    dificuldade : 4,
+    dificuldade: 4,
     descricaoCard: "Design a cash register function",
     linguagem: "js",
     descricao: (
@@ -783,7 +897,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Arithmetic Formatter",
     icone: TbMath,
-    dificuldade : 4,
+    dificuldade: 4,
     descricaoCard: "An Arithmetic Formatter",
     linguagem: "py",
     descricao: (
@@ -910,7 +1024,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Time calculator",
     icone: TbCalendarTime,
-    dificuldade : 3.0,
+    dificuldade: 3.0,
     linguagem: "py",
     descricaoCard: "A time calculator",
     descricao: (
@@ -983,7 +1097,7 @@ const ProjetosFreeCodePython = [
     icone: FaWallet,
     descricaoCard: "Build a Budget App",
     linguagem: "py",
-    dificuldade : 3.2,
+    dificuldade: 3.2,
     descricao: (
       <Box>
         <Text mb={3}>
@@ -1104,7 +1218,7 @@ const ProjetosFreeCodePython = [
   {
     nome: "Polygon Area Calculator",
     icone: FaDrawPolygon,
-    dificuldade : 2.7,
+    dificuldade: 2.7,
     descricaoCard: "Create a Polygon Area Calculator",
     linguagem: "py",
     descricao: (
@@ -1228,7 +1342,7 @@ const ProjetosFreeCodePython = [
     nome: "Probability Calculator",
     linguagem: "py",
     icone: TbCalculator,
-    dificuldade : 4,
+    dificuldade: 4,
     descricaoCard: "A probabilty calculator",
     descricao: (
       <Box>

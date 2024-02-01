@@ -37,7 +37,6 @@ const ProjetoCardBack = ({
   corTag1,
   corTag2,
   projeto,
-
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const widthBasedPlacement = useBreakpointValue({
@@ -132,6 +131,7 @@ const ProjetoCardBack = ({
             pr={5}
             gap={2}
             flexDir={"row"}
+            overflowX={"hidden"}
           >
             <Text fontFamily={"menlo"} fontSize={10}>
               Uses:{" "}
@@ -241,21 +241,25 @@ const ProjetoCardBack = ({
                         <Text fontSize={"md"}>
                           <JsonRender data={metodo.responseExample} />
                         </Text>
-                        {projeto.methods.map((metodo) => (
-                          <div key={metodo.id}>
-                            {metodo.remainingData ? (
-                              <Text
-                                ml={2}
-                                mt={3}
-                                color={"#747474"}
-                                fontSize={"md"}
-                                as="b"
-                              >
-                                {`{...}`}
-                              </Text>
-                            ) : null}
-                          </div>
-                        ))}
+
+                        {projeto.methods &&
+                          projeto.methods.map((metodo, index) => (
+                            <Box key={index}>
+                              {metodo.remainingData ? (
+                                <Text 
+                                  key={index}
+                                  opacity={'0.5'}
+                                  ml={2}
+                                  mt={3}
+                                  color={"#747474"}
+                                  fontSize={"md"}
+                                  as="b"
+                                >
+                                  {`{...}`}
+                                </Text>
+                              ) : null }
+                            </Box>
+                          ))}
                       </Box>
                     </Flex>
                   ))}

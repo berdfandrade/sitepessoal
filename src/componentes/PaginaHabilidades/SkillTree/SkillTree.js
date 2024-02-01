@@ -152,7 +152,7 @@ const SkillTree = () => {
           descricao={
             "I have skills in Flask; I can create simple APIs and use my knowledge of Python programming to create organized and interesting routes and functions, allowing me to build Python back-ends."
           }
-
+          SkillTree={<GRID.HabilidadesFlask/>}
         />
         <CardHabilidade
           titulo={"Docker"}
@@ -162,17 +162,21 @@ const SkillTree = () => {
           level={2}
           ProgressoDrawer={5}
           icone={SiDocker}
-          descricao={"I have basic knowledge of Docker. I know how to download containers and create some basic containers from images."}
+          descricao={
+            "I have basic knowledge of Docker. I know how to download containers and create some basic containers from images."
+          }
         />
         <CardHabilidade
           titulo={"C++"}
           corTexto="black"
           cor="orange.200"
           corIconeDrawer={"blackAlpha"}
-          level={3} 
+          level={3}
           ProgressoDrawer={50}
           icone={SiCplusplus}
-          descricao={"I have a very basic knowledge of C++, which allows me to understand and create applications with this high-performance programming language."}
+          descricao={
+            "I have a very basic knowledge of C++, which allows me to understand and create applications with this high-performance programming language."
+          }
         />
       </SimpleGrid>
     </Box>

@@ -4,7 +4,7 @@ import {
   Box,
   Flex,
   useBreakpointValue,
-  ScaleFade
+  ScaleFade,
 } from "@chakra-ui/react";
 
 import Theme from "../BotaoDarkMode/Tema";
@@ -24,7 +24,6 @@ function PaginaSobre() {
   const widthHandle = useBreakpointValue({ base: "80%", md: "50%" });
   const constraintsRef = useRef(null);
 
-  
   return (
     <ChakraProvider theme={Theme}>
       <Cabecalho />
@@ -38,10 +37,8 @@ function PaginaSobre() {
       <DividerCustomizado />
       <Box mr={"auto"} ml={"auto"} maxW={"800px"}>
         <Flex gap={3} flexDir={handleOrderFlex}>
+          <ProgrammerLincense />
 
-          
-            <ProgrammerLincense />
-          
           <Box
             // border={"1px solid gray"}
             mr={"auto"}
