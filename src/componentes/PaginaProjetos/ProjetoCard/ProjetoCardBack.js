@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
-import { JsonRender } from "./PaginaBackEndDoc";
+import JsonRender from "./JsonRender";
 import { AiFillQuestionCircle } from "react-icons/ai";
 import { AiOutlineLink } from "react-icons/ai";
 import { MdOutlineConstruction } from "react-icons/md";

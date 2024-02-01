@@ -13,7 +13,7 @@ const BarraDeBusca = ({ onSearch }) => {
           width={"60%"}
           borderRadius={"full"}
           bg={"whiteAlpha"}
-          placeholder="Procurar Pokémon"
+          placeholder="Search Pokémon"
           errorBorderColor="coloque um pokemon"
           onChange={handleSearch}
           vairant={"flushed"}

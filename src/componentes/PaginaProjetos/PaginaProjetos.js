@@ -10,7 +10,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-import { FaFreeCodeCamp, FaPython } from "react-icons/fa";
+import { FaFreeCodeCamp, FaPython, FaReact } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import Theme from "../BotaoDarkMode/Tema";
 import DividerCustomizado from "../Divider/DividerCustom";
@@ -22,13 +22,16 @@ import {
   ProjectsBackEnd,
   ProjetosFreeCode,
   ProjetosFreeCodePython,
-} from "./Projetos";
+  ProjetosFrontEnd,
+} from "./projetosData";
 
 import ProjetoCardBack from "./ProjetoCard/ProjetoCardBack";
 import Cabecalho from "../Cabecalho/Cabecalho";
 import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
 import { IoLogoJavascript } from "react-icons/io5";
 import { motion } from "framer-motion";
+import CardFrontEnd from "./ProjetoCard/CardFrontEnd";
+import MoreProjects from './ProjetoCard/MoreProjectsCard';
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -86,6 +89,33 @@ function PaginaProjetosClone() {
           <Center mb={6}>
             <Flex flexDir={"row"}>
               <Text color={"gray.400"} as={"b"} fontSize={25}>
+                Simple React Projects
+              </Text>
+
+              <Icon ml={4} color={"gray.400"} boxSize={"35px"} as={FaReact} />
+            </Flex>
+          </Center>
+
+          <motion.div initial="hidden" animate="visible" variants={container}>
+            <Grid
+              templateColumns={{
+                base: "repeat(1, 1fr)",
+                md: "repeat(3, 1fr)",
+              }}
+              mb={10}
+              gap={3}
+              p={3}
+            >
+              {ProjetosFrontEnd.map((projeto, index) => (
+                <CardFrontEnd key={index} projeto={projeto} />
+              ))}
+              
+            </Grid>
+          </motion.div>
+
+          <Center mb={6}>
+            <Flex flexDir={"row"}>
+              <Text color={"gray.400"} as={"b"} fontSize={25}>
                 Back End Projects
               </Text>
               <Icon ml={4} color={"gray.400"} boxSize={"30px"} as={FaServer} />
@@ -119,6 +149,7 @@ function PaginaProjetosClone() {
                   ></ProjetoCardBack>
                 </motion.div>
               ))}
+              {/* <MoreProjects tipo={"Back-end"}/> */}
             </Grid>
           </motion.div>
           <motion.div initial="hidden" animate="visible" variants={item}>
@@ -168,29 +199,34 @@ function PaginaProjetosClone() {
             </motion.div>
           </Flex>
           <Flex gap={3} flexDir={"column"}>
-          <motion.div initial="hidden" animate="visible" variants={container}>
-            <Flex flexDir={"row"} alignItems={"center"}>
-              <Icon ml={3} boxSize={"25px"} color={"gray.400"} as={FaPython} />
-              <Text ml={2} color={"gray.400"} as="b">
-                Python projects
-              </Text>
-            </Flex>
-            
-            <Grid
-              templateColumns={{
-                base: "repeat(1, 1fr)",
-                md: "repeat(3, 1fr)",
-              }}
-              mb={10}
-              gap={3}
-              p={3}
-            >
-              {ProjetosFreeCodePython.map((projeto, index) => (
-                <motion.div variants={item}>
-                  <FreeCodeCampCard key={index} projeto={projeto} />
-                </motion.div>
-              ))}
-            </Grid>
+            <motion.div initial="hidden" animate="visible" variants={container}>
+              <Flex flexDir={"row"} alignItems={"center"}>
+                <Icon
+                  ml={3}
+                  boxSize={"25px"}
+                  color={"gray.400"}
+                  as={FaPython}
+                />
+                <Text ml={2} color={"gray.400"} as="b">
+                  Python projects
+                </Text>
+              </Flex>
+
+              <Grid
+                templateColumns={{
+                  base: "repeat(1, 1fr)",
+                  md: "repeat(3, 1fr)",
+                }}
+                mb={10}
+                gap={3}
+                p={3}
+              >
+                {ProjetosFreeCodePython.map((projeto, index) => (
+                  <motion.div variants={item}>
+                    <FreeCodeCampCard key={index} projeto={projeto} />
+                  </motion.div>
+                ))}
+              </Grid>
             </motion.div>
           </Flex>
         </Flex>

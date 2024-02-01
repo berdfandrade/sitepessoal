@@ -94,7 +94,7 @@ const Pomodoro = () => {
         <Center flexDirection={"column"}>
           <Text fontSize={60}>{formatarTempo(tempo)}</Text>
           <Text mb={6}>
-            Aperte
+            Press
             <Kbd
               border="1px gray solid"
               onClick={pausar}
@@ -102,9 +102,9 @@ const Pomodoro = () => {
               ml={2}
               mr={2}
             >
-              Espaço
+              Space
             </Kbd>
-            para pausar/inciar
+            to start/pause
           </Text>
         </Center>
 
@@ -114,11 +114,11 @@ const Pomodoro = () => {
           onChange={handleChangeDuracao}
           mb={6}
         >
-          <option value={15}>15 minutos</option>
-          <option value={20}>20 minutos</option>
-          <option value={25}>25 minutos</option>
-          <option value={30}>30 minutos</option>
-          <option value={60}>1 hora</option>
+          <option value={15}>15 minutes</option>
+          <option value={20}>20 minutes</option>
+          <option value={25}>25 minutes</option>
+          <option value={30}>30 minutes</option>
+          <option value={60}>1 hour</option>
         </Select>
 
         <Center>
@@ -134,13 +134,13 @@ const Pomodoro = () => {
         <Center>
           <Flex flexDirection={"row"}>
             <Button mr={3} bg={"teal.600"} color={"white"} onClick={iniciar}>
-              Iniciar
+              Start
             </Button>
             <Button mr={3} bg={"gray.600"} color={"white"} onClick={pausar}>
-              Pausar
+              Pause
             </Button>
             <Button bg={"red.400"} color={"white"} onClick={reiniciar}>
-              Reiniciar
+              Stop
             </Button>
           </Flex>
         </Center>

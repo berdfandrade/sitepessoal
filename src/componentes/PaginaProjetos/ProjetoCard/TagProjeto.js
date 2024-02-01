@@ -8,6 +8,7 @@ import {
   SiFlask,
   SiExpress,
   SiPython,
+  SiChakraui,
 } from "react-icons/si";
 
 export default function TagProjeto({ nome, icon }) {
@@ -21,6 +22,8 @@ export default function TagProjeto({ nome, icon }) {
         return "blue";
       case "flask":
         return "orange";
+      case "chakra":
+        return "teal";
       case "mongodb":
         return "green";
       case "typescript":
@@ -42,6 +45,8 @@ export default function TagProjeto({ nome, icon }) {
         return SiNodedotjs;
       case "react":
         return SiReact;
+      case "chakra":
+        return SiChakraui;
       case "flask":
         return SiFlask;
       case "mongodb":
@@ -59,7 +64,7 @@ export default function TagProjeto({ nome, icon }) {
 
   return (
     <Tag
-      pr={2}
+      pr={3}
       borderRadius={"full"}
       colorScheme={getColorScheme(nome)}
       variant={"outline"}
@@ -85,7 +90,9 @@ export default function TagProjeto({ nome, icon }) {
               ? "JavaScript"
               : nome === "py"
               ? "Python"
-              : ""}
+              : nome === "chakra"
+              ? "Chakra UI"
+              : null}
           </Text>
         )}
       </Flex>
