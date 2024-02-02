@@ -35,14 +35,30 @@ const sizes = {
   2: "sm",
 };
 
-
 function TimeLine({ arr }) {
-
-  const widthHandle = useBreakpointValue({ base: "5" , md: "2"});
-  const fontSizeHandle = useBreakpointValue({base : "2xl", md : "3xl"})
+  // const widthHandle = useBreakpointValue({ base: "5", md: "2" });
+  const fontSizeHandle = useBreakpointValue({ base: "2xl", md: "3xl" });
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <>
+      {isMobile && (
+        <Tag
+          mb={6}
+          p={1}
+    
+  
+          pr={2}
+          colorScheme={"whatsapp"}
+          borderRadius={"full"}
+          ml={3}
+        >
+          <Flex alignItems={"center"} gap={1}>
+            <Icon boxSize={"18px"} as={IoIosCheckmarkCircleOutline} />
+            <Text>Programming Related</Text>
+          </Flex>
+        </Tag>
+      )}
       {arr.map((nome, index) => (
         <motion.div
           initial={"hidden"}
@@ -60,37 +76,34 @@ function TimeLine({ arr }) {
             p={10}
             ml={"auto"}
             mr={"auto"}
-            maxW={"90%"}
+            maxW={"95%"}
             borderRadius={"md"}
             alignItems={"center"}
             borderWidth={1}
             marginBottom={4}
           >
-            <></>
             <Flex gap={1} flexDirection={"column"}>
               <Box>
                 <Flex flexDir="row">
-                  <Heading fontSize={fontSizeHandle}>
-                    {nome.empresa}
-                  </Heading>
+                  <Heading fontSize={fontSizeHandle}>{nome.empresa}</Heading>
                   <Spacer />
                   {nome.programmingRelated ? (
-                 
-                      <Tag
-                        h={'10px'}
-                        pr={5}
-                        fontSize="xs"
-                        p={widthHandle}
-                        borderRadius={"full"}
-                        colorScheme="whatsapp"
-                      >
-                        <Flex alignItems={"center"} gap={1}>
-                        <Icon boxSize={'18px'} as={IoIosCheckmarkCircleOutline}/>
-                        <Text>Programming Related</Text>
-
-                        </Flex>
-                      </Tag>
-                   
+                    <Tag
+                      h={"10px"}
+                      // pr={5}
+                      fontSize="xs"
+                      // p={widthHandle}
+                      borderRadius={"full"}
+                      colorScheme="whatsapp"
+                    >
+                      <Flex alignItems={"center"} gap={isMobile ? "" : 1}>
+                        <Icon
+                          boxSize={"18px"}
+                          as={IoIosCheckmarkCircleOutline}
+                        />
+                        <Text>{isMobile ? "" : "Programming Related"}</Text>
+                      </Flex>
+                    </Tag>
                   ) : null}
                 </Flex>
                 <Divider color="gray.600" mt={3} />
@@ -101,9 +114,7 @@ function TimeLine({ arr }) {
                 </Text>
               </Box>
               <Box>
-                <Text fontSize={"sm"}>
-                  {nome.texto}
-                </Text>
+                <Text fontSize={"sm"}>{nome.texto}</Text>
               </Box>
             </Flex>
           </Box>
