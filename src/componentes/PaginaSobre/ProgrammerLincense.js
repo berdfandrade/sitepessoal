@@ -19,13 +19,17 @@ import { motion } from "framer-motion";
 import { FaKeyboard } from "react-icons/fa";
 import { AiFillThunderbolt } from "react-icons/ai";
 import bennyPix from "../../assets/imagem/BennySmilPix.png";
+import {
+  titleAnimation,
+  avatarAnimation,
+  licenseAnimation,
+} from "./programmerLicenseAnimation";
 
 import { differenceInHours } from "date-fns";
 import { calcularIdade } from "./Idade";
 
 export function ProgrammerLincense() {
-
-  const age = calcularIdade()
+  const age = calcularIdade();
   const startDate = new Date("2022-01-04");
   const currentDate = new Date();
 
@@ -41,12 +45,14 @@ export function ProgrammerLincense() {
       p={3}
       transition="transform 0.3s ease-in-out"
       bg={"#ffffff"}
-    //   border={"3px solid gray"}
+      // border={"3px solid gray"}
       backgroundImage="url('https://www.transparenttextures.com/patterns/back-pattern.png')"
       height={"300px"}
       width={"400px"}
       maxW={"80%"}
-      boxShadow={"rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;"}
+      boxShadow={
+        "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;"
+      }
       borderRadius={"md"}
     >
       {/* 
@@ -66,21 +72,28 @@ export function ProgrammerLincense() {
         >
           <Center>
             <Flex flexDir={"column"}>
-              <Text
-                color={"white"}
-                fontFamily={"menlo"}
-                fontSize={fontSizeHandle}
-                as={"b"}
-                mb={-2}
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={titleAnimation}
               >
-                PROGRAMMER CARD
-              </Text>
+                <Text
+                  color={"white"}
+                  fontFamily={"menlo"}
+                  fontSize={fontSizeHandle}
+                  as={"b"}
+                  mb={-2}
+                >
+                  PROGRAMMER CARD
+                </Text>
+              </motion.div>
               <Text color={"white"} fontFamily={"menlo"} fontSize={"sm"}>
                 ID No. 43554
               </Text>
             </Flex>
           </Center>
         </Box>
+
         <Spacer />
         <Flex flexDir={"row"}></Flex>
         <Icon color={"gray.400"} boxSize={"20px"} as={FaKeyboard} />

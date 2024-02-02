@@ -25,7 +25,7 @@ import avatarHandle from "./avatarHandle";
 
 import axios from "axios";
 
-const HeroCard = () => {
+export default function HeroCard () {
   const [heroData, setHeroData] = useState(null);
 
   useEffect(() => {
@@ -120,4 +120,4 @@ const HeroCard = () => {
   );
 };
 
-export default HeroCard;
+

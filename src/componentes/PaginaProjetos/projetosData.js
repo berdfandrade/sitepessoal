@@ -3,17 +3,14 @@
 */
 
 import {
-  Center,
   Code,
   Text,
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  TableCaption,
   TableContainer,
   Box,
   Link,
@@ -26,26 +23,73 @@ import {
     Import dos Ícones 
 */
 
-
 import * as GI from "react-icons/gi";
 import * as SI from "react-icons/si";
 import * as IO from "react-icons/io";
-import {
-  Fa500Px,
-  FaCashRegister,
-  FaDrawPolygon,
-  FaMoneyBill,
-  FaWallet,
-} from "react-icons/fa";
-import {
-  TbCalculator,
-  TbCalendarTime,
-  TbKey,
-  TbMath,
-  TbPhoneCall,
-  TbTypography,
-} from "react-icons/tb";
+import * as MD from "react-icons/md";
+import * as RI from "react-icons/ri";
+import * as TB from "react-icons/tb";
+import * as FA from "react-icons/fa";
 import { RxFontRoman } from "react-icons/rx";
+
+/*
+    Import dos componentes
+*/
+
+import {
+  BennyDex,
+  Gerador,
+  HeroCard,
+  Pomodoro,
+} from "./ProjetosReactLive/exportFrontEndProjects";
+
+const ProjetosFrontEnd = [
+  {
+    nome: "BennyDex",
+    tags: ["react", "chakra"],
+    descricaoCard: "An imitation of the classic Pokédex",
+    descricao:
+      "An imitation of the classic Pokédex, created by utilizing a specialized API to retrieve information about Pokémon. I fetched the data and rendered it using React, and I styled it with Chakra-ui.",
+    component: <BennyDex />,
+    icon: MD.MdCatchingPokemon,
+    link: "https://github.com/berdfandrade/bennydex/tree/main",
+    tag1: "Front-end",
+  },
+  {
+    nome: "Password Generator",
+    descricaoCard: "A small password generator",
+    tags: ["react", "chakra"],
+    descricao:
+      "A simple password generator developed in React with Chakra-ui styling. This app is live! You can try it here.",
+    component: <Gerador />,
+    icon: RI.RiLockPasswordFill,
+    link: "https://github.com/berdfandrade/gerador-de-senha",
+    tag1: "Front-end",
+  },
+  {
+    nome: "Pomodoro Timer",
+    descricaoCard: "Simple Pomodoro timer for studying/working",
+    tags: ["react", "chakra"],
+    descricao:
+      "A simple Pomodoro timer for studying/working, created with React and chakra-ui, which I also used to style this website. This app is live! You can try it right here!",
+    component: <Pomodoro />,
+    icon: GI.GiTomato,
+    link: "https://github.com/berdfandrade/pomodoro-timer/",
+    tag1: "Front-end",
+  },
+  {
+    nome: "Hero Card",
+    descricaoCard: "A card that renders the RPG API!",
+    tags: ["react", "chakra"],
+    descricao:
+      "The HeroCard component is a part of the front-end of an application that consumes an API to display information about a randomly generated hero. The component displays the attributes and details of the hero on a card.",
+    component: <HeroCard />,
+    icon: GI.GiSwordman,
+    tag1: "Front-end",
+    link: "https://github.com/berdfandrade/hero-card",
+    tag2: "Back-end",
+  },
+];
 
 const ProjectsBackEnd = [
   {
@@ -124,11 +168,125 @@ const ProjectsBackEnd = [
     ],
   },
   {
+    nome: "Pokémon API",
+    tags: ["express", "py", "mongodb", "typescript"],
+    descricaoCard: "API to retrieve information from all the Pokémons",
+    descricao: (
+      <Text>
+        {" "}
+        The Pokémon API offers endpoints for accessing comprehensive information
+        about Pokémon. Constructed with Express, a widely-used Node.js web
+        application framework, the API originates from a{" "}
+        <Link
+          href="https://www.kaggle.com/datasets/rohanpatil63/pokemon-dataset"
+          target="_blank"
+        >
+          <Text color={"blue.400"} as="u">
+            CSV file{" "}
+          </Text>
+        </Link>
+        that has been transformed into a JSON object. Subsequently, all data was
+        seamlessly integrated into a MongoDB database. To enhance accessibility
+        and organization, a user-friendly API was created for efficient data
+        management.
+      </Text>
+    ),
+    icon: MD.MdCatchingPokemon,
+    link: "https://github.com/berdfandrade/poke-api",
+    tag2: "Back-end",
+    methods: [
+      {
+        method: "GET",
+        remainingData: true,
+        url: "poke/all",
+        descricaoMetodo: "Retrieve a list of all Pokémons",
+        responseExample: [
+          {
+            Sp: {
+              " Atk": "65",
+              " Def": "65",
+            },
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/bulbasaur.png",
+            Id: "0001",
+            Names: "Bulbasaur",
+            Type1: "Grass",
+            Type2: "Poison",
+            Total: "318",
+            HP: "45",
+            Attack: "49",
+            Defense: "49",
+            Speed: "45",
+          },
+          {
+            Sp: {
+              " Atk": "135",
+              " Def": "115",
+            },
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/blastoise-mega.png",
+            Id: "0009",
+            Names: "Blastoise Mega Blastoise",
+            Type1: "Water",
+            Type2: "",
+            Total: "630",
+            HP: "79",
+            Attack: "103",
+            Defense: "120",
+            Speed: "78",
+          },
+          {
+            Sp: {
+              " Atk": "40",
+              " Def": "55",
+            },
+
+            image_url:
+              "https://img.pokemondb.net/sprites/sword-shield/icon/aipom.png",
+            Id: "0190",
+            Names: " Aipom",
+            Type1: "Normal",
+            Type2: "",
+            Total: "360",
+            HP: "55",
+            Attack: "70",
+            Defense: "55",
+            Speed: "85",
+          },
+        ],
+      },
+      {
+        method: "GET",
+        url: "poke/{pokemon}",
+        descricaoMetodo: "Retrieve data from a specific Pokémon",
+        responseExample: {
+          Sp: {
+            " Atk": "60",
+            " Def": "50",
+          },
+
+          image_url:
+            "https://img.pokemondb.net/sprites/sword-shield/icon/charmander.png",
+          Id: "0004",
+          Names: "Charmander",
+          Type1: "Fire",
+          Type2: "",
+          Total: "309",
+          HP: "39",
+          Attack: "52",
+          Defense: "43",
+          Speed: "65",
+        },
+      },
+    ],
+  },
+  {
     nome: "FIFA API",
     descricaoCard: "API to retrive information from FIFA players",
     descricao: `The FIFA API retrieves information from a remote MongoDB database, allowing users to access data for any player across FIFA editions, starting from FIFA 15 up to EA FC (FIFA 24). This API offers comprehensive access to player data from various FIFA versions, facilitating seamless retrieval and analysis.`,
     icon: IO.IoIosFootball,
     tag2: "Back-end",
+    link: "https://github.com/berdfandrade/fifa24",
     tags: ["node", "express", "typescript", "mongodb"],
     methods: [
       {
@@ -507,8 +665,8 @@ const ProjectsBackEnd = [
 
 const ProjetosFreeCode = [
   {
-    icone: TbTypography,
-
+    icone: TB.TbTypography,
+    dificuldade: 0.5,
     linguagem: "js",
     nome: "Palindrome Checker",
     descricaoCard: "Create a palidrome checker",
@@ -532,6 +690,7 @@ const ProjetosFreeCode = [
     icone: RxFontRoman,
     nome: "Roman Converter",
     linguagem: "js",
+    dificuldade: 3,
     descricaoCard: "Convert into a roman numeral.",
     descricao: (
       <Box p={3}>
@@ -615,8 +774,9 @@ const ProjetosFreeCode = [
     solucao: "da001dd997705f055ccb6f5310c430ab",
   },
   {
-    icone: TbKey,
+    icone: TB.TbKey,
     nome: "Caesars Cipher",
+    dificuldade: 4,
     descricaoCard: "Build a Ceaser Cipher",
     linguagem: "js",
     descricao: (
@@ -635,9 +795,9 @@ const ProjetosFreeCode = [
     solucao: "4fbc54bf8e53227faeb7bb986a51814d",
   },
   {
-    icone: TbPhoneCall,
+    icone: TB.TbPhoneCall,
     nome: "Telephone Validator",
-
+    dificuldade: 2.5,
     descricaoCard: "A US validator phone number",
     linguagem: "js",
     descricao: (
@@ -665,7 +825,8 @@ const ProjetosFreeCode = [
   },
   {
     nome: "Cash Register",
-    icone: FaCashRegister,
+    icone: FA.FaCashRegister,
+    dificuldade: 4,
     descricaoCard: "Design a cash register function",
     linguagem: "js",
     descricao: (
@@ -779,7 +940,8 @@ const ProjetosFreeCode = [
 const ProjetosFreeCodePython = [
   {
     nome: "Arithmetic Formatter",
-    icone: TbMath,
+    icone: TB.TbMath,
+    dificuldade: 4,
     descricaoCard: "An Arithmetic Formatter",
     linguagem: "py",
     descricao: (
@@ -905,7 +1067,8 @@ const ProjetosFreeCodePython = [
   },
   {
     nome: "Time calculator",
-    icone: TbCalendarTime,
+    icone: TB.TbCalendarTime,
+    dificuldade: 3.0,
     linguagem: "py",
     descricaoCard: "A time calculator",
     descricao: (
@@ -975,9 +1138,10 @@ const ProjetosFreeCodePython = [
   },
   {
     nome: "Budget App",
-    icone: FaWallet,
+    icone: FA.FaWallet,
     descricaoCard: "Build a Budget App",
     linguagem: "py",
+    dificuldade: 3.2,
     descricao: (
       <Box>
         <Text mb={3}>
@@ -1097,7 +1261,8 @@ const ProjetosFreeCodePython = [
   },
   {
     nome: "Polygon Area Calculator",
-    icone: FaDrawPolygon,
+    icone: FA.FaDrawPolygon,
+    dificuldade: 2.7,
     descricaoCard: "Create a Polygon Area Calculator",
     linguagem: "py",
     descricao: (
@@ -1220,7 +1385,8 @@ const ProjetosFreeCodePython = [
   {
     nome: "Probability Calculator",
     linguagem: "py",
-    icone: TbCalculator,
+    icone: TB.TbCalculator,
+    dificuldade: 4,
     descricaoCard: "A probabilty calculator",
     descricao: (
       <Box>
@@ -1326,7 +1492,8 @@ const ProjetosFreeCodePython = [
         </Text>
         <Text>
           <Text as="b">Hint</Text>: Consider using the modules that are already
-          imported at the top of <Code>prob_calculator.py</Code>. Do not
+          imported at the top of <Code>prob_calculator.py</Code>. Do not import
+          Hero from './ProjetosReactLive/BennyTree/componentes/Hero/Hero';
           initialize random seed within <Code>prob_calculator.py</Code>.
         </Text>
       </Box>
@@ -1335,4 +1502,9 @@ const ProjetosFreeCodePython = [
   },
 ];
 
-export { ProjectsBackEnd, ProjetosFreeCode, ProjetosFreeCodePython };
+export {
+  ProjectsBackEnd,
+  ProjetosFreeCode,
+  ProjetosFreeCodePython,
+  ProjetosFrontEnd,
+};

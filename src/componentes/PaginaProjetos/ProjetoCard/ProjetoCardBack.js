@@ -18,9 +18,9 @@ import {
   DrawerCloseButton,
 } from "@chakra-ui/react";
 
-import { JsonRender } from "./PaginaBackEndDoc";
+import { motion } from "framer-motion";
+import JsonRender from "./JsonRender";
 import { AiFillQuestionCircle } from "react-icons/ai";
-import { LuConstruction } from "react-icons/lu";
 import { AiOutlineLink } from "react-icons/ai";
 import { MdOutlineConstruction } from "react-icons/md";
 import * as FA from "react-icons/fa";
@@ -28,8 +28,6 @@ import TagProjeto from "./TagProjeto";
 
 const ProjetoCardBack = ({
   nome,
-  iconModal,
-  componenteLive,
   descricao,
   icon,
   corIcon,
@@ -38,10 +36,7 @@ const ProjetoCardBack = ({
   tag2,
   corTag1,
   corTag2,
-  link,
   projeto,
-  remainingData,
-  underConstruction,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const widthBasedPlacement = useBreakpointValue({
@@ -51,66 +46,68 @@ const ProjetoCardBack = ({
 
   return (
     <>
-      <Box
-        transition="0.1s ease-in-out"
-        alignItems="center"
-        h={{ base: "110px", md: "120px" }}
-        p={2}
-        borderWidth={1}
-        onClick={onOpen}
-        width="100%"
-        _hover={{
-          cursor: "pointer",
-        }}
-      >
-        <Flex flexDir="column" height="100%">
-          <Flex flexDir="row" alignItems="center">
-            <Icon
-              as={icon ? icon : AiFillQuestionCircle}
-              color={corIcon}
-              boxSize="50px"
-              p={2}
-            ></Icon>
-            <Flex>
-              <Text textAlign="left" fontSize={16} fontWeight="bold">
-                {nome ? nome : "Nome do componenteLive"}
-                <Text fontWeight="light" fontSize="12" maxW="80%">
-                  {descricaoCard ? descricaoCard : "descrição do card"}
+      {" "}
+      <motion.div whileTap={{ scale: 0.8 }}>
+        <Box
+          transition="0.1s ease-in-out"
+          alignItems="center"
+          h={{ base: "110px", md: "120px" }}
+          p={2}
+          borderWidth={1}
+          onClick={onOpen}
+          width="100%"
+          _hover={{
+            cursor: "pointer",
+          }}
+        >
+          <Flex flexDir="column" height="100%">
+            <Flex flexDir="row" alignItems="center">
+              <Icon
+                as={icon ? icon : AiFillQuestionCircle}
+                color={corIcon}
+                boxSize="50px"
+                p={2}
+              ></Icon>
+              <Flex>
+                <Text textAlign="left" fontSize={16} fontWeight="bold">
+                  {nome ? nome : "Nome do componenteLive"}
+                  <Text fontWeight="light" fontSize="12" maxW="80%">
+                    {descricaoCard ? descricaoCard : "descrição do card"}
+                  </Text>
                 </Text>
-              </Text>
+              </Flex>
             </Flex>
+
+            <Spacer />
+            {(tag1 || tag2) && (
+              <Box bottom={0}>
+                {tag1 && (
+                  <Tag
+                    fontSize="xs"
+                    variant="outline"
+                    borderRadius="full"
+                    marginLeft={0}
+                    colorScheme={corTag1 ? corTag1 : "facebook"}
+                  >
+                    {tag1}
+                  </Tag>
+                )}
+                {tag2 && (
+                  <Tag
+                    fontSize="xs"
+                    variant={"outline"}
+                    borderRadius={"full"}
+                    marginLeft={0}
+                    colorScheme={corTag2 ? corTag2 : "whatsapp"}
+                  >
+                    {tag2}
+                  </Tag>
+                )}
+              </Box>
+            )}
           </Flex>
-
-          <Spacer />
-          {(tag1 || tag2) && (
-            <Box bottom={0}>
-              {tag1 && (
-                <Tag
-                  fontSize="xs"
-                  variant="outline"
-                  borderRadius="full"
-                  marginLeft={0}
-                  colorScheme={corTag1 ? corTag1 : "facebook"}
-                >
-                  {tag1}
-                </Tag>
-              )}
-              {tag2 && (
-                <Tag
-                  fontSize="xs"
-                  variant={"outline"}
-                  borderRadius={"full"}
-                  marginLeft={0}
-                  colorScheme={corTag2 ? corTag2 : "whatsapp"}
-                >
-                  {tag2}
-                </Tag>
-              )}
-            </Box>
-          )}
-        </Flex>
-      </Box>
-
+        </Box>
+      </motion.div>
       <Drawer
         isOpen={isOpen}
         placement={widthBasedPlacement}
@@ -134,6 +131,7 @@ const ProjetoCardBack = ({
             pr={5}
             gap={2}
             flexDir={"row"}
+            overflowX={"hidden"}
           >
             <Text fontFamily={"menlo"} fontSize={10}>
               Uses:{" "}
@@ -243,21 +241,25 @@ const ProjetoCardBack = ({
                         <Text fontSize={"md"}>
                           <JsonRender data={metodo.responseExample} />
                         </Text>
-                        {projeto.methods.map((metodo) => (
-                          <div key={metodo.id}>
-                            {metodo.remainingData ? (
-                              <Text
-                                ml={2}
-                                mt={3}
-                                color={"#747474"}
-                                fontSize={"md"}
-                                as="b"
-                              >
-                               {`{...}`}
-                              </Text>
-                            ) : null} 
-                          </div>
-                        ))}
+
+                        {projeto.methods &&
+                          projeto.methods.map((metodo, index) => (
+                            <Box key={index}>
+                              {metodo.remainingData ? (
+                                <Text 
+                                  key={index}
+                                  opacity={'0.5'}
+                                  ml={2}
+                                  mt={3}
+                                  color={"#747474"}
+                                  fontSize={"md"}
+                                  as="b"
+                                >
+                                  {`{...}`}
+                                </Text>
+                              ) : null }
+                            </Box>
+                          ))}
                       </Box>
                     </Flex>
                   ))}

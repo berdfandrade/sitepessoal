@@ -9,6 +9,7 @@ import {
   Tag,
   Progress,
   Image,
+  Tooltip,
 } from "@chakra-ui/react";
 
 import * as GI from "react-icons/gi";
@@ -19,19 +20,15 @@ import * as AI from "react-icons/ai";
 import calcularPorcentagemCompletadaAno from "./porcentagemAno";
 import anime from "animejs";
 
-
 import { FaHatWizard } from "react-icons/fa";
 import PixelBenny from "../assets/pixelBennySemFundo.png";
 import aura from "../assets/deza8e9-b79fc074-2c89-4214-b0cb-73152b904149.gif";
 import calcularPorcentagemDiaPassado from "./porcentagemDia";
-
-
-
+import { calcularIdade } from "../../PaginaSobre/Idade";
 
 const HeroPixel = () => {
-
   const elementRef = useRef(null);
-
+  const [idade, setIdade] = useState(0);
   const [porCentoAno, setPorCentoAno] = useState(0);
   const [HP, setHp] = useState(0);
 
@@ -43,6 +40,11 @@ const HeroPixel = () => {
   useEffect(() => {
     const porcentagemCompletadaAno = calcularPorcentagemCompletadaAno();
     setPorCentoAno(porcentagemCompletadaAno);
+  }, []);
+
+  useEffect(() => {
+    const idadeAtual = calcularIdade();
+    setIdade(idadeAtual);
   }, []);
 
   useEffect(() => {
@@ -90,7 +92,7 @@ const HeroPixel = () => {
                 style={{ position: "relative", zIndex: 1 }}
               />
 
-              <Flex mt={-4} flexDir={"row"}>
+              <Flex flexDir={"row"}>
                 <Flex ml={10} alignItems={"center"} mr={2}>
                   <Icon
                     color={"gray.400"}
@@ -115,78 +117,103 @@ const HeroPixel = () => {
               </Flex>
             </Box>
 
-            <Box>
-              <Text fontWeight={"bold"} mb={-1}>
-                Bernardo Stats:
-              </Text>
-              <Flex alignItems={"center"} flexDir={"row"}>
-                <Text fontSize="12" mr={1} mt={4}>
-                  Lvl.
+            <Tooltip
+              p={4}
+              placement={"top"}
+              borderRadius={"md"}
+              hasArrow
+              label={
+                <>
+                  <Text as="b">Note:</Text>
+                  <Text>
+                    The <Text as="b">Lv. {idade}</Text> indicates my current
+                    age, while <Text as='b'>HP</Text> represents the percentage of the day that has
+                    passed, and <Text as='b'>EXP.</Text> signifies the percentage of the year until
+                    my next birthday.
+                  </Text>
+                </>
+              }
+            >
+              <Box>
+                <Text fontWeight={"bold"} mb={-1}>
+                  Bernardo Stats:
                 </Text>
-                <Text fontSize="30" mr={1} as="b">
-                  28
-                </Text>
-                <Text fontSize={"xs"} mt={3} mr={1}>
-                  Class:
-                </Text>
-                <Text fontSize={"xs"} as={"b"} mt={3}>
-                  Programmer
-                </Text>
-              </Flex>
+                <Flex alignItems={"center"} flexDir={"row"}>
+                  <Text fontSize="12" mr={1} mt={4}>
+                    Lvl.
+                  </Text>
+                  <Text fontSize="30" mr={1} as="b">
+                    {idade}
+                  </Text>
+                  <Text fontSize={"xs"} mt={3} mr={1}>
+                    Class:
+                  </Text>
+                  <Text fontSize={"xs"} as={"b"} mt={3}>
+                    Programmer
+                  </Text>
+                </Flex>
 
-              <Flex alignItems={"center"} flexDir={"row"}>
-                <Text fontSize={"xs"}>HP.</Text>
-                <Progress
-                  w={"80%"}
-                  borderRadius={"full"}
-                  height={"8px"}
-                  ml={2}
-                  colorScheme={HP <= 40 ? "orange" : HP <= 20 ? "red" : "teal"}
-                  value={HP}
-                ></Progress>
-              </Flex>
-              <Flex alignItems={"center"} flexDir={"row"}>
-                <Text fontSize={"xs"}>Exp.</Text>
-                <Progress
-                  ml={2}
-                  w={"75%"}
-                  borderRadius={"full"}
-                  height={"8px"}
-                  value={Math.round(porCentoAno)}
-                ></Progress>
-              </Flex>
-              <Text fontSize={"xs"} mt={-1}>{`${
-                10 * Math.round(porCentoAno)
-              } / 1000`}</Text>
+                <Flex alignItems={"center"} flexDir={"row"}>
+                  <Text fontSize={"xs"}>HP.</Text>
+                  <Progress
+                    w={"80%"}
+                    borderRadius={"full"}
+                    height={"8px"}
+                    ml={2}
+                    colorScheme={
+                      HP <= 40 ? "orange" : HP <= 20 ? "red" : "teal"
+                    }
+                    value={HP}
+                  ></Progress>
+                </Flex>
+                <Flex alignItems={"center"} flexDir={"row"}>
+                  <Text fontSize={"xs"}>Exp.</Text>
+                  <Progress
+                    ml={2}
+                    w={"75%"}
+                    borderRadius={"full"}
+                    height={"8px"}
+                    value={Math.round(porCentoAno)}
+                  ></Progress>
+                </Flex>
+                <Text fontSize={"xs"} mt={-1}>{`${
+                  10 * Math.round(porCentoAno)
+                } / 1000`}</Text>
 
-              <Flex flexDir={"column"}>
-                <Tag
-                  colorScheme={"purple"}
-                  mr={"auto"}
-                  ml={"auto"}
-                  mt={2}
-                  variant={"outline"}
-                  p={1}
-                >
-                  <Icon boxSize={"20px"} mr={1} as={TB.TbServer}></Icon>
-                  <Text fontSize={"xs"}>Backend Wizard</Text>
-                  <Icon boxSize={"20px"} ml={1} mr={1} as={FaHatWizard}></Icon>
-                </Tag>
-                <Tag
-                  mr={"auto"}
-                  width={"90%"}
-                  ml={"auto"}
-                  mt={1}
-                  variant={"outline"}
-                  colorScheme="blue"
-                  p={1}
-                >
-                  <Icon mr={1} boxSize={"20px"} as={TB.TbScreenShare}></Icon>
-                  <Text fontSize={"xs"}>FrontEnd Warrior</Text>
-                  <Icon mr={1} boxSize={"20px"} as={GI.GiSwordSpade}></Icon>
-                </Tag>
-              </Flex>
-            </Box>
+                <Flex flexDir={"column"}>
+                  <Tag
+                    colorScheme={"purple"}
+                    mr={"auto"}
+                    ml={"auto"}
+                    mt={2}
+                    variant={"outline"}
+                    p={1}
+                  >
+                    <Icon boxSize={"20px"} mr={1} as={TB.TbServer}></Icon>
+                    <Text fontSize={"xs"}>Backend Wizard</Text>
+                    <Icon
+                      boxSize={"20px"}
+                      ml={1}
+                      mr={1}
+                      as={FaHatWizard}
+                    ></Icon>
+                  </Tag>
+                  <Tag
+                    mr={"auto"}
+                    width={"90%"}
+                    ml={"auto"}
+                    mt={1}
+                    variant={"outline"}
+                    colorScheme="blue"
+                    p={1}
+                  >
+                    <Icon mr={1} boxSize={"20px"} as={TB.TbScreenShare}></Icon>
+                    <Text fontSize={"xs"}>FrontEnd Warrior</Text>
+                    <Icon mr={1} boxSize={"20px"} as={GI.GiSwordSpade}></Icon>
+                  </Tag>
+                </Flex>
+              </Box>
+            </Tooltip>
           </Flex>
         </Center>
       </Box>

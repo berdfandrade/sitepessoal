@@ -12,8 +12,5 @@ function calcularPorcentagemDiaPassado() {
     return Math.floor(porcentagemPassada) // Retorna a porcentagem formatada com duas casas decimais
   }
   
-  // Exemplo de uso:
-  const porcentagemDiaPassado = calcularPorcentagemDiaPassado();
-  console.log(`Porcentagem do dia já passado: ${porcentagemDiaPassado}`);
   
 export default calcularPorcentagemDiaPassado

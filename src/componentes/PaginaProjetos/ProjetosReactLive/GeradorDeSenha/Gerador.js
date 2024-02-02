@@ -43,14 +43,14 @@ function Gerador() {
           <Center p={1} flexDirection={"column"}>
             <Icon boxSize={8} mb={4} as={RiLockPasswordFill}></Icon>
             <Text fontSize="xl" fontWeight="bold">
-              Gerador de Senha
+              Password Generator
             </Text>
             <Text fontSize={"sm"} mb={3}>
-              tamanho da senha:
+              Password Length:
             </Text>
             <NumberInput
               maxW={40}
-              placeholder="Tamanho da senha"
+              placeholder="Password Length"
               min={6}
               max={35}
               value={tamanho}
@@ -64,7 +64,7 @@ function Gerador() {
               </NumberInputStepper>
             </NumberInput>
             <Button colorScheme="twitter" onClick={handleGerarSenha}>
-              Gerar Senha
+              Generate!
             </Button>
           </Center>
           {senhaGerada && (

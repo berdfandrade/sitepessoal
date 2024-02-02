@@ -160,10 +160,11 @@ function HabilidadesLinux() {
         autoRows="minmax(110px, auto)"
       >
         <IconHabilidade icone={SI.SiGnubash} nome={"Bash"} progresso={70} />
-        <IconHabilidade icone={BI.BiPackage} nome={"Pacotes"} progresso={60} />
-        <IconHabilidade icone={FA.FaUserSecret} nome={"Permissões"} progresso={60} />
+        <IconHabilidade icone={BI.BiPackage} nome={"Packages"} progresso={60} />
+        <IconHabilidade icone={FA.FaUserSecret} nome={"Permissions"} progresso={60} />
         <IconHabilidade icone={SI.SiDebian} nome={"Debian"} progresso={40} />
         <IconHabilidade icone={FA.FaUbuntu} nome={"Ubuntu"} progresso={70} />
+        <IconHabilidade icone={SI.SiArchlinux} nome={"Arch"} progresso={20} />
       </Grid>
     </Flex>
   );
@@ -178,9 +179,9 @@ function HabilidadesGit() {
         autoRows="minmax(110px, auto)"
       >
         <IconHabilidade icone={DI.DiGitCommit} nome={"Commits"} progresso={85} />
-        <IconHabilidade icone={RI.RiGitRepositoryCommitsFill} nome={"Repositórios"} progresso={100} />
-        <IconHabilidade icone={GO.GoVersions} nome={"Versões"} progresso={80} />
-        <IconHabilidade icone={AI.AiOutlineHistory} nome={"Histórico"} progresso={50} />
+        <IconHabilidade icone={RI.RiGitRepositoryCommitsFill} nome={"Repositories"} progresso={100} />
+        <IconHabilidade icone={GO.GoVersions} nome={"Versions"} progresso={80} />
+        <IconHabilidade icone={AI.AiOutlineHistory} nome={"History"} progresso={50} />
         <IconHabilidade icone={DI.DiGitMerge} nome={"Merge"} progresso={40} />
       </Grid>
     </Flex>
@@ -224,9 +225,27 @@ function HabilidadesTypeScript() {
   );
 }
 
+function HabilidadesFlask () {
+  return (
+    <Flex direction="column" align="center" mt={4}>
+    <Grid
+      templateColumns="repeat(3, 1fr)"
+      gap={8}
+      autoRows="minmax(110px, auto)"
+    >
+      <IconHabilidade icone={TB.TbRouter} nome={"Routing"} progresso={30} />
+      <IconHabilidade icone={TB.TbCircuitAmmeter} nome={"CRUD"} progresso={90} />
+      <IconHabilidade icone={TB.TbPanoramaVertical} nome={"Namespaces"} progresso={80} />
+      <IconHabilidade icone={BS.BsIntersect} nome={"Interfaces"} progresso={70} />
+      <IconHabilidade icone={BI.BiNetworkChart} nome={"Type-safe"} progresso={80} />
+    </Grid>
+  </Flex>
+  )
+}
 
 export {
   HabilidadesJavscript,
+  HabilidadesFlask,
   HabilidadesNode,
   HabilidadesReact,
   HabilidadesPython,
