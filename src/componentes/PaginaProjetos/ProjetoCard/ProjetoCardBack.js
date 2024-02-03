@@ -125,6 +125,7 @@ const ProjetoCardBack = ({
 
           {/* Tags */}
           <Flex
+            p={4}
             pl={7}
             alignItems={"center"}
             mb={5}
