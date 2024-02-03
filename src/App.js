@@ -1,4 +1,4 @@
-import { ChakraProvider, Switch } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Theme from "./componentes/BotaoDarkMode/Tema";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PaginaHabilidades from "./componentes/PaginaHabilidades/PaginaHabilidades";
