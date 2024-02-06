@@ -23,6 +23,7 @@ import {
   ProjetosFreeCode,
   ProjetosFreeCodePython,
   ProjetosFrontEnd,
+  ProjetosHTML,
 } from "./projetosData";
 
 import ProjetoCardBack from "./ProjetoCard/ProjetoCardBack";
@@ -30,8 +31,9 @@ import Cabecalho from "../Cabecalho/Cabecalho";
 import FreeCodeCampCard from "./ProjetoCard/FreeCodeCampCard";
 import { IoLogoJavascript } from "react-icons/io5";
 import { motion } from "framer-motion";
-import CardFrontEnd from "./ProjetoCard/CardFrontEnd";
+import CardFrontEndReact from "./ProjetoCard/CardFrontEndReact";
 import MoreProjects from './ProjetoCard/MoreProjectsCard';
+import CardFrontEnd from "./ProjetoCard/CardFrontEnd";
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
@@ -63,6 +65,9 @@ const TextAnimation = {
 };
 
 function PaginaProjetosClone() {
+
+  const projetoExemplo = ProjetosHTML[0]
+
   return (
     <ChakraProvider theme={Theme}>
       <Cabecalho />
@@ -107,9 +112,9 @@ function PaginaProjetosClone() {
               p={3}
             >
               {ProjetosFrontEnd.map((projeto, index) => (
-                <CardFrontEnd key={index} projeto={projeto} />
+                <CardFrontEndReact key={index} projeto={projeto} />
               ))}
-              
+              <CardFrontEnd projeto={projetoExemplo}/>
             </Grid>
           </motion.div>
 

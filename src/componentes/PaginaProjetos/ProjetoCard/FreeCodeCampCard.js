@@ -82,20 +82,6 @@ export default function FreeCodeCampCard({ projeto }) {
               ) : null}
             </Flex>
           </Flex>
-          {/* <Flex flexDir={"row"} mt={3} gap={2} alignItems={"center"}>
-            <Text ml={1} opacity={"0.7"} fontSize={"xs"} color="gray">
-              Project Difficulty :
-            </Text>
-            <Progress
-              // bg={"gray.400"}
-              opacity={"0.6"}
-              borderRadius={"full"}
-              size={"sm"}
-              w={"50%"}
-              value={projeto.dificuldade * 20}
-              colorScheme="gray"
-            />
-          </Flex> */}
         </Box>
       </motion.div>
 

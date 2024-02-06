@@ -43,6 +43,17 @@ import {
   Pomodoro,
 } from "./ProjetosReactLive/exportFrontEndProjects";
 
+const ProjetosHTML = [
+  {
+    nome : "Leonardo DaVinci Tribute",
+    tags : ["html"],
+    descricaoCard : "Tribute Page to Leonardo DaVinci",
+    descricao : "An imitation of the classic Pokédex, created by utilizing a specialized API to retrieve information about Pokémon. I fetched the data and rendered it using React, and I styled it with Chakra-ui.",
+    icon : FA.FaPaintBrush,
+    
+  }
+]
+
 const ProjetosFrontEnd = [
   {
     nome: "BennyDex",
@@ -1507,4 +1518,5 @@ export {
   ProjetosFreeCode,
   ProjetosFreeCodePython,
   ProjetosFrontEnd,
+  ProjetosHTML
 };

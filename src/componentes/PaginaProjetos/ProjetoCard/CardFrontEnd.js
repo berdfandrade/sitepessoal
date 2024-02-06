@@ -1,208 +1,172 @@
 import {
-  Box,
-  Text,
-  Icon,
-  useDisclosure,
-  Flex,
-  Tag,
-  Spacer,
-  useBreakpointValue,
-  Button,
-  Center,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-} from "@chakra-ui/react";
-
-import { motion } from "framer-motion";
-import { AiFillQuestionCircle } from "react-icons/ai";
-import TagProjeto from "./TagProjeto";
-import { MdOutlineConstruction } from "react-icons/md";
-import { AiOutlineLink } from "react-icons/ai";
-import { FaGithubAlt } from "react-icons/fa";
-
-export default function CardFrontEnd({ projeto }) {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const widthBasedPlacement = useBreakpointValue({
-    base: "bottom",
-    md: "right",
-  });
-
-  return (
-    <>
-      {" "}
-      <motion.div whileTap={{ scale: 0.8 }}>
-        <Box
-          onClick={onOpen}
-          transition="0.1s ease-in-out"
-          alignItems="center"
-          h={{ base: "110px", md: "120px" }}
-          p={2}
-          borderWidth={1}
-          width="100%"
-          _hover={{
-            cursor: "pointer",
-          }}
-        >
-          <Flex flexDir="column" height="100%">
-            <Flex flexDir="row" alignItems="center">
-              <Icon
-                as={projeto.icon ? projeto.icon : AiFillQuestionCircle}
-                color={projeto.corIcon}
-                boxSize="50px"
-                p={2}
-              ></Icon>
-              <Flex>
-                <Text textAlign="left" fontSize={16} fontWeight="bold">
-                  {projeto.nome ? projeto.nome : "Nome do componenteLive"}
-                  <Text fontWeight="light" fontSize="12" maxW="80%">
-                    {projeto.descricaoCard
-                      ? projeto.descricaoCard
-                      : "descrição do card"}
-                  </Text>
+    Box,
+    Text,
+    Icon,
+    Flex,
+    Tag,
+    Center,
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+    useDisclosure,
+    Button,
+    Progress,
+  } from "@chakra-ui/react";
+  
+  import { motion } from "framer-motion";
+  import { IoLogoJavascript } from "react-icons/io5";
+  import { FaPython } from "react-icons/fa";
+  import TagProjeto from "./TagProjeto";
+  
+  import { Spinner } from "@chakra-ui/react";
+  import React from "react";
+  
+  export default function CardFrontEnd({ projeto }) {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+  
+    return (
+      <>
+        <motion.div whileTap={{ scale: 0.9 }}>
+          <Box
+            onClick={onOpen}
+            transition="0.1s ease-in-out"
+            alignItems="center"
+            h={{ base: "110px", md: "120px" }}
+            p={2}
+            borderWidth={1}
+            width="100%"
+            _hover={{
+              cursor: "pointer",
+            }}
+          >
+            <Flex alignItems="center" flexDir="row">
+              <Icon boxSize="50px" p={2} as={projeto.icone} />
+              <Flex flexDir={"column"}>
+                <Text as="b">{projeto.nome}</Text>
+                <Text fontWeight="light" fontSize="12">
+                  {projeto.descricaoCard}
                 </Text>
+                {projeto.linguagem ? (
+                  <Tag
+                    mt={3}
+                    ml={2}
+                    variant={"subtle"}
+                    borderRadius={"full"}
+                    colorScheme={projeto.linguagem === "js" ? "orange" : "blue"}
+                    p={1}
+                    w="110px"
+                  >
+                    <Flex gap={2} ml={2} flex={"row"} alignItems={"center"}>
+                      <Center>
+                        <Icon
+                          boxSize={"15px"}
+                          as={
+                            projeto.linguagem === "js"
+                              ? IoLogoJavascript
+                              : projeto.linguagem === "py"
+                              ? FaPython
+                              : null
+                          }
+                        />
+                        <Text ml={1} as="b">
+                          {projeto.linguagem === "js" ? "JavaScript" : "Python"}
+                        </Text>
+                      </Center>
+                    </Flex>
+                  </Tag>
+                ) : null}
               </Flex>
             </Flex>
-
-            <Spacer />
-            {(projeto.tag1 || projeto.tag2) && (
-              <Box bottom={0}>
-                {projeto.tag1 && (
-                  <Tag
-                    fontSize="xs"
-                    variant="outline"
-                    borderRadius="full"
-                    marginLeft={0}
-                    mr={2}
-                    colorScheme={projeto.corTag1 ? projeto.corTag1 : "linkedin"}
-                  >
-                    {projeto.tag1}
-                  </Tag>
-                )}
-                {projeto.tag2 && (
-                  <Tag
-                    fontSize="xs"
-                    variant={"outline"}
-                    borderRadius={"full"}
-                    marginLeft={0}
-                    colorScheme={projeto.corTag2 ? projeto.corTag2 : "whatsapp"}
-                  >
-                    {projeto.tag2}
-                  </Tag>
-                )}
-              </Box>
-            )}
-          </Flex>
-        </Box>
-      </motion.div>
-      <Drawer
-        isOpen={isOpen}
-        placement={widthBasedPlacement}
-        p={4}
-        size={"md"}
-        onClose={onClose}
-        colorScheme="green"
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader mt={4} fontSize={30}>
-            {projeto.nome}
-          </DrawerHeader>
-
-          {/* Tags */}
-          <Flex
-            pl={7}
-            alignItems={"center"}
-            p={1}
-            mb={5}
-            pr={5}
-            gap={2}
-            flexDir={"row"}
-            overflowX={"hidden"}
-          >
-            <Text fontFamily={"menlo"} ml={6} fontSize={10}>
-              Uses:{" "}
-            </Text>
-            {projeto.tags &&
-              projeto.tags.map((tag, index) => (
-                <TagProjeto nome={tag} key={index} />
-              ))}
-          </Flex>
-
-          <DrawerBody borderRadius={"md"}>
-            {projeto.underConstruction ? (
-              <Center>
-                <Flex alignItems={"center"} p={6} flexDir={"column"}>
-                  <Text mt={"15"} color="gray.300" fontSize={30} as="b">
-                    Under Construction...
-                  </Text>
-                  <Icon
-                    color="gray.300"
-                    boxSize={"200px"}
-                    as={MdOutlineConstruction}
-                  />
-                  <Text
-                    p={4}
-                    color="gray.400"
-                  >{`The ${projeto.nome} is under construction, and I'm doing my best, I swear! In the meantime, you can visit my GitHub (@berdfandrade) or explore my other projects on this website.`}</Text>
-                </Flex>
-              </Center>
-            ) : (
-              <>
-                <Center mb={5}>
-                  <Icon boxSize={20} as={projeto.icon} />
-                </Center>
-                <Text fontSize="md" p={3}>
-                  {projeto.descricao}
-                </Text>
-                <Box>{projeto.component}</Box>
-              </>
-            )}
-          </DrawerBody>
-
-          <DrawerFooter mt={3}>
-            {projeto.underConstruction ? null : (
-              <Button
-                href={projeto.link}
-                mr={"auto"}
+            {/* <Flex flexDir={"row"} mt={3} gap={2} alignItems={"center"}>
+              <Text ml={1} opacity={"0.7"} fontSize={"xs"} color="gray">
+                Project Difficulty :
+              </Text>
+              <Progress
+                // bg={"gray.400"}
+                opacity={"0.6"}
                 borderRadius={"full"}
-                bg={"blackAlpha.900"}
-                color={"white"}
-                _hover={{ cursor: "pointer" }}
-                p={4}
-                as="a"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Flex flexDirection={"row"}>
-                  <Icon mr={2} as={FaGithubAlt} />
-                  <Text fontSize="sm">Repository</Text>
-                  <Icon
-                    color="white"
-                    boxSize={4}
-                    as={AiOutlineLink}
-                    ml={1}
-                  ></Icon>
+                size={"sm"}
+                w={"50%"}
+                value={projeto.dificuldade * 20}
+                colorScheme="gray"
+              />
+            </Flex> */}
+          </Box>
+        </motion.div>
+  
+        <>
+          <Drawer isOpen={isOpen} placement="right" onClose={onClose} size="md">
+            <DrawerOverlay />
+            <DrawerContent>
+              <DrawerCloseButton />
+              <DrawerHeader>
+                {projeto.nome}
+  
+                <Flex flexDir={"row"} mt={3}  gap={2} alignItems={"center"}>
+                  <Text ml={1} opacity={"0.7"} fontSize={"xs"} color="gray">
+                    Project Difficulty :
+                  </Text>
+                  <Progress
+                    // bg={"gray.400"}
+                    opacity={"0.6"}
+                    borderRadius={"full"}
+                    size={"sm"}
+                    w={"50%"}
+                    value={projeto.dificuldade * 20}
+                    colorScheme={"blue"}
+                  />
                 </Flex>
-              </Button>
-            )}
-
-            <Button
-              variant="outline"
-              colorScheme={"red"}
-              mr={3}
-              onClick={onClose}
-            >
-              Close
-            </Button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-    </>
-  );
-}
+              </DrawerHeader>
+              <Flex
+                pl={7}
+                alignItems={"center"}
+                mb={5}
+                pr={5}
+                gap={2}
+                flexDir={"row"}
+              >
+                <Text fontFamily={"monospace"} fontSize={10}>
+                  Problem solved in:{" "}
+                </Text>
+                <TagProjeto nome={projeto.linguagem} />
+              </Flex>
+  
+              <Center p={5}>
+                <Icon boxSize={"100px"} as={projeto.icone} />
+              </Center>
+              <DrawerBody p={6}>
+                <Text mb={3} fontSize={"xs"} fontFamily={"monospace"}>
+                  Task description:
+                </Text>
+                <Box borderBottom="1px dashed gray" mb={3} />
+                <Box mb={6}>{projeto.descricao}</Box>
+                <Text mt={5} mb={2} ml={3} fontSize="sm" as="b">
+                  My solution:{" "}
+                </Text>
+                <Box borderBottom="1px dashed gray" mt={6} mb={3} />
+                <Box>
+                
+                </Box>
+              </DrawerBody>
+  
+              <DrawerFooter>
+                <Button
+                  variant="outline"
+                  colorScheme={"red"}
+                  mr={3}
+                  onClick={onClose}
+                >
+                  Close
+                </Button>
+              </DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        </>
+      </>
+    );
+  }
+  
